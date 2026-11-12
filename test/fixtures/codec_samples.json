@@ -1,0 +1,13034 @@
+{
+"company": 7,
+"families": [
+{
+"family": "bootstrapCompany",
+"plain": {
+"facts": {
+"geoLat": null,
+"geoLon": null,
+"geoRadiusMetres": 1,
+"geoRequireLocation": false,
+"name": "x",
+"orgCode": "x",
+"slug": "x"
+}
+},
+"rich": {
+"facts": {
+"geoLat": -13,
+"geoLon": -16,
+"geoRadiusMetres": 1222,
+"geoRequireLocation": true,
+"name": "t1é",
+"orgCode": "t3é",
+"slug": "t2é"
+}
+}
+},
+{
+"family": "amendCompany",
+"plain": {
+"amendment": {
+"geoLat": null,
+"geoLon": null,
+"geoRadiusMetres": 1,
+"geoRequireLocation": false,
+"name": "x",
+"orgCode": "x"
+},
+"companyId": 7
+},
+"rich": {
+"amendment": {
+"geoLat": -13,
+"geoLon": -16,
+"geoRadiusMetres": 1222,
+"geoRequireLocation": true,
+"name": "t2é",
+"orgCode": "t3é"
+},
+"companyId": 1037
+}
+},
+{
+"family": "createBranch",
+"plain": {
+"facts": {
+"address": "x",
+"code": "x",
+"companyId": 7,
+"geoLat": null,
+"geoLon": null,
+"geoRadiusMetres": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"address": "t4é",
+"code": "t3é",
+"companyId": 1037,
+"geoLat": -16,
+"geoLon": -19,
+"geoRadiusMetres": 1259,
+"name": "t2é"
+}
+}
+},
+{
+"family": "amendBranch",
+"plain": {
+"branchId": 1,
+"facts": {
+"address": "x",
+"code": "x",
+"companyId": 7,
+"geoLat": null,
+"geoLon": null,
+"geoRadiusMetres": 1,
+"name": "x"
+}
+},
+"rich": {
+"branchId": 1037,
+"facts": {
+"address": "t5é",
+"code": "t4é",
+"companyId": 1074,
+"geoLat": -19,
+"geoLon": -22,
+"geoRadiusMetres": 1296,
+"name": "t3é"
+}
+}
+},
+{
+"family": "closeBranch",
+"plain": {
+"branchId": 1,
+"reason": "x"
+},
+"rich": {
+"branchId": 1037,
+"reason": "t2é"
+}
+},
+{
+"family": "createDepartment",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"name": "x",
+"parentId": 1
+}
+},
+"rich": {
+"facts": {
+"code": "t4é",
+"companyId": 1037,
+"name": "t3é",
+"parentId": 1074
+}
+}
+},
+{
+"family": "amendDepartment",
+"plain": {
+"departmentId": 1,
+"facts": {
+"code": "x",
+"companyId": 7,
+"name": "x",
+"parentId": 1
+}
+},
+"rich": {
+"departmentId": 1037,
+"facts": {
+"code": "t5é",
+"companyId": 1074,
+"name": "t4é",
+"parentId": 1111
+}
+}
+},
+{
+"family": "closeDepartment",
+"plain": {
+"departmentId": 1,
+"reason": "x"
+},
+"rich": {
+"departmentId": 1037,
+"reason": "t2é"
+}
+},
+{
+"family": "declareJobTitle",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"name": "x",
+"seniority": {
+"$case": "Intern"
+}
+}
+},
+"rich": {
+"facts": {
+"code": "t3é",
+"companyId": 1037,
+"name": "t2é",
+"seniority": {
+"$case": "Unrecorded"
+}
+}
+}
+},
+{
+"family": "amendJobTitle",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"name": "x",
+"seniority": {
+"$case": "Intern"
+}
+},
+"jobTitleId": 1
+},
+"rich": {
+"facts": {
+"code": "t4é",
+"companyId": 1074,
+"name": "t3é",
+"seniority": {
+"$case": "Unrecorded"
+}
+},
+"jobTitleId": 1037
+}
+},
+{
+"family": "retireJobTitle",
+"plain": {
+"jobTitleId": 1,
+"reason": "x"
+},
+"rich": {
+"jobTitleId": 1037,
+"reason": "t2é"
+}
+},
+{
+"family": "admitMember",
+"plain": {
+"companyId": 7,
+"companyRole": {
+"$case": "CompanyAdmin"
+},
+"managerId": 1,
+"platformRole": {
+"$case": "PlatformAdmin"
+},
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"companyRole": {
+"$case": "Drafter"
+},
+"managerId": 1111,
+"platformRole": {
+"$case": "None"
+},
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "setMemberRole",
+"plain": {
+"companyId": 7,
+"companyRole": {
+"$case": "CompanyAdmin"
+},
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"companyRole": {
+"$case": "Drafter"
+},
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "setManagers",
+"plain": {
+"companyId": 7,
+"managerId": 1,
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"managerId": 1111,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "suspendMember",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "reinstateMember",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "registerEmployee",
+"plain": {
+"facts": {
+"companyId": 7,
+"details": {
+"address": "x",
+"avatarUrl": "x",
+"city": "x",
+"country": "x",
+"emailNotifications": null,
+"emergencyContact": "x",
+"emergencyPhone": "x",
+"language": "x",
+"location": "x",
+"phone": "x",
+"pushNotifications": null,
+"timezone": "x",
+"weeklyDigest": null
+},
+"email": "x",
+"name": "x",
+"standing": {
+"departmentId": 1,
+"isActive": false,
+"jobTitleId": 1,
+"managerId": 1,
+"seniority": {
+"$case": "Intern"
+}
+},
+"startDay": 1,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"details": {
+"address": "t12é",
+"avatarUrl": "t19é",
+"city": "t13é",
+"country": "t14é",
+"emailNotifications": true,
+"emergencyContact": "t15é",
+"emergencyPhone": "t16é",
+"language": "t17é",
+"location": "t11é",
+"phone": "t10é",
+"pushNotifications": true,
+"timezone": "t18é",
+"weeklyDigest": true
+},
+"email": "t4é",
+"name": "t3é",
+"standing": {
+"departmentId": 1222,
+"isActive": true,
+"jobTitleId": 1259,
+"managerId": 1296,
+"seniority": {
+"$case": "Unrecorded"
+}
+},
+"startDay": 1185,
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "amendEmployeeDetails",
+"plain": {
+"companyId": 7,
+"details": {
+"address": "x",
+"avatarUrl": "x",
+"city": "x",
+"country": "x",
+"emailNotifications": null,
+"emergencyContact": "x",
+"emergencyPhone": "x",
+"language": "x",
+"location": "x",
+"phone": "x",
+"pushNotifications": null,
+"timezone": "x",
+"weeklyDigest": null
+},
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"details": {
+"address": "t5é",
+"avatarUrl": "t12é",
+"city": "t6é",
+"country": "t7é",
+"emailNotifications": true,
+"emergencyContact": "t8é",
+"emergencyPhone": "t9é",
+"language": "t10é",
+"location": "t4é",
+"phone": "t3é",
+"pushNotifications": true,
+"timezone": "t11é",
+"weeklyDigest": true
+},
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "amendEmployeeStanding",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"standing": {
+"departmentId": 1,
+"isActive": false,
+"jobTitleId": 1,
+"managerId": 1,
+"seniority": {
+"$case": "Intern"
+}
+},
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"reason": "t7é",
+"standing": {
+"departmentId": 1111,
+"isActive": true,
+"jobTitleId": 1148,
+"managerId": 1185,
+"seniority": {
+"$case": "Unrecorded"
+}
+},
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "punchIn",
+"plain": {
+"branchId": 1,
+"companyId": 7,
+"note": "x",
+"source": {
+"$case": "self"
+},
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"branchId": 1111,
+"companyId": 1037,
+"note": "t4é",
+"source": {
+"$case": "import_"
+},
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "punchOut",
+"plain": {
+"companyId": 7,
+"note": "x",
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"note": "t3é",
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "requestPunchCorrection",
+"plain": {
+"companyId": 7,
+"inMinute": 1,
+"outMinute": 1,
+"punchId": 1,
+"reason": "x",
+"status": {
+"$case": "Present"
+},
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"inMinute": 1148,
+"outMinute": 1185,
+"punchId": 1111,
+"reason": "t6é",
+"status": {
+"$case": "Remote"
+},
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "decidePunchCorrection",
+"plain": {
+"approve": false,
+"companyId": 7,
+"correctionId": 1,
+"reason": "x"
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"correctionId": 1074,
+"reason": "t4é"
+}
+},
+{
+"family": "requestLeave",
+"plain": {
+"companyId": 7,
+"fromDay": 1,
+"leaveType": {
+"$case": "Annual"
+},
+"quantity": 1,
+"reason": "x",
+"subject": {
+"$principal": "0102031d"
+},
+"toDay": 1
+},
+"rich": {
+"companyId": 1037,
+"fromDay": 1111,
+"leaveType": {
+"$case": "WorkFromHome"
+},
+"quantity": 1185,
+"reason": "t6é",
+"subject": {
+"$principal": "0102031d"
+},
+"toDay": 1148
+}
+},
+{
+"family": "decideLeave",
+"plain": {
+"approve": false,
+"companyId": 7,
+"reason": "x",
+"requestId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"reason": "t4é",
+"requestId": 1074
+}
+},
+{
+"family": "withdrawLeave",
+"plain": {
+"companyId": 7,
+"requestId": 1
+},
+"rich": {
+"companyId": 1037,
+"requestId": 1074
+}
+},
+{
+"family": "adjustLeaveBalance",
+"plain": {
+"companyId": 7,
+"deltaZigzag": 1,
+"leaveType": {
+"$case": "Annual"
+},
+"reason": "x",
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"deltaZigzag": 1111,
+"leaveType": {
+"$case": "WorkFromHome"
+},
+"reason": "t4é",
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "accrueLeave",
+"plain": {
+"asOfDay": 1,
+"companyId": 7,
+"leaveType": {
+"$case": "Annual"
+},
+"planHash": {
+"$blob": "01"
+},
+"quantity": 1,
+"subjects": []
+},
+"rich": {
+"asOfDay": 1111,
+"companyId": 1037,
+"leaveType": {
+"$case": "WorkFromHome"
+},
+"planHash": {
+"$blob": "dead02"
+},
+"quantity": 1148,
+"subjects": [
+{
+"$principal": "0102031d"
+},
+{
+"$principal": "0102031d"
+}
+]
+}
+},
+{
+"family": "declareStatutoryProfile",
+"plain": {
+"facts": {
+"currency": "x",
+"effectiveDay": 1,
+"jurisdiction": "x",
+"personalAllowance": 1,
+"socialCeiling": 1,
+"socialEmployeeRate": 1,
+"socialEmployerRate": 1,
+"socialFloor": 1
+}
+},
+"rich": {
+"facts": {
+"currency": "t3é",
+"effectiveDay": 1074,
+"jurisdiction": "t1é",
+"personalAllowance": 1296,
+"socialCeiling": 1222,
+"socialEmployeeRate": 1148,
+"socialEmployerRate": 1185,
+"socialFloor": 1259
+}
+}
+},
+{
+"family": "declareTaxBracket",
+"plain": {
+"facts": {
+"fromAmount": 1,
+"ordinal": 1,
+"profileId": 1,
+"rate": 1,
+"toAmount": 1
+}
+},
+"rich": {
+"facts": {
+"fromAmount": 1111,
+"ordinal": 1074,
+"profileId": 1037,
+"rate": 1185,
+"toAmount": 1148
+}
+}
+},
+{
+"family": "retireStatutoryProfile",
+"plain": {
+"profileId": 1,
+"reason": "x"
+},
+"rich": {
+"profileId": 1037,
+"reason": "t2é"
+}
+},
+{
+"family": "setCompensation",
+"plain": {
+"facts": {
+"baseMonthly": 1,
+"companyId": 7,
+"currency": "x",
+"effectiveDay": 1,
+"frequency": {
+"$case": "Weekly"
+},
+"hourlyRate": 1,
+"profileId": 1,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"baseMonthly": 1148,
+"companyId": 1037,
+"currency": "t3é",
+"effectiveDay": 1259,
+"frequency": {
+"$case": "Monthly"
+},
+"hourlyRate": 1185,
+"profileId": 1222,
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "openPayrollRun",
+"plain": {
+"companyId": 7,
+"headcount": 1,
+"periodDay": 1,
+"planHash": {
+"$blob": "01"
+}
+},
+"rich": {
+"companyId": 1037,
+"headcount": 1148,
+"periodDay": 1074,
+"planHash": {
+"$blob": "dead03"
+}
+}
+},
+{
+"family": "runPayrollSlice",
+"plain": {
+"facts": {
+"bonuses": [],
+"companyId": 7,
+"overtimeMinutes": [],
+"planHash": {
+"$blob": "01"
+},
+"runId": 1,
+"subjects": []
+}
+},
+"rich": {
+"facts": {
+"bonuses": [
+1296,
+1333
+],
+"companyId": 1037,
+"overtimeMinutes": [
+1222,
+1259
+],
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074,
+"subjects": [
+{
+"$principal": "0102031d"
+},
+{
+"$principal": "0102031d"
+}
+]
+}
+}
+},
+{
+"family": "closePayrollRun",
+"plain": {
+"companyId": 7,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"runId": 1074
+}
+},
+{
+"family": "approvePayrollRun",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"runId": 1074
+}
+},
+{
+"family": "postPayrollJournal",
+"plain": {
+"companyId": 7,
+"credits": [],
+"debits": [],
+"differenceAccount": "x",
+"differenceAmount": 0,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"credits": [
+[
+"t7é",
+1296
+],
+[
+"t9é",
+1370
+]
+],
+"debits": [
+[
+"t3é",
+1148
+],
+[
+"t5é",
+1222
+]
+],
+"differenceAccount": "t11é",
+"differenceAmount": -37,
+"runId": 1074
+}
+},
+{
+"family": "abandonPayrollRun",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"runId": 1074
+}
+},
+{
+"family": "createAccount",
+"plain": {
+"facts": {
+"accountType": {
+"$case": "asset"
+},
+"code": "x",
+"companyId": 7,
+"currency": "x",
+"name": "x",
+"parentId": 1,
+"reconcilable": false
+}
+},
+"rich": {
+"facts": {
+"accountType": {
+"$case": "roundingDifference"
+},
+"code": "t2é",
+"companyId": 1037,
+"currency": "t6é",
+"name": "t3é",
+"parentId": 1148,
+"reconcilable": true
+}
+}
+},
+{
+"family": "amendAccount",
+"plain": {
+"accountId": 1,
+"facts": {
+"accountType": {
+"$case": "asset"
+},
+"code": "x",
+"companyId": 7,
+"currency": "x",
+"name": "x",
+"parentId": 1,
+"reconcilable": false
+}
+},
+"rich": {
+"accountId": 1037,
+"facts": {
+"accountType": {
+"$case": "roundingDifference"
+},
+"code": "t3é",
+"companyId": 1074,
+"currency": "t7é",
+"name": "t4é",
+"parentId": 1185,
+"reconcilable": true
+}
+}
+},
+{
+"family": "deprecateAccount",
+"plain": {
+"accountId": 1,
+"reason": "x"
+},
+"rich": {
+"accountId": 1037,
+"reason": "t2é"
+}
+},
+{
+"family": "createJournal",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"defaultAccountId": 1,
+"journalType": {
+"$case": "sale"
+},
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"defaultAccountId": 1148,
+"journalType": {
+"$case": "payroll"
+},
+"name": "t3é"
+}
+}
+},
+{
+"family": "amendJournal",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"defaultAccountId": 1,
+"journalType": {
+"$case": "sale"
+},
+"name": "x"
+},
+"journalId": 1
+},
+"rich": {
+"facts": {
+"code": "t3é",
+"companyId": 1074,
+"defaultAccountId": 1185,
+"journalType": {
+"$case": "payroll"
+},
+"name": "t4é"
+},
+"journalId": 1037
+}
+},
+{
+"family": "closeJournal",
+"plain": {
+"journalId": 1,
+"reason": "x"
+},
+"rich": {
+"journalId": 1037,
+"reason": "t2é"
+}
+},
+{
+"family": "proposeMove",
+"plain": {
+"facts": {
+"businessDay": 1,
+"companyId": 7,
+"currency": "x",
+"journalId": 1,
+"lines": [],
+"moveType": {
+"$case": "entry"
+},
+"partnerId": 1,
+"ref": "x"
+}
+},
+"rich": {
+"facts": {
+"businessDay": 1111,
+"companyId": 1037,
+"currency": "t4é",
+"journalId": 1074,
+"lines": [
+{
+"accountId": 1259,
+"amountCurrency": 1444,
+"credit": 1407,
+"debit": 1370,
+"name": "t9é",
+"partnerId": 1296,
+"taxId": 1481
+},
+{
+"accountId": 1518,
+"amountCurrency": 1703,
+"credit": 1666,
+"debit": 1629,
+"name": "t16é",
+"partnerId": 1555,
+"taxId": 1740
+}
+],
+"moveType": {
+"$case": "closing"
+},
+"partnerId": 1185,
+"ref": "t6é"
+}
+}
+},
+{
+"family": "postMove",
+"plain": {
+"companyId": 7,
+"moveId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"moveId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "cancelMove",
+"plain": {
+"companyId": 7,
+"moveId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"moveId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "lockPeriod",
+"plain": {
+"companyId": 7,
+"lockedThroughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"lockedThroughDay": 1074
+}
+},
+{
+"family": "createPartner",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"isCustomer": false,
+"isSupplier": false,
+"name": "x",
+"payableAccountId": 1,
+"receivableAccountId": 1,
+"taxIdentifier": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"isCustomer": true,
+"isSupplier": true,
+"name": "t3é",
+"payableAccountId": 1259,
+"receivableAccountId": 1222,
+"taxIdentifier": "t8é"
+}
+}
+},
+{
+"family": "amendPartner",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"isCustomer": false,
+"isSupplier": false,
+"name": "x",
+"payableAccountId": 1,
+"receivableAccountId": 1,
+"taxIdentifier": "x"
+},
+"partnerId": 1
+},
+"rich": {
+"facts": {
+"code": "t3é",
+"companyId": 1074,
+"isCustomer": true,
+"isSupplier": true,
+"name": "t4é",
+"payableAccountId": 1296,
+"receivableAccountId": 1259,
+"taxIdentifier": "t9é"
+},
+"partnerId": 1037
+}
+},
+{
+"family": "createCategory",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"expenseAccountId": 1,
+"incomeAccountId": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"expenseAccountId": 1185,
+"incomeAccountId": 1148,
+"name": "t3é"
+}
+}
+},
+{
+"family": "amendCategory",
+"plain": {
+"categoryId": 1,
+"facts": {
+"code": "x",
+"companyId": 7,
+"expenseAccountId": 1,
+"incomeAccountId": 1,
+"name": "x"
+}
+},
+"rich": {
+"categoryId": 1037,
+"facts": {
+"code": "t3é",
+"companyId": 1074,
+"expenseAccountId": 1222,
+"incomeAccountId": 1185,
+"name": "t4é"
+}
+}
+},
+{
+"family": "placeOrder",
+"plain": {
+"facts": {
+"clientRef": "x",
+"companyId": 7,
+"currency": "x",
+"direction": {
+"$case": "sale"
+},
+"lines": [],
+"orderDay": 1,
+"partnerId": 1
+}
+},
+"rich": {
+"facts": {
+"clientRef": "t5é",
+"companyId": 1037,
+"currency": "t4é",
+"direction": {
+"$case": "purchase"
+},
+"lines": [
+{
+"categoryId": 1222,
+"name": "t7é",
+"priceUnit": 1333,
+"quantity": 1296,
+"taxRate": 1370
+},
+{
+"categoryId": 1407,
+"name": "t12é",
+"priceUnit": 1518,
+"quantity": 1481,
+"taxRate": 1555
+}
+],
+"orderDay": 1111,
+"partnerId": 1074
+}
+}
+},
+{
+"family": "amendOrder",
+"plain": {
+"facts": {
+"clientRef": "x",
+"companyId": 7,
+"currency": "x",
+"direction": {
+"$case": "sale"
+},
+"lines": [],
+"orderDay": 1,
+"partnerId": 1
+},
+"orderId": 1
+},
+"rich": {
+"facts": {
+"clientRef": "t6é",
+"companyId": 1074,
+"currency": "t5é",
+"direction": {
+"$case": "purchase"
+},
+"lines": [
+{
+"categoryId": 1259,
+"name": "t8é",
+"priceUnit": 1370,
+"quantity": 1333,
+"taxRate": 1407
+},
+{
+"categoryId": 1444,
+"name": "t13é",
+"priceUnit": 1555,
+"quantity": 1518,
+"taxRate": 1592
+}
+],
+"orderDay": 1148,
+"partnerId": 1111
+},
+"orderId": 1037
+}
+},
+{
+"family": "confirmOrder",
+"plain": {
+"companyId": 7,
+"orderId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"orderId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "cancelOrder",
+"plain": {
+"companyId": 7,
+"orderId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"orderId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "issueInvoice",
+"plain": {
+"companyId": 7,
+"journalId": 1,
+"orderId": 1
+},
+"rich": {
+"companyId": 1037,
+"journalId": 1111,
+"orderId": 1074
+}
+},
+{
+"family": "createWarehouse",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"name": "t3é"
+}
+}
+},
+{
+"family": "createLocation",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"name": "x",
+"parentId": 1,
+"usage": {
+"$case": "internal"
+},
+"warehouseId": 1
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"name": "t3é",
+"parentId": 1185,
+"usage": {
+"$case": "transit"
+},
+"warehouseId": 1148
+}
+}
+},
+{
+"family": "createLot",
+"plain": {
+"facts": {
+"categoryId": 1,
+"code": "x",
+"companyId": 7,
+"expiryDay": 1
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1074,
+"code": "t3é",
+"companyId": 1037,
+"expiryDay": 1148
+}
+}
+},
+{
+"family": "setCosting",
+"plain": {
+"facts": {
+"categoryId": 1,
+"cogsAccountId": 1,
+"companyId": 7,
+"inventoryAccountId": 1,
+"method": {
+"$case": "standard"
+},
+"standardCost": 1,
+"varianceAccountId": 1
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1074,
+"cogsAccountId": 1185,
+"companyId": 1037,
+"inventoryAccountId": 1148,
+"method": {
+"$case": "avco"
+},
+"standardCost": 1111,
+"varianceAccountId": 1222
+}
+}
+},
+{
+"family": "createPicking",
+"plain": {
+"facts": {
+"businessDay": 1,
+"companyId": 7,
+"fromLocationId": 1,
+"moves": [],
+"partnerId": 1,
+"reference": "x",
+"toLocationId": 1
+}
+},
+"rich": {
+"facts": {
+"businessDay": 1148,
+"companyId": 1037,
+"fromLocationId": 1074,
+"moves": [
+{
+"categoryId": 1259,
+"lotId": 1296,
+"quantity": 1333,
+"unitCost": 1370
+},
+{
+"categoryId": 1407,
+"lotId": 1444,
+"quantity": 1481,
+"unitCost": 1518
+}
+],
+"partnerId": 1185,
+"reference": "t6é",
+"toLocationId": 1111
+}
+}
+},
+{
+"family": "cancelPicking",
+"plain": {
+"companyId": 7,
+"pickingId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"pickingId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "validatePicking",
+"plain": {
+"companyId": 7,
+"journalId": 1,
+"pickingId": 1
+},
+"rich": {
+"companyId": 1037,
+"journalId": 1111,
+"pickingId": 1074
+}
+},
+{
+"family": "declareBom",
+"plain": {
+"facts": {
+"categoryId": 1,
+"code": "x",
+"companyId": 7,
+"lines": [],
+"quantity": 1
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1074,
+"code": "t3é",
+"companyId": 1037,
+"lines": [
+{
+"categoryId": 1185,
+"quantity": 1222
+},
+{
+"categoryId": 1259,
+"quantity": 1296
+}
+],
+"quantity": 1148
+}
+}
+},
+{
+"family": "retireBom",
+"plain": {
+"bomId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"bomId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "planProduction",
+"plain": {
+"facts": {
+"bomId": 1,
+"businessDay": 1,
+"companyId": 7,
+"destLocationId": 1,
+"plannedQty": 1,
+"sourceLocationId": 1,
+"wipLocationId": 1
+}
+},
+"rich": {
+"facts": {
+"bomId": 1074,
+"businessDay": 1148,
+"companyId": 1037,
+"destLocationId": 1222,
+"plannedQty": 1111,
+"sourceLocationId": 1185,
+"wipLocationId": 1259
+}
+}
+},
+{
+"family": "confirmProduction",
+"plain": {
+"companyId": 7,
+"productionId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"productionId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "produce",
+"plain": {
+"companyId": 7,
+"journalId": 1,
+"productionId": 1,
+"quantity": 1
+},
+"rich": {
+"companyId": 1037,
+"journalId": 1148,
+"productionId": 1074,
+"quantity": 1111
+}
+},
+{
+"family": "closeProductionShort",
+"plain": {
+"companyId": 7,
+"productionId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"productionId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "cancelProduction",
+"plain": {
+"companyId": 7,
+"productionId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"productionId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "explodeRequirements",
+"plain": {
+"companyId": 7,
+"maxDepth": 1,
+"planHash": {
+"$blob": "01"
+},
+"rootCategoryId": 1,
+"rootQuantity": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"maxDepth": 1222,
+"planHash": {
+"$blob": "dead03"
+},
+"rootCategoryId": 1148,
+"rootQuantity": 1185,
+"runId": 1074
+}
+},
+{
+"family": "createProject",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"costAccountId": 1,
+"endDay": 1,
+"managerEmployeeId": 1,
+"name": "x",
+"partnerId": 1,
+"startDay": 1
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"costAccountId": 1296,
+"endDay": 1259,
+"managerEmployeeId": 1185,
+"name": "t3é",
+"partnerId": 1148,
+"startDay": 1222
+}
+}
+},
+{
+"family": "amendProject",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"costAccountId": 1,
+"endDay": 1,
+"managerEmployeeId": 1,
+"name": "x",
+"partnerId": 1,
+"startDay": 1
+},
+"projectId": 1
+},
+"rich": {
+"facts": {
+"code": "t3é",
+"companyId": 1074,
+"costAccountId": 1333,
+"endDay": 1296,
+"managerEmployeeId": 1222,
+"name": "t4é",
+"partnerId": 1185,
+"startDay": 1259
+},
+"projectId": 1037
+}
+},
+{
+"family": "setProjectState",
+"plain": {
+"companyId": 7,
+"projectId": 1,
+"reason": "x",
+"state": {
+"$case": "draft"
+}
+},
+"rich": {
+"companyId": 1037,
+"projectId": 1074,
+"reason": "t3é",
+"state": {
+"$case": "cancelled"
+}
+}
+},
+{
+"family": "createTask",
+"plain": {
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 7,
+"dueDay": 1,
+"origin": {
+"$case": "hr"
+},
+"priority": {
+"$case": "low"
+},
+"projectId": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 1037,
+"dueDay": 1185,
+"origin": {
+"$case": "fieldService"
+},
+"priority": {
+"$case": "urgent"
+},
+"projectId": 1074,
+"title": "t3é"
+}
+}
+},
+{
+"family": "amendTask",
+"plain": {
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 7,
+"dueDay": 1,
+"origin": {
+"$case": "hr"
+},
+"priority": {
+"$case": "low"
+},
+"projectId": 1,
+"title": "x"
+},
+"taskId": 1
+},
+"rich": {
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 1074,
+"dueDay": 1222,
+"origin": {
+"$case": "fieldService"
+},
+"priority": {
+"$case": "urgent"
+},
+"projectId": 1111,
+"title": "t4é"
+},
+"taskId": 1037
+}
+},
+{
+"family": "setTaskState",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"state": {
+"$case": "todo"
+},
+"taskId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"state": {
+"$case": "cancelled"
+},
+"taskId": 1074
+}
+},
+{
+"family": "logTime",
+"plain": {
+"facts": {
+"businessDay": 1,
+"companyId": 7,
+"minutes": 1,
+"note": "x",
+"subject": {
+"$principal": "0102031d"
+},
+"taskId": 1
+}
+},
+"rich": {
+"facts": {
+"businessDay": 1148,
+"companyId": 1037,
+"minutes": 1185,
+"note": "t6é",
+"subject": {
+"$principal": "0102031d"
+},
+"taskId": 1074
+}
+}
+},
+{
+"family": "voidTimeEntry",
+"plain": {
+"companyId": 7,
+"entryId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"entryId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "submitTimesheet",
+"plain": {
+"companyId": 7,
+"fromDay": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"toDay": 1
+},
+"rich": {
+"companyId": 1037,
+"fromDay": 1111,
+"subject": {
+"$principal": "0102031d"
+},
+"toDay": 1148
+}
+},
+{
+"family": "decideTimesheet",
+"plain": {
+"approve": false,
+"companyId": 7,
+"journalId": 1,
+"reason": "x",
+"timesheetId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"journalId": 1148,
+"reason": "t5é",
+"timesheetId": 1074
+}
+},
+{
+"family": "createLead",
+"plain": {
+"facts": {
+"companyId": 7,
+"currency": "x",
+"deadlineDay": 1,
+"description": "x",
+"email": "x",
+"expectedRevenue": 1,
+"kanban": {
+"$case": "normal"
+},
+"kind": {
+"$case": "lead"
+},
+"mobile": "x",
+"name": "x",
+"ownerEmployeeId": 1,
+"partnerId": 1,
+"partnerName": "x",
+"phone": "x",
+"priority": {
+"$case": "low"
+},
+"probability": 1,
+"stageId": 1,
+"tags": []
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"currency": "t8é",
+"deadlineDay": 1333,
+"description": "t14é",
+"email": "t11é",
+"expectedRevenue": 1259,
+"kanban": {
+"$case": "blocked"
+},
+"kind": {
+"$case": "opportunity"
+},
+"mobile": "t13é",
+"name": "t2é",
+"ownerEmployeeId": 1148,
+"partnerId": 1185,
+"partnerName": "t10é",
+"phone": "t12é",
+"priority": {
+"$case": "veryHigh"
+},
+"probability": 1222,
+"stageId": 1111,
+"tags": [
+"t15é",
+"t16é"
+]
+}
+}
+},
+{
+"family": "amendLead",
+"plain": {
+"facts": {
+"companyId": 7,
+"currency": "x",
+"deadlineDay": 1,
+"description": "x",
+"email": "x",
+"expectedRevenue": 1,
+"kanban": {
+"$case": "normal"
+},
+"kind": {
+"$case": "lead"
+},
+"mobile": "x",
+"name": "x",
+"ownerEmployeeId": 1,
+"partnerId": 1,
+"partnerName": "x",
+"phone": "x",
+"priority": {
+"$case": "low"
+},
+"probability": 1,
+"stageId": 1,
+"tags": []
+},
+"leadId": 1
+},
+"rich": {
+"facts": {
+"companyId": 1074,
+"currency": "t9é",
+"deadlineDay": 1370,
+"description": "t15é",
+"email": "t12é",
+"expectedRevenue": 1296,
+"kanban": {
+"$case": "blocked"
+},
+"kind": {
+"$case": "opportunity"
+},
+"mobile": "t14é",
+"name": "t3é",
+"ownerEmployeeId": 1185,
+"partnerId": 1222,
+"partnerName": "t11é",
+"phone": "t13é",
+"priority": {
+"$case": "veryHigh"
+},
+"probability": 1259,
+"stageId": 1148,
+"tags": [
+"t16é",
+"t17é"
+]
+},
+"leadId": 1037
+}
+},
+{
+"family": "setLeadStage",
+"plain": {
+"companyId": 7,
+"leadId": 1,
+"stageId": 1
+},
+"rich": {
+"companyId": 1037,
+"leadId": 1074,
+"stageId": 1111
+}
+},
+{
+"family": "convertLead",
+"plain": {
+"companyId": 7,
+"leadId": 1
+},
+"rich": {
+"companyId": 1037,
+"leadId": 1074
+}
+},
+{
+"family": "setLeadWon",
+"plain": {
+"companyId": 7,
+"leadId": 1
+},
+"rich": {
+"companyId": 1037,
+"leadId": 1074
+}
+},
+{
+"family": "setLeadLost",
+"plain": {
+"companyId": 7,
+"leadId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"leadId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "restoreLead",
+"plain": {
+"companyId": 7,
+"leadId": 1
+},
+"rich": {
+"companyId": 1037,
+"leadId": 1074
+}
+},
+{
+"family": "archiveLead",
+"plain": {
+"companyId": 7,
+"leadId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"leadId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "createStage",
+"plain": {
+"facts": {
+"companyId": 7,
+"folded": false,
+"isWon": false,
+"name": "x",
+"requirements": "x",
+"sequence": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"folded": true,
+"isWon": true,
+"name": "t2é",
+"requirements": "t5é",
+"sequence": 1111
+}
+}
+},
+{
+"family": "amendStage",
+"plain": {
+"facts": {
+"companyId": 7,
+"folded": false,
+"isWon": false,
+"name": "x",
+"requirements": "x",
+"sequence": 1
+},
+"stageId": 1
+},
+"rich": {
+"facts": {
+"companyId": 1074,
+"folded": true,
+"isWon": true,
+"name": "t3é",
+"requirements": "t6é",
+"sequence": 1148
+},
+"stageId": 1037
+}
+},
+{
+"family": "archiveStage",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"stageId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"stageId": 1074
+}
+},
+{
+"family": "createActivity",
+"plain": {
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 7,
+"deadlineDay": 1,
+"kind": {
+"$case": "email"
+},
+"leadId": 1,
+"note": "x",
+"summary": "x"
+}
+},
+"rich": {
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 1037,
+"deadlineDay": 1185,
+"kind": {
+"$case": "uploadDocument"
+},
+"leadId": 1074,
+"note": "t4é",
+"summary": "t3é"
+}
+}
+},
+{
+"family": "amendActivity",
+"plain": {
+"activityId": 1,
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 7,
+"deadlineDay": 1,
+"kind": {
+"$case": "email"
+},
+"leadId": 1,
+"note": "x",
+"summary": "x"
+}
+},
+"rich": {
+"activityId": 1037,
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 1074,
+"deadlineDay": 1222,
+"kind": {
+"$case": "uploadDocument"
+},
+"leadId": 1111,
+"note": "t5é",
+"summary": "t4é"
+}
+}
+},
+{
+"family": "completeActivity",
+"plain": {
+"activityId": 1,
+"companyId": 7,
+"feedback": "x"
+},
+"rich": {
+"activityId": 1074,
+"companyId": 1037,
+"feedback": "t3é"
+}
+},
+{
+"family": "archiveActivity",
+"plain": {
+"activityId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"activityId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "openReminderSweep",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"throughDay": 1074
+}
+},
+{
+"family": "sweepReminderSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "suppressAddress",
+"plain": {
+"address": "x",
+"companyId": 7,
+"reason": {
+"$case": "unsubscribed"
+}
+},
+"rich": {
+"address": "t2é",
+"companyId": 1037,
+"reason": {
+"$case": "manual"
+}
+}
+},
+{
+"family": "releaseAddress",
+"plain": {
+"address": "x",
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"address": "t2é",
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "createMailing",
+"plain": {
+"facts": {
+"attemptBound": 1,
+"bodyHtml": "x",
+"companyId": 7,
+"emailFrom": "x",
+"replyTo": "x",
+"scheduledDay": 1,
+"subject": "x"
+}
+},
+"rich": {
+"facts": {
+"attemptBound": 1259,
+"bodyHtml": "t4é",
+"companyId": 1037,
+"emailFrom": "t3é",
+"replyTo": "t5é",
+"scheduledDay": 1222,
+"subject": "t2é"
+}
+}
+},
+{
+"family": "amendMailing",
+"plain": {
+"facts": {
+"attemptBound": 1,
+"bodyHtml": "x",
+"companyId": 7,
+"emailFrom": "x",
+"replyTo": "x",
+"scheduledDay": 1,
+"subject": "x"
+},
+"mailingId": 1
+},
+"rich": {
+"facts": {
+"attemptBound": 1296,
+"bodyHtml": "t5é",
+"companyId": 1074,
+"emailFrom": "t4é",
+"replyTo": "t6é",
+"scheduledDay": 1259,
+"subject": "t3é"
+},
+"mailingId": 1037
+}
+},
+{
+"family": "launchMailing",
+"plain": {
+"companyId": 7,
+"expectedRecipients": 1,
+"mailingId": 1
+},
+"rich": {
+"companyId": 1037,
+"expectedRecipients": 1111,
+"mailingId": 1074
+}
+},
+{
+"family": "planMailingSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"mailingId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"mailingId": 1074
+}
+},
+{
+"family": "claimMailingSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"mailingId": 1,
+"planHash": {
+"$blob": "01"
+}
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"mailingId": 1074,
+"planHash": {
+"$blob": "dead03"
+}
+}
+},
+{
+"family": "recordMailingResults",
+"plain": {
+"results": {
+"companyId": 7,
+"mailingId": 1,
+"ok": [],
+"reasons": [],
+"recipientIds": []
+}
+},
+"rich": {
+"results": {
+"companyId": 1037,
+"mailingId": 1074,
+"ok": [
+true,
+true
+],
+"reasons": [
+"t7é",
+"t8é"
+],
+"recipientIds": [
+1111,
+1148
+]
+}
+}
+},
+{
+"family": "cancelMailing",
+"plain": {
+"companyId": 7,
+"mailingId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"mailingId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "createScoringRule",
+"plain": {
+"facts": {
+"companyId": 7,
+"criteria": {
+"$case": "hasEmail"
+},
+"name": "x",
+"weight": 0
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"criteria": {
+"$case": "expectedRevenueAboveZero"
+},
+"name": "t2é",
+"weight": -10
+}
+}
+},
+{
+"family": "amendScoringRule",
+"plain": {
+"facts": {
+"companyId": 7,
+"criteria": {
+"$case": "hasEmail"
+},
+"name": "x",
+"weight": 0
+},
+"ruleId": 1
+},
+"rich": {
+"facts": {
+"companyId": 1074,
+"criteria": {
+"$case": "expectedRevenueAboveZero"
+},
+"name": "t3é",
+"weight": -13
+},
+"ruleId": 1037
+}
+},
+{
+"family": "retireScoringRule",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"ruleId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"ruleId": 1074
+}
+},
+{
+"family": "openScoringRun",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+}
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead02"
+}
+}
+},
+{
+"family": "scoreSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "registerDevice",
+"plain": {
+"companyId": 7,
+"note": "x",
+"spki": "x"
+},
+"rich": {
+"companyId": 1037,
+"note": "t3é",
+"spki": "t2é"
+}
+},
+{
+"family": "revokeDevice",
+"plain": {
+"companyId": 7,
+"deviceId": 1,
+"isAdmin": false,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"deviceId": 1074,
+"isAdmin": true,
+"reason": "t4é"
+}
+},
+{
+"family": "openRing",
+"plain": {
+"companyId": 7,
+"personal": false,
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"personal": true,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "rotateRing",
+"plain": {
+"byDevice": 1,
+"companyId": 7,
+"expect": 1,
+"personal": false,
+"subject": {
+"$principal": "0102031d"
+},
+"wraps": []
+},
+"rich": {
+"byDevice": 1333,
+"companyId": 1037,
+"expect": 1148,
+"personal": true,
+"subject": {
+"$principal": "0102031d"
+},
+"wraps": [
+[
+1185,
+"t6é"
+],
+[
+1259,
+"t8é"
+]
+]
+}
+},
+{
+"family": "shareRing",
+"plain": {
+"byDevice": 1,
+"companyId": 7,
+"epoch": 1,
+"personal": false,
+"subject": {
+"$principal": "0102031d"
+},
+"wraps": []
+},
+"rich": {
+"byDevice": 1333,
+"companyId": 1037,
+"epoch": 1148,
+"personal": true,
+"subject": {
+"$principal": "0102031d"
+},
+"wraps": [
+[
+1185,
+"t6é"
+],
+[
+1259,
+"t8é"
+]
+]
+}
+},
+{
+"family": "beginUpload",
+"plain": {
+"companyId": 7,
+"facts": {
+"chunkHashes": [],
+"size": 1
+}
+},
+"rich": {
+"companyId": 1037,
+"facts": {
+"chunkHashes": [
+"t3é",
+"t4é"
+],
+"size": 1074
+}
+}
+},
+{
+"family": "putChunk",
+"plain": {
+"facts": {
+"blobId": "x",
+"bytes": {
+"$blob": "01"
+},
+"index": 1
+}
+},
+"rich": {
+"facts": {
+"blobId": "t1é",
+"bytes": {
+"$blob": "dead03"
+},
+"index": 1074
+}
+}
+},
+{
+"family": "sealUpload",
+"plain": {
+"blobId": "x"
+},
+"rich": {
+"blobId": "t1é"
+}
+},
+{
+"family": "abortUpload",
+"plain": {
+"blobId": "x"
+},
+"rich": {
+"blobId": "t1é"
+}
+},
+{
+"family": "registerDocument",
+"plain": {
+"facts": {
+"blobId": "x",
+"category": {
+"$case": "contract"
+},
+"companyId": 7,
+"description": "x",
+"docType": {
+"$case": "none"
+},
+"expiryDay": 1,
+"isTemplate": false,
+"kind": {
+"$case": "company"
+},
+"mime": "x",
+"name": "x",
+"plainHash": "x",
+"plainSize": 1,
+"reminderDays": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"taskId": 1,
+"title": "x",
+"wrappedFileKey": "x"
+}
+},
+"rich": {
+"facts": {
+"blobId": "t2é",
+"category": {
+"$case": "other"
+},
+"companyId": 1037,
+"description": "t6é",
+"docType": {
+"$case": "other"
+},
+"expiryDay": 1407,
+"isTemplate": true,
+"kind": {
+"$case": "signatureContent"
+},
+"mime": "t7é",
+"name": "t8é",
+"plainHash": "t3é",
+"plainSize": 1148,
+"reminderDays": 1444,
+"subject": {
+"$principal": "0102031d"
+},
+"taskId": 1370,
+"title": "t5é",
+"wrappedFileKey": "t14é"
+}
+}
+},
+{
+"family": "amendDocument",
+"plain": {
+"companyId": 7,
+"description": "x",
+"documentId": 1,
+"expiryDay": 1,
+"reminderDays": 1,
+"title": "x"
+},
+"rich": {
+"companyId": 1037,
+"description": "t4é",
+"documentId": 1074,
+"expiryDay": 1185,
+"reminderDays": 1222,
+"title": "t3é"
+}
+},
+{
+"family": "archiveDocument",
+"plain": {
+"companyId": 7,
+"documentId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"documentId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "eraseDocument",
+"plain": {
+"companyId": 7,
+"documentId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"documentId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "openDocumentExpirySweep",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"throughDay": 1074
+}
+},
+{
+"family": "sweepDocumentExpirySlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "registerSigningKey",
+"plain": {
+"companyId": 7,
+"context": "x",
+"credentialId": "x",
+"note": "x",
+"publicKey": "x",
+"scheme": {
+"$case": "es256"
+}
+},
+"rich": {
+"companyId": 1037,
+"context": "t4é",
+"credentialId": "t2é",
+"note": "t5é",
+"publicKey": "t3é",
+"scheme": {
+"$case": "mayo2"
+}
+}
+},
+{
+"family": "revokeSigningKey",
+"plain": {
+"companyId": 7,
+"keyId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"keyId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "createSignatureRequest",
+"plain": {
+"facts": {
+"companyId": 7,
+"deadlineDay": 1,
+"description": "x",
+"docType": {
+"$case": "contract"
+},
+"documentId": 1,
+"mandatory": false,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"deadlineDay": 1185,
+"description": "t3é",
+"docType": {
+"$case": "other"
+},
+"documentId": 1148,
+"mandatory": true,
+"title": "t2é"
+}
+}
+},
+{
+"family": "revokeSignatureRequest",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"requestId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"requestId": 1074
+}
+},
+{
+"family": "beginSignature",
+"plain": {
+"companyId": 7,
+"requestId": 1
+},
+"rich": {
+"companyId": 1037,
+"requestId": 1074
+}
+},
+{
+"family": "completeSignature",
+"plain": {
+"facts": {
+"authDataB64": "x",
+"clientDataB64": "x",
+"companyId": 7,
+"credentialId": "x",
+"nonce": "x",
+"requestId": 1,
+"signatureB64": "x"
+}
+},
+"rich": {
+"facts": {
+"authDataB64": "t6é",
+"clientDataB64": "t5é",
+"companyId": 1037,
+"credentialId": "t4é",
+"nonce": "t3é",
+"requestId": 1074,
+"signatureB64": "t7é"
+}
+}
+},
+{
+"family": "completeSignaturePq",
+"plain": {
+"facts": {
+"companyId": 7,
+"keyId": 1,
+"nonce": "x",
+"requestId": 1,
+"signatureB64": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"keyId": 1148,
+"nonce": "t3é",
+"requestId": 1074,
+"signatureB64": "t5é"
+}
+}
+},
+{
+"family": "declineSignature",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"requestId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"requestId": 1074
+}
+},
+{
+"family": "createCurrency",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"exponent": 1,
+"name": "x",
+"rounding": 1,
+"symbol": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"exponent": 1185,
+"name": "t3é",
+"rounding": 1222,
+"symbol": "t4é"
+}
+}
+},
+{
+"family": "amendCurrency",
+"plain": {
+"currencyId": 1,
+"facts": {
+"code": "x",
+"companyId": 7,
+"exponent": 1,
+"name": "x",
+"rounding": 1,
+"symbol": "x"
+}
+},
+"rich": {
+"currencyId": 1037,
+"facts": {
+"code": "t3é",
+"companyId": 1074,
+"exponent": 1222,
+"name": "t4é",
+"rounding": 1259,
+"symbol": "t5é"
+}
+}
+},
+{
+"family": "retireCurrency",
+"plain": {
+"companyId": 7,
+"currencyId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"currencyId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "recordRate",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"effectiveDay": 1,
+"rate": 1
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"effectiveDay": 1111,
+"rate": 1148
+}
+}
+},
+{
+"family": "createTax",
+"plain": {
+"facts": {
+"accountId": 1,
+"amount": 1,
+"amountType": {
+"$case": "percent"
+},
+"code": "x",
+"companyId": 7,
+"description": "x",
+"includeBaseAmount": false,
+"name": "x",
+"priceInclude": false,
+"sequence": 1,
+"taxUse": {
+"$case": "sale"
+}
+}
+},
+"rich": {
+"facts": {
+"accountId": 1333,
+"amount": 1148,
+"amountType": {
+"$case": "division"
+},
+"code": "t2é",
+"companyId": 1037,
+"description": "t8é",
+"includeBaseAmount": true,
+"name": "t3é",
+"priceInclude": true,
+"sequence": 1185,
+"taxUse": {
+"$case": "adjustment"
+}
+}
+}
+},
+{
+"family": "amendTax",
+"plain": {
+"facts": {
+"accountId": 1,
+"amount": 1,
+"amountType": {
+"$case": "percent"
+},
+"code": "x",
+"companyId": 7,
+"description": "x",
+"includeBaseAmount": false,
+"name": "x",
+"priceInclude": false,
+"sequence": 1,
+"taxUse": {
+"$case": "sale"
+}
+},
+"taxId": 1
+},
+"rich": {
+"facts": {
+"accountId": 1370,
+"amount": 1185,
+"amountType": {
+"$case": "division"
+},
+"code": "t3é",
+"companyId": 1074,
+"description": "t9é",
+"includeBaseAmount": true,
+"name": "t4é",
+"priceInclude": true,
+"sequence": 1222,
+"taxUse": {
+"$case": "adjustment"
+}
+},
+"taxId": 1037
+}
+},
+{
+"family": "retireTax",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"taxId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"taxId": 1074
+}
+},
+{
+"family": "importBankStatement",
+"plain": {
+"facts": {
+"balanceEndDeclared": 0,
+"balanceStart": 0,
+"companyId": 7,
+"currency": "x",
+"journalId": 1,
+"name": "x",
+"statementDay": 1
+}
+},
+"rich": {
+"facts": {
+"balanceEndDeclared": -22,
+"balanceStart": -19,
+"companyId": 1037,
+"currency": "t5é",
+"journalId": 1074,
+"name": "t3é",
+"statementDay": 1148
+}
+}
+},
+{
+"family": "addStatementLine",
+"plain": {
+"facts": {
+"amount": 0,
+"companyId": 7,
+"foreignAmount": 0,
+"foreignCurrency": "x",
+"partnerId": 1,
+"paymentRef": "x",
+"statementId": 1,
+"transactionDay": 1
+}
+},
+"rich": {
+"facts": {
+"amount": -16,
+"companyId": 1037,
+"foreignAmount": -19,
+"foreignCurrency": "t7é",
+"partnerId": 1296,
+"paymentRef": "t4é",
+"statementId": 1074,
+"transactionDay": 1111
+}
+}
+},
+{
+"family": "confirmBankStatement",
+"plain": {
+"companyId": 7,
+"statementId": 1
+},
+"rich": {
+"companyId": 1037,
+"statementId": 1074
+}
+},
+{
+"family": "archiveBankStatement",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"statementId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"statementId": 1074
+}
+},
+{
+"family": "reconcileLine",
+"plain": {
+"amount": 1,
+"companyId": 7,
+"lineId": 1,
+"moveId": 1
+},
+"rich": {
+"amount": 1148,
+"companyId": 1037,
+"lineId": 1074,
+"moveId": 1111
+}
+},
+{
+"family": "unreconcileLine",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"reconciliationId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"reconciliationId": 1074
+}
+},
+{
+"family": "openMatchRun",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"statementId": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"statementId": 1074
+}
+},
+{
+"family": "matchSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "configureEtaEndpoint",
+"plain": {
+"facts": {
+"activityCode": "x",
+"companyId": 7,
+"endpoint": "x",
+"issuerName": "x",
+"issuerTaxId": "x",
+"keyHandle": "x"
+}
+},
+"rich": {
+"facts": {
+"activityCode": "t5é",
+"companyId": 1037,
+"endpoint": "t2é",
+"issuerName": "t4é",
+"issuerTaxId": "t3é",
+"keyHandle": "t6é"
+}
+}
+},
+{
+"family": "prepareEtaFiling",
+"plain": {
+"facts": {
+"companyId": 7,
+"docType": {
+"$case": "invoice"
+},
+"orderId": 1,
+"version": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"docType": {
+"$case": "debitNote"
+},
+"orderId": 1074,
+"version": "t3é"
+}
+}
+},
+{
+"family": "recordEtaSubmission",
+"plain": {
+"companyId": 7,
+"filingId": 1,
+"payloadHash": {
+"$blob": "01"
+}
+},
+"rich": {
+"companyId": 1037,
+"filingId": 1074,
+"payloadHash": {
+"$blob": "dead03"
+}
+}
+},
+{
+"family": "recordEtaResult",
+"plain": {
+"facts": {
+"accepted": false,
+"companyId": 7,
+"filingId": 1,
+"longId": "x",
+"payloadHash": {
+"$blob": "01"
+},
+"reason": "x",
+"submissionId": "x",
+"uuid": "x"
+}
+},
+"rich": {
+"facts": {
+"accepted": true,
+"companyId": 1037,
+"filingId": 1074,
+"longId": "t7é",
+"payloadHash": {
+"$blob": "dead03"
+},
+"reason": "t8é",
+"submissionId": "t6é",
+"uuid": "t5é"
+}
+}
+},
+{
+"family": "abandonEtaFiling",
+"plain": {
+"companyId": 7,
+"filingId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"filingId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "openPlan",
+"plain": {
+"facts": {
+"companyId": 7,
+"contractId": 1,
+"kind": {
+"$case": "onboarding"
+},
+"managerId": 1,
+"startDay": 1,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"contractId": 1148,
+"kind": {
+"$case": "offboarding"
+},
+"managerId": 1111,
+"startDay": 1185,
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "addPlanItem",
+"plain": {
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 7,
+"description": "x",
+"dueOffsetDays": 1,
+"isRequired": false,
+"phase": {
+"$case": "preboarding"
+},
+"planId": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 1037,
+"description": "t4é",
+"dueOffsetDays": 1259,
+"isRequired": true,
+"phase": {
+"$case": "exit"
+},
+"planId": 1074,
+"title": "t3é"
+}
+}
+},
+{
+"family": "setPlanItemState",
+"plain": {
+"companyId": 7,
+"itemId": 1,
+"note": "x",
+"state": {
+"$case": "pending"
+}
+},
+"rich": {
+"companyId": 1037,
+"itemId": 1074,
+"note": "t3é",
+"state": {
+"$case": "waived"
+}
+}
+},
+{
+"family": "closePlan",
+"plain": {
+"companyId": 7,
+"planId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"planId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "createContract",
+"plain": {
+"facts": {
+"autoRenew": false,
+"companyId": 7,
+"counterparty": "x",
+"counterpartyEmail": "x",
+"currency": "x",
+"description": "x",
+"endDay": 1,
+"kind": {
+"$case": "employment"
+},
+"ownerEmployeeId": 1,
+"renewalNoticeDays": 1,
+"startDay": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "x",
+"value": 1
+}
+},
+"rich": {
+"facts": {
+"autoRenew": true,
+"companyId": 1037,
+"counterparty": "t3é",
+"counterpartyEmail": "t4é",
+"currency": "t9é",
+"description": "t10é",
+"endDay": 1259,
+"kind": {
+"$case": "other"
+},
+"ownerEmployeeId": 1481,
+"renewalNoticeDays": 1444,
+"startDay": 1222,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "t2é",
+"value": 1296
+}
+}
+},
+{
+"family": "amendContract",
+"plain": {
+"contractId": 1,
+"facts": {
+"autoRenew": false,
+"companyId": 7,
+"counterparty": "x",
+"counterpartyEmail": "x",
+"currency": "x",
+"description": "x",
+"endDay": 1,
+"kind": {
+"$case": "employment"
+},
+"ownerEmployeeId": 1,
+"renewalNoticeDays": 1,
+"startDay": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "x",
+"value": 1
+}
+},
+"rich": {
+"contractId": 1037,
+"facts": {
+"autoRenew": true,
+"companyId": 1074,
+"counterparty": "t4é",
+"counterpartyEmail": "t5é",
+"currency": "t10é",
+"description": "t11é",
+"endDay": 1296,
+"kind": {
+"$case": "other"
+},
+"ownerEmployeeId": 1518,
+"renewalNoticeDays": 1481,
+"startDay": 1259,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "t3é",
+"value": 1333
+}
+}
+},
+{
+"family": "setContractState",
+"plain": {
+"companyId": 7,
+"contractId": 1,
+"reason": "x",
+"state": {
+"$case": "draft"
+}
+},
+"rich": {
+"companyId": 1037,
+"contractId": 1074,
+"reason": "t3é",
+"state": {
+"$case": "renewed"
+}
+}
+},
+{
+"family": "openProbation",
+"plain": {
+"facts": {
+"companyId": 7,
+"departmentId": 1,
+"endDay": 1,
+"jobTitleId": 1,
+"managerId": 1,
+"startDay": 1,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"departmentId": 1148,
+"endDay": 1259,
+"jobTitleId": 1185,
+"managerId": 1111,
+"startDay": 1222,
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "addProbationCheckIn",
+"plain": {
+"facts": {
+"companyId": 7,
+"concerns": "x",
+"dueDay": 1,
+"milestoneId": 1,
+"notes": "x",
+"outcome": {
+"$case": "onTrack"
+},
+"probationId": 1,
+"rating": {
+"$case": "low"
+},
+"strengths": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"concerns": "t6é",
+"dueDay": 1148,
+"milestoneId": 1111,
+"notes": "t7é",
+"outcome": {
+"$case": "offTrack"
+},
+"probationId": 1074,
+"rating": {
+"$case": "critical"
+},
+"strengths": "t5é"
+}
+}
+},
+{
+"family": "finalizeProbation",
+"plain": {
+"companyId": 7,
+"finalNote": "x",
+"probationId": 1,
+"state": {
+"$case": "active"
+}
+},
+"rich": {
+"companyId": 1037,
+"finalNote": "t3é",
+"probationId": 1074,
+"state": {
+"$case": "failed"
+}
+}
+},
+{
+"family": "requestRelocation",
+"plain": {
+"facts": {
+"budget": 1,
+"companyId": 7,
+"currency": "x",
+"fromBranchId": 1,
+"reason": "x",
+"startDay": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"toBranchId": 1
+}
+},
+"rich": {
+"facts": {
+"budget": 1259,
+"companyId": 1037,
+"currency": "t8é",
+"fromBranchId": 1111,
+"reason": "t6é",
+"startDay": 1185,
+"subject": {
+"$principal": "0102031d"
+},
+"toBranchId": 1148
+}
+}
+},
+{
+"family": "decideRelocation",
+"plain": {
+"approve": false,
+"companyId": 7,
+"reason": "x",
+"relocationId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"reason": "t4é",
+"relocationId": 1074
+}
+},
+{
+"family": "setRelocationState",
+"plain": {
+"companyId": 7,
+"relocationId": 1,
+"state": {
+"$case": "requested"
+}
+},
+"rich": {
+"companyId": 1037,
+"relocationId": 1074,
+"state": {
+"$case": "rejected"
+}
+}
+},
+{
+"family": "addRelocationExpense",
+"plain": {
+"facts": {
+"amount": 1,
+"companyId": 7,
+"currency": "x",
+"day": 1,
+"description": "x",
+"relocationId": 1
+}
+},
+"rich": {
+"facts": {
+"amount": 1148,
+"companyId": 1037,
+"currency": "t5é",
+"day": 1222,
+"description": "t3é",
+"relocationId": 1074
+}
+}
+},
+{
+"family": "addWorkHistoryItem",
+"plain": {
+"facts": {
+"category": "x",
+"companyId": 7,
+"day": 1,
+"description": "x",
+"documentId": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"category": "t5é",
+"companyId": 1037,
+"day": 1222,
+"description": "t4é",
+"documentId": 1259,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "t3é"
+}
+}
+},
+{
+"family": "addFamilyMember",
+"plain": {
+"facts": {
+"companyId": 7,
+"documentId": 1,
+"isDependent": false,
+"name": "x",
+"relation": {
+"$case": "spouse"
+},
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"documentId": 1148,
+"isDependent": true,
+"name": "t3é",
+"relation": {
+"$case": "other"
+},
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "removeFamilyMember",
+"plain": {
+"companyId": 7,
+"memberId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"memberId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "createHeadcountPlan",
+"plain": {
+"facts": {
+"budget": 1,
+"companyId": 7,
+"currency": "x",
+"departmentId": 1,
+"fiscalYear": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"budget": 1185,
+"companyId": 1037,
+"currency": "t6é",
+"departmentId": 1111,
+"fiscalYear": 1148,
+"name": "t2é"
+}
+}
+},
+{
+"family": "addFteEntry",
+"plain": {
+"facts": {
+"companyId": 7,
+"departmentId": 1,
+"fromDay": 1,
+"fte": 1,
+"jobTitleId": 1,
+"planId": 1,
+"toDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"departmentId": 1148,
+"fromDay": 1222,
+"fte": 1185,
+"jobTitleId": 1111,
+"planId": 1074,
+"toDay": 1259
+}
+}
+},
+{
+"family": "setHeadcountState",
+"plain": {
+"companyId": 7,
+"planId": 1,
+"reason": "x",
+"state": {
+"$case": "draft"
+}
+},
+"rich": {
+"companyId": 1037,
+"planId": 1074,
+"reason": "t3é",
+"state": {
+"$case": "closed"
+}
+}
+},
+{
+"family": "declareKeyPosition",
+"plain": {
+"facts": {
+"companyId": 7,
+"criticality": {
+"$case": "low"
+},
+"departmentId": 1,
+"incumbent": {
+"$principal": "0102031d"
+},
+"jobTitleId": 1,
+"notes": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"criticality": {
+"$case": "critical"
+},
+"departmentId": 1111,
+"incumbent": {
+"$principal": "0102031d"
+},
+"jobTitleId": 1074,
+"notes": "t5é"
+}
+}
+},
+{
+"family": "upsertSuccessor",
+"plain": {
+"facts": {
+"candidate": {
+"$principal": "0102031d"
+},
+"companyId": 7,
+"notes": "x",
+"positionId": 1,
+"readiness": {
+"$case": "ready"
+}
+}
+},
+"rich": {
+"facts": {
+"candidate": {
+"$principal": "0102031d"
+},
+"companyId": 1037,
+"notes": "t4é",
+"positionId": 1074,
+"readiness": {
+"$case": "notReady"
+}
+}
+}
+},
+{
+"family": "removeSuccessor",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"successorId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"successorId": 1074
+}
+},
+{
+"family": "createCustomField",
+"plain": {
+"facts": {
+"caption": "x",
+"choices": "x",
+"code": "x",
+"companyId": 7,
+"isRequired": false,
+"kind": {
+"$case": "text"
+}
+}
+},
+"rich": {
+"facts": {
+"caption": "t3é",
+"choices": "t4é",
+"code": "t2é",
+"companyId": 1037,
+"isRequired": true,
+"kind": {
+"$case": "choice"
+}
+}
+}
+},
+{
+"family": "amendCustomField",
+"plain": {
+"facts": {
+"caption": "x",
+"choices": "x",
+"code": "x",
+"companyId": 7,
+"isRequired": false,
+"kind": {
+"$case": "text"
+}
+},
+"fieldId": 1
+},
+"rich": {
+"facts": {
+"caption": "t4é",
+"choices": "t5é",
+"code": "t3é",
+"companyId": 1074,
+"isRequired": true,
+"kind": {
+"$case": "choice"
+}
+},
+"fieldId": 1037
+}
+},
+{
+"family": "retireCustomField",
+"plain": {
+"companyId": 7,
+"fieldId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"fieldId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "setCustomFieldValue",
+"plain": {
+"facts": {
+"companyId": 7,
+"day": 1,
+"fieldId": 1,
+"flag": false,
+"number": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"text": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"day": 1222,
+"fieldId": 1074,
+"flag": true,
+"number": 1185,
+"subject": {
+"$principal": "0102031d"
+},
+"text": "t4é"
+}
+}
+},
+{
+"family": "openDisciplinaryCase",
+"plain": {
+"facts": {
+"actionTaken": "x",
+"companyId": 7,
+"expectedImprovement": "x",
+"expiryDay": 1,
+"incidentDocumentId": 1,
+"issueDay": 1,
+"kind": {
+"$case": "verbalWarning"
+},
+"managerId": 1,
+"reviewDay": 1,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"actionTaken": "t5é",
+"companyId": 1037,
+"expectedImprovement": "t6é",
+"expiryDay": 1333,
+"incidentDocumentId": 1148,
+"issueDay": 1259,
+"kind": {
+"$case": "dismissal"
+},
+"managerId": 1111,
+"reviewDay": 1296,
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "acknowledgeDisciplinaryCase",
+"plain": {
+"caseId": 1,
+"companyId": 7,
+"signatureRecordId": 1
+},
+"rich": {
+"caseId": 1074,
+"companyId": 1037,
+"signatureRecordId": 1111
+}
+},
+{
+"family": "resolveDisciplinaryCase",
+"plain": {
+"caseId": 1,
+"companyId": 7,
+"resolution": "x"
+},
+"rich": {
+"caseId": 1074,
+"companyId": 1037,
+"resolution": "t3é"
+}
+},
+{
+"family": "openWarningExpirySweep",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"throughDay": 1074
+}
+},
+{
+"family": "sweepWarningExpirySlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "submitGrievance",
+"plain": {
+"facts": {
+"blindedComplainant": {
+"$blob": "01"
+},
+"category": {
+"$case": "harassment"
+},
+"companyId": 7,
+"descriptionDocumentId": 1,
+"evidenceDocumentId": 1,
+"isAnonymous": false,
+"respondent": {
+"$principal": "0102031d"
+},
+"severity": {
+"$case": "low"
+}
+}
+},
+"rich": {
+"facts": {
+"blindedComplainant": {
+"$blob": "dead02"
+},
+"category": {
+"$case": "other"
+},
+"companyId": 1037,
+"descriptionDocumentId": 1185,
+"evidenceDocumentId": 1222,
+"isAnonymous": true,
+"respondent": {
+"$principal": "0102031d"
+},
+"severity": {
+"$case": "critical"
+}
+}
+}
+},
+{
+"family": "setGrievanceState",
+"plain": {
+"companyId": 7,
+"grievanceId": 1,
+"resolution": "x",
+"state": {
+"$case": "submitted"
+}
+},
+"rich": {
+"companyId": 1037,
+"grievanceId": 1074,
+"resolution": "t3é",
+"state": {
+"$case": "escalated"
+}
+}
+},
+{
+"family": "withdrawGrievance",
+"plain": {
+"blinded": {
+"$blob": "01"
+},
+"companyId": 7,
+"grievanceId": 1
+},
+"rich": {
+"blinded": {
+"$blob": "dead03"
+},
+"companyId": 1037,
+"grievanceId": 1074
+}
+},
+{
+"family": "reportIncident",
+"plain": {
+"facts": {
+"blindedReporter": {
+"$blob": "01"
+},
+"companyId": 7,
+"descriptionDocumentId": 1,
+"incidentDay": 1,
+"injuryOccurred": false,
+"isAnonymous": false,
+"kind": {
+"$case": "injury"
+},
+"location": "x",
+"severity": {
+"$case": "low"
+},
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"blindedReporter": {
+"$blob": "dead02"
+},
+"companyId": 1037,
+"descriptionDocumentId": 1185,
+"incidentDay": 1259,
+"injuryOccurred": true,
+"isAnonymous": true,
+"kind": {
+"$case": "other"
+},
+"location": "t6é",
+"severity": {
+"$case": "critical"
+},
+"title": "t4é"
+}
+}
+},
+{
+"family": "assignIncident",
+"plain": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 7,
+"incidentId": 1
+},
+"rich": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 1037,
+"incidentId": 1074
+}
+},
+{
+"family": "setIncidentState",
+"plain": {
+"companyId": 7,
+"incidentId": 1,
+"reason": "x",
+"state": {
+"$case": "reported"
+}
+},
+"rich": {
+"companyId": 1037,
+"incidentId": 1074,
+"reason": "t3é",
+"state": {
+"$case": "closed"
+}
+}
+},
+{
+"family": "addInvestigationNote",
+"plain": {
+"facts": {
+"caseId": 1,
+"caseKind": {
+"$case": "employee"
+},
+"companyId": 7,
+"note": "x"
+}
+},
+"rich": {
+"facts": {
+"caseId": 1074,
+"caseKind": {
+"$case": "improvement"
+},
+"companyId": 1037,
+"note": "t3é"
+}
+}
+},
+{
+"family": "addMilestone",
+"plain": {
+"facts": {
+"companyId": 7,
+"description": "x",
+"dueDay": 1,
+"kind": {
+"$case": "employee"
+},
+"parentId": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"description": "t5é",
+"dueDay": 1222,
+"kind": {
+"$case": "improvement"
+},
+"parentId": 1111,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "t4é"
+}
+}
+},
+{
+"family": "amendMilestone",
+"plain": {
+"facts": {
+"companyId": 7,
+"description": "x",
+"dueDay": 1,
+"kind": {
+"$case": "employee"
+},
+"parentId": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "x"
+},
+"milestoneId": 1
+},
+"rich": {
+"facts": {
+"companyId": 1074,
+"description": "t6é",
+"dueDay": 1259,
+"kind": {
+"$case": "improvement"
+},
+"parentId": 1148,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "t5é"
+},
+"milestoneId": 1037
+}
+},
+{
+"family": "setMilestoneState",
+"plain": {
+"companyId": 7,
+"milestoneId": 1,
+"outcome": {
+"$case": "onTrack"
+},
+"state": {
+"$case": "pending"
+}
+},
+"rich": {
+"companyId": 1037,
+"milestoneId": 1074,
+"outcome": {
+"$case": "offTrack"
+},
+"state": {
+"$case": "waived"
+}
+}
+},
+{
+"family": "setEmployeeAssignment",
+"plain": {
+"branchId": 1,
+"companyId": 7,
+"employeeNumber": "x",
+"subject": {
+"$principal": "0102031d"
+},
+"workType": {
+"$case": "onsite"
+}
+},
+"rich": {
+"branchId": 1111,
+"companyId": 1037,
+"employeeNumber": "t4é",
+"subject": {
+"$principal": "0102031d"
+},
+"workType": {
+"$case": "hybrid"
+}
+}
+},
+{
+"family": "addPendingEmployee",
+"plain": {
+"facts": {
+"companyId": 7,
+"companyRole": {
+"$case": "CompanyAdmin"
+},
+"departmentId": 1,
+"email": "x",
+"jobTitleId": 1,
+"name": "x",
+"note": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"companyRole": {
+"$case": "Drafter"
+},
+"departmentId": 1148,
+"email": "t3é",
+"jobTitleId": 1185,
+"name": "t2é",
+"note": "t6é"
+}
+}
+},
+{
+"family": "decidePendingEmployee",
+"plain": {
+"approve": false,
+"companyId": 7,
+"pendingId": 1,
+"reason": "x"
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"pendingId": 1074,
+"reason": "t4é"
+}
+},
+{
+"family": "openImportRun",
+"plain": {
+"companyId": 7,
+"expectedRows": 1,
+"planHash": {
+"$blob": "01"
+}
+},
+"rich": {
+"companyId": 1037,
+"expectedRows": 1074,
+"planHash": {
+"$blob": "dead03"
+}
+}
+},
+{
+"family": "importSlice",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"rows": [],
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"rows": [
+{
+"companyId": 1148,
+"companyRole": {
+"$case": "Drafter"
+},
+"departmentId": 1259,
+"email": "t6é",
+"jobTitleId": 1296,
+"name": "t5é",
+"note": "t9é"
+},
+{
+"companyId": 1370,
+"companyRole": {
+"$case": "Drafter"
+},
+"departmentId": 1481,
+"email": "t12é",
+"jobTitleId": 1518,
+"name": "t11é",
+"note": "t15é"
+}
+],
+"runId": 1074
+}
+},
+{
+"family": "createShiftTemplate",
+"plain": {
+"facts": {
+"colour": "x",
+"companyId": 7,
+"daysMask": 1,
+"endMinute": 1,
+"name": "x",
+"startMinute": 1,
+"unpaidBreakMinutes": 1
+}
+},
+"rich": {
+"facts": {
+"colour": "t3é",
+"companyId": 1037,
+"daysMask": 1259,
+"endMinute": 1185,
+"name": "t2é",
+"startMinute": 1148,
+"unpaidBreakMinutes": 1222
+}
+}
+},
+{
+"family": "setShiftTemplateActive",
+"plain": {
+"companyId": 7,
+"isActive": false,
+"templateId": 1
+},
+"rich": {
+"companyId": 1037,
+"isActive": true,
+"templateId": 1074
+}
+},
+{
+"family": "assignShift",
+"plain": {
+"facts": {
+"businessDay": 1,
+"companyId": 7,
+"note": "x",
+"subject": {
+"$principal": "0102031d"
+},
+"templateId": 1
+}
+},
+"rich": {
+"facts": {
+"businessDay": 1148,
+"companyId": 1037,
+"note": "t5é",
+"subject": {
+"$principal": "0102031d"
+},
+"templateId": 1074
+}
+}
+},
+{
+"family": "cancelShiftAssignment",
+"plain": {
+"assignmentId": 1,
+"companyId": 7
+},
+"rich": {
+"assignmentId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "requestShiftSwap",
+"plain": {
+"facts": {
+"assignmentId": 1,
+"companyId": 7,
+"reason": "x",
+"target": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"assignmentId": 1074,
+"companyId": 1037,
+"reason": "t4é",
+"target": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "answerSwapRequest",
+"plain": {
+"accept": false,
+"companyId": 7,
+"swapId": 1
+},
+"rich": {
+"accept": true,
+"companyId": 1037,
+"swapId": 1074
+}
+},
+{
+"family": "decideShiftSwap",
+"plain": {
+"approve": false,
+"companyId": 7,
+"swapId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"swapId": 1074
+}
+},
+{
+"family": "createBreakType",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"isPaid": false,
+"maxMinutes": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t3é",
+"companyId": 1037,
+"isPaid": true,
+"maxMinutes": 1148,
+"name": "t2é"
+}
+}
+},
+{
+"family": "setBreakTypeActive",
+"plain": {
+"breakTypeId": 1,
+"companyId": 7,
+"isActive": false
+},
+"rich": {
+"breakTypeId": 1074,
+"companyId": 1037,
+"isActive": true
+}
+},
+{
+"family": "startBreak",
+"plain": {
+"breakTypeId": 1,
+"companyId": 7
+},
+"rich": {
+"breakTypeId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "endBreak",
+"plain": {
+"companyId": 7
+},
+"rich": {
+"companyId": 1037
+}
+},
+{
+"family": "claimOvertime",
+"plain": {
+"facts": {
+"businessDay": 1,
+"category": {
+"$case": "regular"
+},
+"companyId": 7,
+"description": "x",
+"minutes": 1,
+"payout": {
+"$case": "cash"
+}
+}
+},
+"rich": {
+"facts": {
+"businessDay": 1074,
+"category": {
+"$case": "emergencyCallIn"
+},
+"companyId": 1037,
+"description": "t4é",
+"minutes": 1111,
+"payout": {
+"$case": "compTime"
+}
+}
+}
+},
+{
+"family": "submitOvertime",
+"plain": {
+"companyId": 7,
+"overtimeId": 1
+},
+"rich": {
+"companyId": 1037,
+"overtimeId": 1074
+}
+},
+{
+"family": "cancelOvertime",
+"plain": {
+"companyId": 7,
+"overtimeId": 1
+},
+"rich": {
+"companyId": 1037,
+"overtimeId": 1074
+}
+},
+{
+"family": "decideOvertime",
+"plain": {
+"approve": false,
+"companyId": 7,
+"note": "x",
+"overtimeId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"note": "t4é",
+"overtimeId": 1074
+}
+},
+{
+"family": "requestCompTimeUse",
+"plain": {
+"facts": {
+"businessDay": 1,
+"companyId": 7,
+"minutes": 1,
+"reason": "x"
+}
+},
+"rich": {
+"facts": {
+"businessDay": 1111,
+"companyId": 1037,
+"minutes": 1074,
+"reason": "t4é"
+}
+}
+},
+{
+"family": "decideCompTimeUse",
+"plain": {
+"approve": false,
+"companyId": 7,
+"useId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"useId": 1074
+}
+},
+{
+"family": "createCompanyHoliday",
+"plain": {
+"facts": {
+"businessDay": 1,
+"companyId": 7,
+"description": "x",
+"isRecurring": false,
+"kind": {
+"$case": "publicHoliday"
+},
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"businessDay": 1148,
+"companyId": 1037,
+"description": "t3é",
+"isRecurring": true,
+"kind": {
+"$case": "bank"
+},
+"name": "t2é"
+}
+}
+},
+{
+"family": "amendCompanyHoliday",
+"plain": {
+"facts": {
+"businessDay": 1,
+"companyId": 7,
+"description": "x",
+"isRecurring": false,
+"kind": {
+"$case": "publicHoliday"
+},
+"name": "x"
+},
+"holidayId": 1
+},
+"rich": {
+"facts": {
+"businessDay": 1185,
+"companyId": 1074,
+"description": "t4é",
+"isRecurring": true,
+"kind": {
+"$case": "bank"
+},
+"name": "t3é"
+},
+"holidayId": 1037
+}
+},
+{
+"family": "withdrawCompanyHoliday",
+"plain": {
+"companyId": 7,
+"holidayId": 1
+},
+"rich": {
+"companyId": 1037,
+"holidayId": 1074
+}
+},
+{
+"family": "requestWorkFromHome",
+"plain": {
+"facts": {
+"businessDay": 1,
+"companyId": 7,
+"reason": "x"
+}
+},
+"rich": {
+"facts": {
+"businessDay": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+}
+},
+{
+"family": "decideWorkFromHome",
+"plain": {
+"approve": false,
+"companyId": 7,
+"note": "x",
+"wfhId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"note": "t4é",
+"wfhId": 1074
+}
+},
+{
+"family": "cancelWorkFromHome",
+"plain": {
+"companyId": 7,
+"wfhId": 1
+},
+"rich": {
+"companyId": 1037,
+"wfhId": 1074
+}
+},
+{
+"family": "setWorkingHours",
+"plain": {
+"facts": {
+"companyId": 7,
+"daysMask": 1,
+"endMinute": 1,
+"startMinute": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"daysMask": 1148,
+"endMinute": 1111,
+"startMinute": 1074
+}
+}
+},
+{
+"family": "setAttendancePolicy",
+"plain": {
+"facts": {
+"absentDeductionKind": {
+"$case": "fixedAmount"
+},
+"absentDeductionValue": 1,
+"autoClockOutAfterMinutes": 1,
+"autoClockOutEnabled": false,
+"clockInWindowMinutes": 1,
+"companyId": 7,
+"lateAfterMinutes": 1
+}
+},
+"rich": {
+"facts": {
+"absentDeductionKind": {
+"$case": "daysFromSalary"
+},
+"absentDeductionValue": 1222,
+"autoClockOutAfterMinutes": 1185,
+"autoClockOutEnabled": true,
+"clockInWindowMinutes": 1074,
+"companyId": 1037,
+"lateAfterMinutes": 1111
+}
+}
+},
+{
+"family": "setLateDeductionTiers",
+"plain": {
+"companyId": 7,
+"tiers": []
+},
+"rich": {
+"companyId": 1037,
+"tiers": [
+{
+"afterMinutes": 1074,
+"deductionKind": {
+"$case": "daysFromSalary"
+},
+"deductionValue": 1111
+},
+{
+"afterMinutes": 1148,
+"deductionKind": {
+"$case": "daysFromSalary"
+},
+"deductionValue": 1185
+}
+]
+}
+},
+{
+"family": "registerAttendanceDevice",
+"plain": {
+"facts": {
+"branchId": 1,
+"companyId": 7,
+"kind": {
+"$case": "reader"
+},
+"location": "x",
+"name": "x",
+"publicKey": {
+"$blob": "01"
+}
+}
+},
+"rich": {
+"facts": {
+"branchId": 1148,
+"companyId": 1037,
+"kind": {
+"$case": "tablet"
+},
+"location": "t3é",
+"name": "t2é",
+"publicKey": {
+"$blob": "dead05"
+}
+}
+}
+},
+{
+"family": "amendAttendanceDevice",
+"plain": {
+"facts": {
+"branchId": 1,
+"companyId": 7,
+"deviceId": 1,
+"location": "x",
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"branchId": 1185,
+"companyId": 1037,
+"deviceId": 1074,
+"location": "t4é",
+"name": "t3é"
+}
+}
+},
+{
+"family": "revokeAttendanceDevice",
+"plain": {
+"companyId": 7,
+"deviceId": 1
+},
+"rich": {
+"companyId": 1037,
+"deviceId": 1074
+}
+},
+{
+"family": "ingestDeviceBatch",
+"plain": {
+"companyId": 7,
+"counter": 1,
+"deviceId": 1,
+"punches": [],
+"signature": {
+"$blob": "01"
+}
+},
+"rich": {
+"companyId": 1037,
+"counter": 1111,
+"deviceId": 1074,
+"punches": [
+{
+"businessDay": 1185,
+"employeeId": 1148,
+"kind": {
+"$case": "departure"
+},
+"minute": 1222
+},
+{
+"businessDay": 1296,
+"employeeId": 1259,
+"kind": {
+"$case": "departure"
+},
+"minute": 1333
+}
+],
+"signature": {
+"$blob": "dead0a"
+}
+}
+},
+{
+"family": "enrolFaceTemplate",
+"plain": {
+"facts": {
+"blobId": "x",
+"companyId": 7,
+"plainHash": "x",
+"plainSize": 1,
+"ringId": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"wrappedFileKey": "x"
+}
+},
+"rich": {
+"facts": {
+"blobId": "t4é",
+"companyId": 1037,
+"plainHash": "t5é",
+"plainSize": 1222,
+"ringId": 1111,
+"subject": {
+"$principal": "0102031d"
+},
+"wrappedFileKey": "t7é"
+}
+}
+},
+{
+"family": "withdrawFaceTemplate",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"templateId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"templateId": 1074
+}
+},
+{
+"family": "createReportSchedule",
+"plain": {
+"cadence": {
+"$case": "daily"
+},
+"columns": [],
+"companyId": 7,
+"name": "x",
+"recipients": []
+},
+"rich": {
+"cadence": {
+"$case": "annually"
+},
+"columns": [
+"t3é",
+"t4é"
+],
+"companyId": 1037,
+"name": "t2é",
+"recipients": [
+{
+"$principal": "0102031d"
+},
+{
+"$principal": "0102031d"
+}
+]
+}
+},
+{
+"family": "setReportScheduleActive",
+"plain": {
+"companyId": 7,
+"isActive": false,
+"scheduleId": 1
+},
+"rich": {
+"companyId": 1037,
+"isActive": true,
+"scheduleId": 1074
+}
+},
+{
+"family": "openReportRun",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"throughDay": 1074
+}
+},
+{
+"family": "runReportSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "declareOvertimePremiums",
+"plain": {
+"facts": {
+"callIn": 1,
+"holiday": 1,
+"profileId": 1,
+"regular": 1,
+"weekend": 1
+}
+},
+"rich": {
+"facts": {
+"callIn": 1185,
+"holiday": 1148,
+"profileId": 1037,
+"regular": 1074,
+"weekend": 1111
+}
+}
+},
+{
+"family": "createJobPosting",
+"plain": {
+"facts": {
+"branchId": 1,
+"companyId": 7,
+"departmentId": 1,
+"description": "x",
+"employmentKind": {
+"$case": "fullTime"
+},
+"isInternal": false,
+"jobTitleId": 1,
+"requirements": [],
+"requisitionId": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"branchId": 1185,
+"companyId": 1037,
+"departmentId": 1111,
+"description": "t6é",
+"employmentKind": {
+"$case": "freelance"
+},
+"isInternal": true,
+"jobTitleId": 1148,
+"requirements": [
+"t7é",
+"t8é"
+],
+"requisitionId": 1370,
+"title": "t2é"
+}
+}
+},
+{
+"family": "amendJobPosting",
+"plain": {
+"facts": {
+"branchId": 1,
+"companyId": 7,
+"departmentId": 1,
+"description": "x",
+"employmentKind": {
+"$case": "fullTime"
+},
+"isInternal": false,
+"jobTitleId": 1,
+"requirements": [],
+"requisitionId": 1,
+"title": "x"
+},
+"postingId": 1
+},
+"rich": {
+"facts": {
+"branchId": 1222,
+"companyId": 1074,
+"departmentId": 1148,
+"description": "t7é",
+"employmentKind": {
+"$case": "freelance"
+},
+"isInternal": true,
+"jobTitleId": 1185,
+"requirements": [
+"t8é",
+"t9é"
+],
+"requisitionId": 1407,
+"title": "t3é"
+},
+"postingId": 1037
+}
+},
+{
+"family": "setPostingState",
+"plain": {
+"companyId": 7,
+"postingId": 1,
+"state": {
+"$case": "draft"
+}
+},
+"rich": {
+"companyId": 1037,
+"postingId": 1074,
+"state": {
+"$case": "closed"
+}
+}
+},
+{
+"family": "setCareersPolicy",
+"plain": {
+"facts": {
+"companyId": 7,
+"dailyCeiling": 1,
+"difficulty": 1,
+"isOpen": false,
+"perPostingCeiling": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"dailyCeiling": 1074,
+"difficulty": 1148,
+"isOpen": true,
+"perPostingCeiling": 1111
+}
+}
+},
+{
+"family": "submitPublicApplication",
+"plain": {
+"facts": {
+"ciphertext": {
+"$blob": "01"
+},
+"companyId": 7,
+"fingerprint": {
+"$blob": "01"
+},
+"plainHash": "x",
+"plainSize": 1,
+"postingId": 1,
+"stampNonce": 1,
+"wrappedFileKey": "x"
+}
+},
+"rich": {
+"facts": {
+"ciphertext": {
+"$blob": "dead04"
+},
+"companyId": 1037,
+"fingerprint": {
+"$blob": "dead03"
+},
+"plainHash": "t5é",
+"plainSize": 1222,
+"postingId": 1074,
+"stampNonce": 1296,
+"wrappedFileKey": "t7é"
+}
+}
+},
+{
+"family": "eraseApplication",
+"plain": {
+"applicationId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"applicationId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "applyToPosting",
+"plain": {
+"companyId": 7,
+"coverLetterDocId": 1,
+"postingId": 1
+},
+"rich": {
+"companyId": 1037,
+"coverLetterDocId": 1111,
+"postingId": 1074
+}
+},
+{
+"family": "reviewApplication",
+"plain": {
+"applicationId": 1,
+"companyId": 7,
+"state": {
+"$case": "applied"
+}
+},
+"rich": {
+"applicationId": 1074,
+"companyId": 1037,
+"state": {
+"$case": "withdrawn"
+}
+}
+},
+{
+"family": "withdrawApplication",
+"plain": {
+"applicationId": 1,
+"companyId": 7
+},
+"rich": {
+"applicationId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "addCandidate",
+"plain": {
+"facts": {
+"blobId": "x",
+"companyId": 7,
+"fingerprint": {
+"$blob": "01"
+},
+"ownerEmployeeId": 1,
+"plainHash": "x",
+"plainSize": 1,
+"source": "x",
+"wrappedFileKey": "x"
+}
+},
+"rich": {
+"facts": {
+"blobId": "t5é",
+"companyId": 1037,
+"fingerprint": {
+"$blob": "dead02"
+},
+"ownerEmployeeId": 1148,
+"plainHash": "t6é",
+"plainSize": 1259,
+"source": "t3é",
+"wrappedFileKey": "t8é"
+}
+}
+},
+{
+"family": "setCandidateStage",
+"plain": {
+"candidateId": 1,
+"companyId": 7,
+"stage": {
+"$case": "inPool"
+}
+},
+"rich": {
+"candidateId": 1074,
+"companyId": 1037,
+"stage": {
+"$case": "withdrawn"
+}
+}
+},
+{
+"family": "addCandidateNote",
+"plain": {
+"facts": {
+"blobId": "x",
+"candidateId": 1,
+"companyId": 7,
+"plainHash": "x",
+"plainSize": 1,
+"wrappedFileKey": "x"
+}
+},
+"rich": {
+"facts": {
+"blobId": "t3é",
+"candidateId": 1074,
+"companyId": 1037,
+"plainHash": "t4é",
+"plainSize": 1185,
+"wrappedFileKey": "t6é"
+}
+}
+},
+{
+"family": "eraseCandidate",
+"plain": {
+"candidateId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"candidateId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "createRequisition",
+"plain": {
+"facts": {
+"budgetAmount": 1,
+"companyId": 7,
+"currency": "x",
+"departmentId": 1,
+"employmentKind": {
+"$case": "fullTime"
+},
+"headcount": 1,
+"jobTitleId": 1,
+"justification": "x",
+"kind": {
+"$case": "newPosition"
+},
+"priority": {
+"$case": "low"
+},
+"targetDay": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"budgetAmount": 1222,
+"companyId": 1037,
+"currency": "t7é",
+"departmentId": 1111,
+"employmentKind": {
+"$case": "freelance"
+},
+"headcount": 1185,
+"jobTitleId": 1148,
+"justification": "t8é",
+"kind": {
+"$case": "intern"
+},
+"priority": {
+"$case": "critical"
+},
+"targetDay": 1333,
+"title": "t2é"
+}
+}
+},
+{
+"family": "amendRequisition",
+"plain": {
+"facts": {
+"budgetAmount": 1,
+"companyId": 7,
+"currency": "x",
+"departmentId": 1,
+"employmentKind": {
+"$case": "fullTime"
+},
+"headcount": 1,
+"jobTitleId": 1,
+"justification": "x",
+"kind": {
+"$case": "newPosition"
+},
+"priority": {
+"$case": "low"
+},
+"targetDay": 1,
+"title": "x"
+},
+"requisitionId": 1
+},
+"rich": {
+"facts": {
+"budgetAmount": 1259,
+"companyId": 1074,
+"currency": "t8é",
+"departmentId": 1148,
+"employmentKind": {
+"$case": "freelance"
+},
+"headcount": 1222,
+"jobTitleId": 1185,
+"justification": "t9é",
+"kind": {
+"$case": "intern"
+},
+"priority": {
+"$case": "critical"
+},
+"targetDay": 1370,
+"title": "t3é"
+},
+"requisitionId": 1037
+}
+},
+{
+"family": "submitRequisition",
+"plain": {
+"companyId": 7,
+"requisitionId": 1
+},
+"rich": {
+"companyId": 1037,
+"requisitionId": 1074
+}
+},
+{
+"family": "decideRequisition",
+"plain": {
+"approve": false,
+"companyId": 7,
+"note": "x",
+"requisitionId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"note": "t4é",
+"requisitionId": 1074
+}
+},
+{
+"family": "setRequisitionState",
+"plain": {
+"companyId": 7,
+"requisitionId": 1,
+"state": {
+"$case": "draft"
+}
+},
+"rich": {
+"companyId": 1037,
+"requisitionId": 1074,
+"state": {
+"$case": "cancelled"
+}
+}
+},
+{
+"family": "createOffer",
+"plain": {
+"facts": {
+"applicationId": 1,
+"baseMonthly": 1,
+"bonusRate": 1,
+"candidateId": 1,
+"companyId": 7,
+"currency": "x",
+"departmentId": 1,
+"expiryDay": 1,
+"jobTitleId": 1,
+"noteDocId": 1,
+"postingId": 1,
+"startDay": 1
+}
+},
+"rich": {
+"facts": {
+"applicationId": 1111,
+"baseMonthly": 1259,
+"bonusRate": 1296,
+"candidateId": 1074,
+"companyId": 1037,
+"currency": "t9é",
+"departmentId": 1222,
+"expiryDay": 1407,
+"jobTitleId": 1185,
+"noteDocId": 1444,
+"postingId": 1148,
+"startDay": 1370
+}
+}
+},
+{
+"family": "sendOffer",
+"plain": {
+"companyId": 7,
+"offerId": 1,
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"offerId": 1074,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "respondToOffer",
+"plain": {
+"accept": false,
+"companyId": 7,
+"offerId": 1,
+"reason": {
+"$case": "none"
+}
+},
+"rich": {
+"accept": true,
+"companyId": 1037,
+"offerId": 1074,
+"reason": {
+"$case": "other"
+}
+}
+},
+{
+"family": "rescindOffer",
+"plain": {
+"companyId": 7,
+"offerId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"offerId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "submitCounterOffer",
+"plain": {
+"facts": {
+"baseMonthly": 1,
+"bonusRate": 1,
+"companyId": 7,
+"note": "x",
+"offerId": 1,
+"startDay": 1
+}
+},
+"rich": {
+"facts": {
+"baseMonthly": 1111,
+"bonusRate": 1148,
+"companyId": 1037,
+"note": "t6é",
+"offerId": 1074,
+"startDay": 1185
+}
+}
+},
+{
+"family": "decideCounterOffer",
+"plain": {
+"approve": false,
+"companyId": 7,
+"counterOfferId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"counterOfferId": 1074
+}
+},
+{
+"family": "contractFromOffer",
+"plain": {
+"companyId": 7,
+"offerId": 1,
+"ownerEmployeeId": 1
+},
+"rich": {
+"companyId": 1037,
+"offerId": 1074,
+"ownerEmployeeId": 1111
+}
+},
+{
+"family": "openOfferExpirySweep",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"throughDay": 1074
+}
+},
+{
+"family": "sweepOfferExpirySlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "scheduleInterview",
+"plain": {
+"facts": {
+"applicationId": 1,
+"branchId": 1,
+"businessDay": 1,
+"candidateId": 1,
+"companyId": 7,
+"durationMinutes": 1,
+"kind": {
+"$case": "phoneScreen"
+},
+"meetingLink": "x",
+"panelists": [],
+"startMinute": 1
+}
+},
+"rich": {
+"facts": {
+"applicationId": 1111,
+"branchId": 1259,
+"businessDay": 1148,
+"candidateId": 1074,
+"companyId": 1037,
+"durationMinutes": 1222,
+"kind": {
+"$case": "final_"
+},
+"meetingLink": "t8é",
+"panelists": [
+{
+"$principal": "0102031d"
+},
+{
+"$principal": "0102031d"
+}
+],
+"startMinute": 1185
+}
+}
+},
+{
+"family": "setInterviewState",
+"plain": {
+"companyId": 7,
+"interviewId": 1,
+"state": {
+"$case": "scheduled"
+}
+},
+"rich": {
+"companyId": 1037,
+"interviewId": 1074,
+"state": {
+"$case": "noShow"
+}
+}
+},
+{
+"family": "submitScorecard",
+"plain": {
+"facts": {
+"commentsDocId": 1,
+"companyId": 7,
+"interviewId": 1,
+"recommendation": {
+"$case": "none"
+},
+"score": 1
+}
+},
+"rich": {
+"facts": {
+"commentsDocId": 1148,
+"companyId": 1037,
+"interviewId": 1074,
+"recommendation": {
+"$case": "strongNoHire"
+},
+"score": 1111
+}
+}
+},
+{
+"family": "makeHiringDecision",
+"plain": {
+"companyId": 7,
+"interviewId": 1,
+"recommendation": {
+"$case": "none"
+}
+},
+"rich": {
+"companyId": 1037,
+"interviewId": 1074,
+"recommendation": {
+"$case": "strongNoHire"
+}
+}
+},
+{
+"family": "submitReferral",
+"plain": {
+"facts": {
+"blobId": "x",
+"companyId": 7,
+"fingerprint": {
+"$blob": "01"
+},
+"plainHash": "x",
+"plainSize": 1,
+"postingId": 1,
+"relationship": "x",
+"wrappedFileKey": "x"
+}
+},
+"rich": {
+"facts": {
+"blobId": "t4é",
+"companyId": 1037,
+"fingerprint": {
+"$blob": "dead08"
+},
+"plainHash": "t5é",
+"plainSize": 1222,
+"postingId": 1074,
+"relationship": "t3é",
+"wrappedFileKey": "t7é"
+}
+}
+},
+{
+"family": "setReferralState",
+"plain": {
+"companyId": 7,
+"referralId": 1,
+"state": {
+"$case": "submitted"
+}
+},
+"rich": {
+"companyId": 1037,
+"referralId": 1074,
+"state": {
+"$case": "withdrawn"
+}
+}
+},
+{
+"family": "withdrawReferral",
+"plain": {
+"companyId": 7,
+"referralId": 1
+},
+"rich": {
+"companyId": 1037,
+"referralId": 1074
+}
+},
+{
+"family": "payReferralReward",
+"plain": {
+"amount": 1,
+"companyId": 7,
+"currency": "x",
+"payslipId": 1,
+"referralId": 1
+},
+"rich": {
+"amount": 1148,
+"companyId": 1037,
+"currency": "t5é",
+"payslipId": 1111,
+"referralId": 1074
+}
+},
+{
+"family": "recordCheckConsent",
+"plain": {
+"facts": {
+"candidateId": 1,
+"companyId": 7,
+"contentHash": {
+"$blob": "01"
+},
+"signatureId": 1
+}
+},
+"rich": {
+"facts": {
+"candidateId": 1074,
+"companyId": 1037,
+"contentHash": {
+"$blob": "dead03"
+},
+"signatureId": 1148
+}
+}
+},
+{
+"family": "createBackgroundCheck",
+"plain": {
+"facts": {
+"candidateId": 1,
+"companyId": 7,
+"consentId": 1,
+"kinds": [],
+"offerId": 1,
+"provider": "x",
+"retentionDay": 1
+}
+},
+"rich": {
+"facts": {
+"candidateId": 1074,
+"companyId": 1037,
+"consentId": 1148,
+"kinds": [
+{
+"$case": "other"
+},
+{
+"$case": "other"
+}
+],
+"offerId": 1111,
+"provider": "t5é",
+"retentionDay": 1222
+}
+}
+},
+{
+"family": "recordCheckResult",
+"plain": {
+"checkId": 1,
+"companyId": 7,
+"result": {
+"$case": "none"
+},
+"resultDocId": 1
+},
+"rich": {
+"checkId": 1074,
+"companyId": 1037,
+"result": {
+"$case": "pendingReview"
+},
+"resultDocId": 1111
+}
+},
+{
+"family": "cancelBackgroundCheck",
+"plain": {
+"checkId": 1,
+"companyId": 7
+},
+"rich": {
+"checkId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "openCheckRetentionSweep",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"throughDay": 1074
+}
+},
+{
+"family": "sweepCheckRetentionSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "createExitInterview",
+"plain": {
+"companyId": 7,
+"scheduledDay": 1,
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"scheduledDay": 1111,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "submitExitInterview",
+"plain": {
+"facts": {
+"blobId": "x",
+"companyId": 7,
+"exitId": 1,
+"plainHash": "x",
+"plainSize": 1,
+"wrappedFileKey": "x"
+}
+},
+"rich": {
+"facts": {
+"blobId": "t3é",
+"companyId": 1037,
+"exitId": 1074,
+"plainHash": "t4é",
+"plainSize": 1185,
+"wrappedFileKey": "t6é"
+}
+}
+},
+{
+"family": "acknowledgeExitInterview",
+"plain": {
+"companyId": 7,
+"exitId": 1
+},
+"rich": {
+"companyId": 1037,
+"exitId": 1074
+}
+},
+{
+"family": "setTalentAssessment",
+"plain": {
+"facts": {
+"candidateId": 1,
+"companyId": 7,
+"notesDocId": 1,
+"performance": 1,
+"potential": 1
+}
+},
+"rich": {
+"facts": {
+"candidateId": 1074,
+"companyId": 1037,
+"notesDocId": 1185,
+"performance": 1148,
+"potential": 1111
+}
+}
+},
+{
+"family": "assignReceiptToOrder",
+"plain": {
+"companyId": 7,
+"orderId": 1,
+"pickingId": 1
+},
+"rich": {
+"companyId": 1037,
+"orderId": 1111,
+"pickingId": 1074
+}
+},
+{
+"family": "recordSupplierBill",
+"plain": {
+"facts": {
+"billDay": 1,
+"companyId": 7,
+"currency": "x",
+"lines": [],
+"orderId": 1,
+"supplierRef": "x"
+}
+},
+"rich": {
+"facts": {
+"billDay": 1111,
+"companyId": 1037,
+"currency": "t4é",
+"lines": [
+{
+"categoryId": 1222,
+"priceUnit": 1296,
+"quantity": 1259
+},
+{
+"categoryId": 1333,
+"priceUnit": 1407,
+"quantity": 1370
+}
+],
+"orderId": 1074,
+"supplierRef": "t5é"
+}
+}
+},
+{
+"family": "matchSupplierBill",
+"plain": {
+"billId": 1,
+"companyId": 7,
+"journalId": 1,
+"reason": "x"
+},
+"rich": {
+"billId": 1074,
+"companyId": 1037,
+"journalId": 1111,
+"reason": "t4é"
+}
+},
+{
+"family": "issueCreditNote",
+"plain": {
+"facts": {
+"companyId": 7,
+"journalId": 1,
+"lines": [],
+"orderId": 1,
+"reason": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"journalId": 1111,
+"lines": [
+{
+"ordinal": 1185,
+"quantity": 1222
+},
+{
+"ordinal": 1259,
+"quantity": 1296
+}
+],
+"orderId": 1074,
+"reason": "t4é"
+}
+}
+},
+{
+"family": "setIssuerProfile",
+"plain": {
+"facts": {
+"anchorCertificate": {
+"$blob": "01"
+},
+"branchId": "x",
+"buildingNumber": "x",
+"companyId": 7,
+"country": "x",
+"governate": "x",
+"partyType": "x",
+"postalCode": "x",
+"regionCity": "x",
+"street": "x"
+}
+},
+"rich": {
+"facts": {
+"anchorCertificate": {
+"$blob": "dead0a"
+},
+"branchId": "t3é",
+"buildingNumber": "t8é",
+"companyId": 1037,
+"country": "t4é",
+"governate": "t5é",
+"partyType": "t2é",
+"postalCode": "t9é",
+"regionCity": "t6é",
+"street": "t7é"
+}
+}
+},
+{
+"family": "setPartnerAddress",
+"plain": {
+"facts": {
+"buildingNumber": "x",
+"companyId": 7,
+"country": "x",
+"governate": "x",
+"partnerId": 1,
+"partyType": "x",
+"postalCode": "x",
+"regionCity": "x",
+"street": "x"
+}
+},
+"rich": {
+"facts": {
+"buildingNumber": "t8é",
+"companyId": 1037,
+"country": "t4é",
+"governate": "t5é",
+"partnerId": 1074,
+"partyType": "t3é",
+"postalCode": "t9é",
+"regionCity": "t6é",
+"street": "t7é"
+}
+}
+},
+{
+"family": "setCategoryTaxProfile",
+"plain": {
+"facts": {
+"categoryId": 1,
+"companyId": 7,
+"itemCode": "x",
+"itemType": "x",
+"taxSubType": "x",
+"taxType": "x",
+"unitType": "x"
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1074,
+"companyId": 1037,
+"itemCode": "t4é",
+"itemType": "t3é",
+"taxSubType": "t7é",
+"taxType": "t6é",
+"unitType": "t5é"
+}
+}
+},
+{
+"family": "prepareEtaCreditNote",
+"plain": {
+"facts": {
+"companyId": 7,
+"creditNoteId": 1,
+"version": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"creditNoteId": 1074,
+"version": "t3é"
+}
+}
+},
+{
+"family": "sealEtaFiling",
+"plain": {
+"facts": {
+"companyId": 7,
+"filingId": 1,
+"seal": {
+"$blob": "01"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"filingId": 1074,
+"seal": {
+"$blob": "dead03"
+}
+}
+}
+},
+{
+"family": "nameSigners",
+"plain": {
+"companyId": 7,
+"requestId": 1,
+"signers": []
+},
+"rich": {
+"companyId": 1037,
+"requestId": 1074,
+"signers": [
+{
+"$principal": "0102031d"
+},
+{
+"$principal": "0102031d"
+}
+]
+}
+},
+{
+"family": "expireSignatureRequest",
+"plain": {
+"companyId": 7,
+"requestId": 1
+},
+"rich": {
+"companyId": 1037,
+"requestId": 1074
+}
+},
+{
+"family": "createSegment",
+"plain": {
+"facts": {
+"companyId": 7,
+"kind": {
+"$case": "any"
+},
+"minScore": 0,
+"name": "x",
+"priorityAtLeast": {
+"$case": "low"
+},
+"stageId": 1,
+"standing": {
+"$case": "any"
+},
+"tag": "x",
+"useMinScore": false
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"kind": {
+"$case": "opportunity"
+},
+"minScore": -16,
+"name": "t2é",
+"priorityAtLeast": {
+"$case": "veryHigh"
+},
+"stageId": 1111,
+"standing": {
+"$case": "lost"
+},
+"tag": "t4é",
+"useMinScore": true
+}
+}
+},
+{
+"family": "amendSegment",
+"plain": {
+"facts": {
+"companyId": 7,
+"kind": {
+"$case": "any"
+},
+"minScore": 0,
+"name": "x",
+"priorityAtLeast": {
+"$case": "low"
+},
+"stageId": 1,
+"standing": {
+"$case": "any"
+},
+"tag": "x",
+"useMinScore": false
+},
+"segmentId": 1
+},
+"rich": {
+"facts": {
+"companyId": 1074,
+"kind": {
+"$case": "opportunity"
+},
+"minScore": -19,
+"name": "t3é",
+"priorityAtLeast": {
+"$case": "veryHigh"
+},
+"stageId": 1148,
+"standing": {
+"$case": "lost"
+},
+"tag": "t5é",
+"useMinScore": true
+},
+"segmentId": 1037
+}
+},
+{
+"family": "archiveSegment",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"segmentId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"segmentId": 1074
+}
+},
+{
+"family": "createCampaign",
+"plain": {
+"facts": {
+"companyId": 7,
+"decideDay": 1,
+"mailingA": 1,
+"mailingB": 1,
+"name": "x",
+"scheduledDay": 1,
+"segmentId": 1,
+"testShare": 1,
+"winnerRule": {
+"$case": "opens"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"decideDay": 1296,
+"mailingA": 1148,
+"mailingB": 1185,
+"name": "t2é",
+"scheduledDay": 1259,
+"segmentId": 1111,
+"testShare": 1222,
+"winnerRule": {
+"$case": "clicks"
+}
+}
+}
+},
+{
+"family": "amendCampaign",
+"plain": {
+"campaignId": 1,
+"facts": {
+"companyId": 7,
+"decideDay": 1,
+"mailingA": 1,
+"mailingB": 1,
+"name": "x",
+"scheduledDay": 1,
+"segmentId": 1,
+"testShare": 1,
+"winnerRule": {
+"$case": "opens"
+}
+}
+},
+"rich": {
+"campaignId": 1037,
+"facts": {
+"companyId": 1074,
+"decideDay": 1333,
+"mailingA": 1185,
+"mailingB": 1222,
+"name": "t3é",
+"scheduledDay": 1296,
+"segmentId": 1148,
+"testShare": 1259,
+"winnerRule": {
+"$case": "clicks"
+}
+}
+}
+},
+{
+"family": "launchCampaign",
+"plain": {
+"campaignId": 1,
+"companyId": 7,
+"expectedRecipients": 1
+},
+"rich": {
+"campaignId": 1074,
+"companyId": 1037,
+"expectedRecipients": 1111
+}
+},
+{
+"family": "planCampaignSlice",
+"plain": {
+"campaignId": 1,
+"companyId": 7,
+"limit": 1
+},
+"rich": {
+"campaignId": 1074,
+"companyId": 1037,
+"limit": 1111
+}
+},
+{
+"family": "decideCampaignWinner",
+"plain": {
+"campaignId": 1,
+"companyId": 7
+},
+"rich": {
+"campaignId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "planRemainderSlice",
+"plain": {
+"campaignId": 1,
+"companyId": 7,
+"limit": 1
+},
+"rich": {
+"campaignId": 1074,
+"companyId": 1037,
+"limit": 1111
+}
+},
+{
+"family": "completeCampaign",
+"plain": {
+"campaignId": 1,
+"companyId": 7
+},
+"rich": {
+"campaignId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "cancelCampaign",
+"plain": {
+"campaignId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"campaignId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "recordEngagement",
+"plain": {
+"facts": {
+"companyId": 7,
+"kinds": [],
+"mailingId": 1,
+"recipientIds": []
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"kinds": [
+{
+"$case": "unsubscribe"
+},
+{
+"$case": "unsubscribe"
+}
+],
+"mailingId": 1074,
+"recipientIds": [
+1111,
+1148
+]
+}
+}
+},
+{
+"family": "beginClose",
+"plain": {
+"facts": {
+"companyId": 7,
+"fromDay": 1,
+"journalId": 1,
+"retainedEarningsAccountId": 1,
+"throughDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"fromDay": 1074,
+"journalId": 1148,
+"retainedEarningsAccountId": 1185,
+"throughDay": 1111
+}
+}
+},
+{
+"family": "planCloseSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "cancelClose",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"runId": 1074
+}
+},
+{
+"family": "closePeriod",
+"plain": {
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "reopenClose",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"runId": 1074
+}
+},
+{
+"family": "reverseCloseSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "openStatement",
+"plain": {
+"facts": {
+"companyId": 7,
+"fromDay": 1,
+"kind": {
+"$case": "trialBalance"
+},
+"throughDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"fromDay": 1074,
+"kind": {
+"$case": "incomeStatement"
+},
+"throughDay": 1111
+}
+}
+},
+{
+"family": "statementSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"statementId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"statementId": 1074
+}
+},
+{
+"family": "cancelStatement",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"statementId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"statementId": 1074
+}
+},
+{
+"family": "declareDeferral",
+"plain": {
+"facts": {
+"amount": 1,
+"companyId": 7,
+"deferredAccountId": 1,
+"firstDay": 1,
+"journalId": 1,
+"kind": {
+"$case": "prepaid"
+},
+"months": 1,
+"sourceMoveId": 1,
+"targetAccountId": 1
+}
+},
+"rich": {
+"facts": {
+"amount": 1222,
+"companyId": 1037,
+"deferredAccountId": 1074,
+"firstDay": 1259,
+"journalId": 1148,
+"kind": {
+"$case": "unearned"
+},
+"months": 1296,
+"sourceMoveId": 1185,
+"targetAccountId": 1111
+}
+}
+},
+{
+"family": "cancelDeferral",
+"plain": {
+"companyId": 7,
+"deferralId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"deferralId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "openDeferralRun",
+"plain": {
+"companyId": 7,
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"throughDay": 1074
+}
+},
+{
+"family": "deferralRunSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "setRevaluationPolicy",
+"plain": {
+"facts": {
+"companyId": 7,
+"functionalCurrency": "x",
+"gainAccountId": 1,
+"lossAccountId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"functionalCurrency": "t2é",
+"gainAccountId": 1111,
+"lossAccountId": 1148
+}
+}
+},
+{
+"family": "revalueCloseSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "capitaliseAsset",
+"plain": {
+"facts": {
+"accumulatedAccountId": 1,
+"assetAccountId": 1,
+"companyId": 7,
+"cost": 1,
+"expenseAccountId": 1,
+"firstDay": 1,
+"journalId": 1,
+"months": 1,
+"name": "x",
+"salvage": 1,
+"sourceMoveId": 1
+}
+},
+"rich": {
+"facts": {
+"accumulatedAccountId": 1148,
+"assetAccountId": 1111,
+"companyId": 1037,
+"cost": 1296,
+"expenseAccountId": 1185,
+"firstDay": 1370,
+"journalId": 1222,
+"months": 1407,
+"name": "t2é",
+"salvage": 1333,
+"sourceMoveId": 1259
+}
+}
+},
+{
+"family": "impairAsset",
+"plain": {
+"facts": {
+"amount": 1,
+"assetId": 1,
+"companyId": 7,
+"day": 1,
+"lossAccountId": 1,
+"reason": "x"
+}
+},
+"rich": {
+"facts": {
+"amount": 1148,
+"assetId": 1074,
+"companyId": 1037,
+"day": 1111,
+"lossAccountId": 1185,
+"reason": "t6é"
+}
+}
+},
+{
+"family": "disposeAsset",
+"plain": {
+"facts": {
+"assetId": 1,
+"companyId": 7,
+"day": 1,
+"gainAccountId": 1,
+"lossAccountId": 1,
+"proceeds": 1,
+"proceedsAccountId": 1,
+"reason": "x"
+}
+},
+"rich": {
+"facts": {
+"assetId": 1074,
+"companyId": 1037,
+"day": 1111,
+"gainAccountId": 1222,
+"lossAccountId": 1259,
+"proceeds": 1148,
+"proceedsAccountId": 1185,
+"reason": "t8é"
+}
+}
+},
+{
+"family": "postAssetEvent",
+"plain": {
+"companyId": 7,
+"eventId": 1
+},
+"rich": {
+"companyId": 1037,
+"eventId": 1074
+}
+},
+{
+"family": "cancelAssetEvent",
+"plain": {
+"companyId": 7,
+"eventId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"eventId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "openDepreciationRun",
+"plain": {
+"companyId": 7,
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"throughDay": 1074
+}
+},
+{
+"family": "depreciationRunSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "declareExpenseCategory",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"expenseAccountId": 1,
+"kind": {
+"$case": "receipted"
+},
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"expenseAccountId": 1148,
+"kind": {
+"$case": "mileage"
+},
+"name": "t3é"
+}
+}
+},
+{
+"family": "setExpenseRate",
+"plain": {
+"facts": {
+"categoryId": 1,
+"companyId": 7,
+"effectiveDay": 1,
+"rate": 1
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1074,
+"companyId": 1037,
+"effectiveDay": 1111,
+"rate": 1148
+}
+}
+},
+{
+"family": "setExpensePolicy",
+"plain": {
+"facts": {
+"companyId": 7,
+"journalId": 1,
+"payableAccountId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"journalId": 1111,
+"payableAccountId": 1074
+}
+}
+},
+{
+"family": "fileExpenseClaim",
+"plain": {
+"facts": {
+"companyId": 7,
+"lines": [],
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"lines": [
+{
+"amount": 1259,
+"categoryId": 1111,
+"day": 1148,
+"description": "t5é",
+"documentId": 1296,
+"quantity": 1222
+},
+{
+"amount": 1481,
+"categoryId": 1333,
+"day": 1370,
+"description": "t11é",
+"documentId": 1518,
+"quantity": 1444
+}
+],
+"title": "t2é"
+}
+}
+},
+{
+"family": "withdrawExpenseClaim",
+"plain": {
+"claimId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"claimId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "rejectExpenseClaim",
+"plain": {
+"claimId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"claimId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "approveExpenseClaim",
+"plain": {
+"claimId": 1,
+"companyId": 7
+},
+"rich": {
+"claimId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "settleExpenseClaim",
+"plain": {
+"cashAccountId": 1,
+"claimId": 1,
+"companyId": 7
+},
+"rich": {
+"cashAccountId": 1111,
+"claimId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "registerBankAccount",
+"plain": {
+"facts": {
+"bic": "x",
+"companyId": 7,
+"currency": "x",
+"iban": "x",
+"ledgerAccountId": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"bic": "t4é",
+"companyId": 1037,
+"currency": "t5é",
+"iban": "t3é",
+"ledgerAccountId": 1222,
+"name": "t2é"
+}
+}
+},
+{
+"family": "setPartnerBankAccount",
+"plain": {
+"facts": {
+"bic": "x",
+"companyId": 7,
+"holderName": "x",
+"iban": "x",
+"partnerId": 1
+}
+},
+"rich": {
+"facts": {
+"bic": "t5é",
+"companyId": 1037,
+"holderName": "t3é",
+"iban": "t4é",
+"partnerId": 1074
+}
+}
+},
+{
+"family": "preparePayment",
+"plain": {
+"facts": {
+"bankAccountId": 1,
+"billId": 1,
+"companyId": 7,
+"remittance": "x"
+}
+},
+"rich": {
+"facts": {
+"bankAccountId": 1111,
+"billId": 1074,
+"companyId": 1037,
+"remittance": "t4é"
+}
+}
+},
+{
+"family": "recordPaymentSubmission",
+"plain": {
+"companyId": 7,
+"payloadHash": {
+"$blob": "01"
+},
+"paymentId": 1
+},
+"rich": {
+"companyId": 1037,
+"payloadHash": {
+"$blob": "dead03"
+},
+"paymentId": 1074
+}
+},
+{
+"family": "recordPaymentResult",
+"plain": {
+"facts": {
+"accepted": false,
+"companyId": 7,
+"hubReference": "x",
+"payloadHash": {
+"$blob": "01"
+},
+"paymentId": 1,
+"reason": "x"
+}
+},
+"rich": {
+"facts": {
+"accepted": true,
+"companyId": 1037,
+"hubReference": "t5é",
+"payloadHash": {
+"$blob": "dead03"
+},
+"paymentId": 1074,
+"reason": "t6é"
+}
+}
+},
+{
+"family": "cancelPayment",
+"plain": {
+"companyId": 7,
+"paymentId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"paymentId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "importCamt053",
+"plain": {
+"companyId": 7,
+"journalId": 1,
+"xml": {
+"$blob": "01"
+}
+},
+"rich": {
+"companyId": 1037,
+"journalId": 1074,
+"xml": {
+"$blob": "dead03"
+}
+}
+},
+{
+"family": "setCreditTerms",
+"plain": {
+"facts": {
+"companyId": 7,
+"graceDays": 1,
+"incomeAccountId": 1,
+"interestRate": 1,
+"journalId": 1,
+"lateCharge": 1,
+"limit": 1,
+"partnerId": 1,
+"termDays": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"graceDays": 1185,
+"incomeAccountId": 1296,
+"interestRate": 1259,
+"journalId": 1333,
+"lateCharge": 1222,
+"limit": 1111,
+"partnerId": 1074,
+"termDays": 1148
+}
+}
+},
+{
+"family": "openInterestRun",
+"plain": {
+"companyId": 7,
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"throughDay": 1074
+}
+},
+{
+"family": "interestRunSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "declareGroup",
+"plain": {
+"facts": {
+"companyId": 7,
+"differenceAccountId": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"differenceAccountId": 1111,
+"name": "t2é"
+}
+}
+},
+{
+"family": "addGroupMember",
+"plain": {
+"companyId": 7,
+"groupId": 1
+},
+"rich": {
+"companyId": 1074,
+"groupId": 1037
+}
+},
+{
+"family": "removeGroupMember",
+"plain": {
+"companyId": 7,
+"groupId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1074,
+"groupId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "linkIntercompanyPartner",
+"plain": {
+"facts": {
+"companyId": 7,
+"counterpartyId": 1,
+"groupId": 1,
+"partnerId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1074,
+"counterpartyId": 1148,
+"groupId": 1037,
+"partnerId": 1111
+}
+}
+},
+{
+"family": "unlinkIntercompanyPartner",
+"plain": {
+"companyId": 7,
+"groupId": 1,
+"partnerId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1074,
+"groupId": 1037,
+"partnerId": 1111,
+"reason": "t4é"
+}
+},
+{
+"family": "openConsolidation",
+"plain": {
+"facts": {
+"fromDay": 1,
+"groupId": 1,
+"kind": {
+"$case": "trialBalance"
+},
+"members": [],
+"throughDay": 1
+}
+},
+"rich": {
+"facts": {
+"fromDay": 1074,
+"groupId": 1037,
+"kind": {
+"$case": "incomeStatement"
+},
+"members": [
+{
+"companyId": 1148,
+"statementId": 1185
+},
+{
+"companyId": 1222,
+"statementId": 1259
+}
+],
+"throughDay": 1111
+}
+}
+},
+{
+"family": "consolidationSlice",
+"plain": {
+"consolidationId": 1,
+"groupId": 1,
+"limit": 1
+},
+"rich": {
+"consolidationId": 1074,
+"groupId": 1037,
+"limit": 1111
+}
+},
+{
+"family": "cancelConsolidation",
+"plain": {
+"consolidationId": 1,
+"groupId": 1,
+"reason": "x"
+},
+"rich": {
+"consolidationId": 1074,
+"groupId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "declareEquipment",
+"plain": {
+"facts": {
+"assetId": 1,
+"code": "x",
+"companyId": 7,
+"locationId": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"assetId": 1185,
+"code": "t2é",
+"companyId": 1037,
+"locationId": 1148,
+"name": "t3é"
+}
+}
+},
+{
+"family": "retireEquipment",
+"plain": {
+"companyId": 7,
+"equipmentId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"equipmentId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "declareMaintenancePlan",
+"plain": {
+"facts": {
+"companyId": 7,
+"equipmentId": 1,
+"firstDay": 1,
+"intervalDays": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"equipmentId": 1074,
+"firstDay": 1185,
+"intervalDays": 1148,
+"name": "t3é"
+}
+}
+},
+{
+"family": "cancelMaintenancePlan",
+"plain": {
+"companyId": 7,
+"planId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"planId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "openMaintenanceRun",
+"plain": {
+"companyId": 7,
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"throughDay": 1074
+}
+},
+{
+"family": "maintenanceRunSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "requestRepair",
+"plain": {
+"facts": {
+"companyId": 7,
+"day": 1,
+"description": "x",
+"equipmentId": 1,
+"productionId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"day": 1148,
+"description": "t3é",
+"equipmentId": 1074,
+"productionId": 1185
+}
+}
+},
+{
+"family": "completeWorkOrder",
+"plain": {
+"facts": {
+"companyId": 7,
+"consumeLocationId": 1,
+"day": 1,
+"downtimeDays": 1,
+"fromLocationId": 1,
+"journalId": 1,
+"parts": [],
+"workOrderId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"consumeLocationId": 1222,
+"day": 1111,
+"downtimeDays": 1148,
+"fromLocationId": 1185,
+"journalId": 1259,
+"parts": [
+{
+"categoryId": 1296,
+"lotId": 1333,
+"quantity": 1370,
+"unitCost": 1407
+},
+{
+"categoryId": 1444,
+"lotId": 1481,
+"quantity": 1518,
+"unitCost": 1555
+}
+],
+"workOrderId": 1074
+}
+}
+},
+{
+"family": "cancelWorkOrder",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"workOrderId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"workOrderId": 1074
+}
+},
+{
+"family": "declareControlPoint",
+"plain": {
+"facts": {
+"categoryId": 1,
+"code": "x",
+"companyId": 7,
+"name": "x",
+"trigger": {
+"$case": "receipt"
+}
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1148,
+"code": "t2é",
+"companyId": 1037,
+"name": "t3é",
+"trigger": {
+"$case": "production"
+}
+}
+}
+},
+{
+"family": "retireControlPoint",
+"plain": {
+"companyId": 7,
+"controlPointId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"controlPointId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "recordQualityCheck",
+"plain": {
+"facts": {
+"companyId": 7,
+"controlPointId": 1,
+"day": 1,
+"note": "x",
+"passed": false,
+"pickingId": 1,
+"productionId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"controlPointId": 1074,
+"day": 1222,
+"note": "t7é",
+"passed": true,
+"pickingId": 1111,
+"productionId": 1148
+}
+}
+},
+{
+"family": "decideDisposition",
+"plain": {
+"facts": {
+"companyId": 7,
+"day": 1,
+"disposition": {
+"$case": "undecided"
+},
+"journalId": 1,
+"nonConformanceId": 1,
+"reason": "x",
+"scrapLocationId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"day": 1111,
+"disposition": {
+"$case": "returned"
+},
+"journalId": 1185,
+"nonConformanceId": 1074,
+"reason": "t6é",
+"scrapLocationId": 1148
+}
+}
+},
+{
+"family": "declareHelpdeskTeam",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"lead": {
+"$principal": "0102031d"
+},
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"lead": {
+"$principal": "0102031d"
+},
+"name": "t3é"
+}
+}
+},
+{
+"family": "retireHelpdeskTeam",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"teamId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"teamId": 1074
+}
+},
+{
+"family": "declareTicketStage",
+"plain": {
+"facts": {
+"closes": false,
+"code": "x",
+"companyId": 7,
+"name": "x",
+"ordinal": 1,
+"teamId": 1
+}
+},
+"rich": {
+"facts": {
+"closes": true,
+"code": "t3é",
+"companyId": 1037,
+"name": "t4é",
+"ordinal": 1185,
+"teamId": 1074
+}
+}
+},
+{
+"family": "setServiceLevel",
+"plain": {
+"facts": {
+"companyId": 7,
+"priority": {
+"$case": "low"
+},
+"resolveDays": 1,
+"responseDays": 1,
+"teamId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"priority": {
+"$case": "urgent"
+},
+"resolveDays": 1148,
+"responseDays": 1111,
+"teamId": 1074
+}
+}
+},
+{
+"family": "openTicket",
+"plain": {
+"facts": {
+"companyId": 7,
+"description": "x",
+"partnerId": 1,
+"priority": {
+"$case": "low"
+},
+"subject": "x",
+"teamId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"description": "t5é",
+"partnerId": 1111,
+"priority": {
+"$case": "urgent"
+},
+"subject": "t4é",
+"teamId": 1074
+}
+}
+},
+{
+"family": "assignTicket",
+"plain": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 7,
+"ticketId": 1
+},
+"rich": {
+"assignee": {
+"$principal": "0102031d"
+},
+"companyId": 1037,
+"ticketId": 1074
+}
+},
+{
+"family": "moveTicket",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"stageId": 1,
+"ticketId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t4é",
+"stageId": 1111,
+"ticketId": 1074
+}
+},
+{
+"family": "postTicketMessage",
+"plain": {
+"facts": {
+"body": "x",
+"companyId": 7,
+"ticketId": 1
+}
+},
+"rich": {
+"facts": {
+"body": "t3é",
+"companyId": 1037,
+"ticketId": 1074
+}
+}
+},
+{
+"family": "openEscalationSweep",
+"plain": {
+"companyId": 7,
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"throughDay": 1074
+}
+},
+{
+"family": "escalationSweepSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "setServiceRate",
+"plain": {
+"facts": {
+"companyId": 7,
+"currency": "x",
+"hourlyRate": 1,
+"labourCategoryId": 1,
+"taxRate": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"currency": "t3é",
+"hourlyRate": 1148,
+"labourCategoryId": 1074,
+"taxRate": 1185
+}
+}
+},
+{
+"family": "planVisit",
+"plain": {
+"facts": {
+"companyId": 7,
+"location": "x",
+"partnerId": 1,
+"priority": {
+"$case": "low"
+},
+"technician": {
+"$principal": "0102031d"
+},
+"ticketId": 1,
+"title": "x",
+"windowFromDay": 1,
+"windowToDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"location": "t6é",
+"partnerId": 1111,
+"priority": {
+"$case": "urgent"
+},
+"technician": {
+"$principal": "0102031d"
+},
+"ticketId": 1074,
+"title": "t5é",
+"windowFromDay": 1259,
+"windowToDay": 1296
+}
+}
+},
+{
+"family": "cancelVisit",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"visitId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"visitId": 1074
+}
+},
+{
+"family": "completeVisit",
+"plain": {
+"facts": {
+"companyId": 7,
+"day": 1,
+"fromLocationId": 1,
+"journalId": 1,
+"note": "x",
+"parts": [],
+"toLocationId": 1,
+"visitId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"day": 1111,
+"fromLocationId": 1148,
+"journalId": 1222,
+"note": "t15é",
+"parts": [
+{
+"categoryId": 1259,
+"lotId": 1296,
+"priceUnit": 1370,
+"quantity": 1333
+},
+{
+"categoryId": 1407,
+"lotId": 1444,
+"priceUnit": 1518,
+"quantity": 1481
+}
+],
+"toLocationId": 1185,
+"visitId": 1074
+}
+}
+},
+{
+"family": "invoiceVisit",
+"plain": {
+"companyId": 7,
+"journalId": 1,
+"reason": "x",
+"visitId": 1
+},
+"rich": {
+"companyId": 1037,
+"journalId": 1111,
+"reason": "t4é",
+"visitId": 1074
+}
+},
+{
+"family": "declareBookableResource",
+"plain": {
+"facts": {
+"cancelNoticeDays": 1,
+"capacity": 1,
+"closeMinute": 1,
+"code": "x",
+"companyId": 7,
+"daysMask": 1,
+"keeper": {
+"$principal": "0102031d"
+},
+"kind": {
+"$case": "room"
+},
+"location": "x",
+"name": "x",
+"openMinute": 1
+}
+},
+"rich": {
+"facts": {
+"cancelNoticeDays": 1333,
+"capacity": 1148,
+"closeMinute": 1259,
+"code": "t2é",
+"companyId": 1037,
+"daysMask": 1296,
+"keeper": {
+"$principal": "0102031d"
+},
+"kind": {
+"$case": "other"
+},
+"location": "t5é",
+"name": "t3é",
+"openMinute": 1222
+}
+}
+},
+{
+"family": "retireBookableResource",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"resourceId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"resourceId": 1074
+}
+},
+{
+"family": "bookResource",
+"plain": {
+"facts": {
+"companyId": 7,
+"day": 1,
+"endMinute": 1,
+"notes": "x",
+"resourceId": 1,
+"startMinute": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"day": 1111,
+"endMinute": 1185,
+"notes": "t7é",
+"resourceId": 1074,
+"startMinute": 1148,
+"title": "t6é"
+}
+}
+},
+{
+"family": "cancelBooking",
+"plain": {
+"bookingId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"bookingId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "openSubscription",
+"plain": {
+"facts": {
+"categoryId": 1,
+"companyId": 7,
+"currency": "x",
+"name": "x",
+"partnerId": 1,
+"period": {
+"$case": "monthly"
+},
+"priceUnit": 1,
+"quantity": 1,
+"startDay": 1,
+"taxRate": 1
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1111,
+"companyId": 1037,
+"currency": "t7é",
+"name": "t4é",
+"partnerId": 1074,
+"period": {
+"$case": "yearly"
+},
+"priceUnit": 1222,
+"quantity": 1185,
+"startDay": 1333,
+"taxRate": 1296
+}
+}
+},
+{
+"family": "changeSubscription",
+"plain": {
+"facts": {
+"companyId": 7,
+"journalId": 1,
+"priceUnit": 1,
+"quantity": 1,
+"subscriptionId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"journalId": 1185,
+"priceUnit": 1148,
+"quantity": 1111,
+"subscriptionId": 1074
+}
+}
+},
+{
+"family": "closeSubscription",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"subscriptionId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"subscriptionId": 1074
+}
+},
+{
+"family": "openSubscriptionRun",
+"plain": {
+"companyId": 7,
+"journalId": 1,
+"throughDay": 1
+},
+"rich": {
+"companyId": 1037,
+"journalId": 1111,
+"throughDay": 1074
+}
+},
+{
+"family": "subscriptionRunSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "declareRentalItem",
+"plain": {
+"facts": {
+"assetId": 1,
+"categoryId": 1,
+"code": "x",
+"companyId": 7,
+"currency": "x",
+"dailyRate": 1,
+"lateRatePerDay": 1,
+"lotId": 1,
+"name": "x",
+"taxRate": 1,
+"yardLocationId": 1
+}
+},
+"rich": {
+"facts": {
+"assetId": 1222,
+"categoryId": 1148,
+"code": "t2é",
+"companyId": 1037,
+"currency": "t10é",
+"dailyRate": 1296,
+"lateRatePerDay": 1333,
+"lotId": 1185,
+"name": "t3é",
+"taxRate": 1407,
+"yardLocationId": 1259
+}
+}
+},
+{
+"family": "retireRentalItem",
+"plain": {
+"companyId": 7,
+"itemId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"itemId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "reserveRental",
+"plain": {
+"facts": {
+"companyId": 7,
+"fromDay": 1,
+"itemId": 1,
+"partnerId": 1,
+"toDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"fromDay": 1148,
+"itemId": 1074,
+"partnerId": 1111,
+"toDay": 1185
+}
+}
+},
+{
+"family": "cancelRental",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"rentalId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"rentalId": 1074
+}
+},
+{
+"family": "pickUpRental",
+"plain": {
+"facts": {
+"companyId": 7,
+"journalId": 1,
+"outLocationId": 1,
+"rentalId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"journalId": 1148,
+"outLocationId": 1111,
+"rentalId": 1074
+}
+}
+},
+{
+"family": "returnRental",
+"plain": {
+"facts": {
+"companyId": 7,
+"journalId": 1,
+"rentalId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"journalId": 1111,
+"rentalId": 1074
+}
+}
+},
+{
+"family": "declareShop",
+"plain": {
+"facts": {
+"cardAccountId": 1,
+"cashAccountId": 1,
+"code": "x",
+"companyId": 7,
+"currency": "x",
+"customerLocationId": 1,
+"differenceAccountId": 1,
+"journalId": 1,
+"name": "x",
+"partnerId": 1,
+"stockLocationId": 1
+}
+},
+"rich": {
+"facts": {
+"cardAccountId": 1333,
+"cashAccountId": 1296,
+"code": "t2é",
+"companyId": 1037,
+"currency": "t11é",
+"customerLocationId": 1185,
+"differenceAccountId": 1370,
+"journalId": 1259,
+"name": "t3é",
+"partnerId": 1222,
+"stockLocationId": 1148
+}
+}
+},
+{
+"family": "retireShop",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"shopId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"shopId": 1074
+}
+},
+{
+"family": "setShopPrice",
+"plain": {
+"facts": {
+"categoryId": 1,
+"companyId": 7,
+"movesStock": false,
+"priceUnit": 1,
+"shopId": 1,
+"taxRate": 1
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1111,
+"companyId": 1037,
+"movesStock": true,
+"priceUnit": 1148,
+"shopId": 1074,
+"taxRate": 1185
+}
+}
+},
+{
+"family": "withdrawShopPrice",
+"plain": {
+"categoryId": 1,
+"companyId": 7,
+"shopId": 1
+},
+"rich": {
+"categoryId": 1111,
+"companyId": 1037,
+"shopId": 1074
+}
+},
+{
+"family": "openTillSession",
+"plain": {
+"companyId": 7,
+"openingFloat": 1,
+"shopId": 1
+},
+"rich": {
+"companyId": 1037,
+"openingFloat": 1111,
+"shopId": 1074
+}
+},
+{
+"family": "ringUpSale",
+"plain": {
+"facts": {
+"cardTendered": 1,
+"cashTendered": 1,
+"companyId": 7,
+"lines": [],
+"sessionId": 1
+}
+},
+"rich": {
+"facts": {
+"cardTendered": 1296,
+"cashTendered": 1259,
+"companyId": 1037,
+"lines": [
+{
+"categoryId": 1111,
+"quantity": 1148
+},
+{
+"categoryId": 1185,
+"quantity": 1222
+}
+],
+"sessionId": 1074
+}
+}
+},
+{
+"family": "closeTillSession",
+"plain": {
+"companyId": 7,
+"countedCash": 1,
+"sessionId": 1
+},
+"rich": {
+"companyId": 1037,
+"countedCash": 1111,
+"sessionId": 1074
+}
+},
+{
+"family": "postTillSession",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"sessionId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"sessionId": 1074
+}
+},
+{
+"family": "declareTable",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"name": "x",
+"seats": 1,
+"shopId": 1
+}
+},
+"rich": {
+"facts": {
+"code": "t3é",
+"companyId": 1037,
+"name": "t4é",
+"seats": 1185,
+"shopId": 1074
+}
+}
+},
+{
+"family": "retireTable",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"tableId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"tableId": 1074
+}
+},
+{
+"family": "openTab",
+"plain": {
+"facts": {
+"companyId": 7,
+"covers": 1,
+"sessionId": 1,
+"tableId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"covers": 1148,
+"sessionId": 1074,
+"tableId": 1111
+}
+}
+},
+{
+"family": "orderCourse",
+"plain": {
+"facts": {
+"companyId": 7,
+"course": 1,
+"lines": [],
+"tabId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"course": 1111,
+"lines": [
+{
+"categoryId": 1148,
+"quantity": 1185
+},
+{
+"categoryId": 1222,
+"quantity": 1259
+}
+],
+"tabId": 1074
+}
+}
+},
+{
+"family": "voidTabLine",
+"plain": {
+"companyId": 7,
+"lineId": 1,
+"reason": "x",
+"tabId": 1
+},
+"rich": {
+"companyId": 1037,
+"lineId": 1111,
+"reason": "t4é",
+"tabId": 1074
+}
+},
+{
+"family": "sendCourse",
+"plain": {
+"companyId": 7,
+"course": 1,
+"tabId": 1
+},
+"rich": {
+"companyId": 1037,
+"course": 1111,
+"tabId": 1074
+}
+},
+{
+"family": "cancelTab",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"tabId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"tabId": 1074
+}
+},
+{
+"family": "settleTab",
+"plain": {
+"facts": {
+"companyId": 7,
+"rule": {
+"$case": "evenly"
+},
+"tabId": 1,
+"tenders": [],
+"weights": []
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"rule": {
+"$case": "byWeights"
+},
+"tabId": 1074,
+"tenders": [
+{
+"card": 1222,
+"cash": 1185
+},
+{
+"card": 1296,
+"cash": 1259
+}
+],
+"weights": [
+1111,
+1148
+]
+}
+}
+},
+{
+"family": "openStorefront",
+"plain": {
+"facts": {
+"companyId": 7,
+"name": "x",
+"shopId": 1,
+"slug": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"name": "t4é",
+"shopId": 1074,
+"slug": "t3é"
+}
+}
+},
+{
+"family": "closeStorefront",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"storefrontId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"storefrontId": 1074
+}
+},
+{
+"family": "listOnline",
+"plain": {
+"facts": {
+"categoryId": 1,
+"companyId": 7,
+"storefrontId": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1111,
+"companyId": 1037,
+"storefrontId": 1074,
+"title": "t4é"
+}
+}
+},
+{
+"family": "delist",
+"plain": {
+"categoryId": 1,
+"companyId": 7,
+"storefrontId": 1
+},
+"rich": {
+"categoryId": 1111,
+"companyId": 1037,
+"storefrontId": 1074
+}
+},
+{
+"family": "addToCart",
+"plain": {
+"facts": {
+"categoryId": 1,
+"companyId": 7,
+"quantity": 1,
+"storefrontId": 1
+}
+},
+"rich": {
+"facts": {
+"categoryId": 1111,
+"companyId": 1037,
+"quantity": 1148,
+"storefrontId": 1074
+}
+}
+},
+{
+"family": "removeFromCart",
+"plain": {
+"cartId": 1,
+"categoryId": 1,
+"companyId": 7
+},
+"rich": {
+"cartId": 1074,
+"categoryId": 1111,
+"companyId": 1037
+}
+},
+{
+"family": "abandonCart",
+"plain": {
+"cartId": 1,
+"companyId": 7
+},
+"rich": {
+"cartId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "checkout",
+"plain": {
+"facts": {
+"cardTendered": 1,
+"cartId": 1,
+"companyId": 7,
+"paymentReference": "x"
+}
+},
+"rich": {
+"facts": {
+"cardTendered": 1111,
+"cartId": 1074,
+"companyId": 1037,
+"paymentReference": "t4é"
+}
+}
+},
+{
+"family": "fulfilWebOrder",
+"plain": {
+"companyId": 7,
+"journalId": 1,
+"webOrderId": 1
+},
+"rich": {
+"companyId": 1037,
+"journalId": 1111,
+"webOrderId": 1074
+}
+},
+{
+"family": "cancelWebOrder",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"webOrderId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"webOrderId": 1074
+}
+},
+{
+"family": "publishPage",
+"plain": {
+"facts": {
+"companyId": 7,
+"contentType": "x",
+"documentId": 1,
+"path": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"contentType": "t4é",
+"documentId": 1111,
+"path": "t2é"
+}
+}
+},
+{
+"family": "unpublishPage",
+"plain": {
+"companyId": 7,
+"pageId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"pageId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "publishPost",
+"plain": {
+"facts": {
+"companyId": 7,
+"contentType": "x",
+"documentId": 1,
+"slug": "x",
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"contentType": "t5é",
+"documentId": 1148,
+"slug": "t2é",
+"title": "t3é"
+}
+}
+},
+{
+"family": "revisePost",
+"plain": {
+"facts": {
+"companyId": 7,
+"contentType": "x",
+"documentId": 1,
+"postId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"contentType": "t4é",
+"documentId": 1111,
+"postId": 1074
+}
+}
+},
+{
+"family": "withdrawPost",
+"plain": {
+"companyId": 7,
+"postId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"postId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "declareBoard",
+"plain": {
+"facts": {
+"companyId": 7,
+"description": "x",
+"slug": "x",
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"description": "t4é",
+"slug": "t2é",
+"title": "t3é"
+}
+}
+},
+{
+"family": "openTopic",
+"plain": {
+"facts": {
+"boardId": 1,
+"body": "x",
+"companyId": 7,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"boardId": 1074,
+"body": "t4é",
+"companyId": 1037,
+"title": "t3é"
+}
+}
+},
+{
+"family": "replyToTopic",
+"plain": {
+"facts": {
+"body": "x",
+"companyId": 7,
+"topicId": 1
+}
+},
+"rich": {
+"facts": {
+"body": "t3é",
+"companyId": 1037,
+"topicId": 1074
+}
+}
+},
+{
+"family": "moderate",
+"plain": {
+"facts": {
+"act": {
+"$case": "hide"
+},
+"companyId": 7,
+"reason": "x",
+"target": {
+"$case": "topic"
+},
+"targetId": 1
+}
+},
+"rich": {
+"facts": {
+"act": {
+"$case": "unpin"
+},
+"companyId": 1037,
+"reason": "t3é",
+"target": {
+"$case": "reply"
+},
+"targetId": 1074
+}
+}
+},
+{
+"family": "enrolOperator",
+"plain": {
+"companyId": 7,
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "withdrawOperator",
+"plain": {
+"companyId": 7,
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"companyId": 1037,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "openConversation",
+"plain": {
+"facts": {
+"body": "x",
+"companyId": 7,
+"stampNonce": 1,
+"storefrontId": 1
+}
+},
+"rich": {
+"facts": {
+"body": "t3é",
+"companyId": 1037,
+"stampNonce": 1148,
+"storefrontId": 1074
+}
+}
+},
+{
+"family": "takeConversation",
+"plain": {
+"companyId": 7
+},
+"rich": {
+"companyId": 1037
+}
+},
+{
+"family": "transferConversation",
+"plain": {
+"facts": {
+"companyId": 7,
+"conversationId": 1,
+"to": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"conversationId": 1074,
+"to": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "sendChatMessage",
+"plain": {
+"facts": {
+"body": "x",
+"companyId": 7,
+"conversationId": 1
+}
+},
+"rich": {
+"facts": {
+"body": "t3é",
+"companyId": 1037,
+"conversationId": 1074
+}
+}
+},
+{
+"family": "closeConversation",
+"plain": {
+"companyId": 7,
+"conversationId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"conversationId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "rateConversation",
+"plain": {
+"facts": {
+"companyId": 7,
+"conversationId": 1,
+"rating": {
+"$case": "unrated"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"conversationId": 1074,
+"rating": {
+"$case": "sad"
+}
+}
+}
+},
+{
+"family": "declareWorkflow",
+"plain": {
+"facts": {
+"companyId": 7,
+"name": "x",
+"segmentId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"name": "t2é",
+"segmentId": 1111
+}
+}
+},
+{
+"family": "addWorkflowStep",
+"plain": {
+"facts": {
+"companyId": 7,
+"condition": {
+"$case": "always"
+},
+"delayDays": 1,
+"kind": {
+"$case": "sendMailing"
+},
+"mailingId": 1,
+"tag": "x",
+"workflowId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"condition": {
+"$case": "ifClicked"
+},
+"delayDays": 1185,
+"kind": {
+"$case": "removeTag"
+},
+"mailingId": 1111,
+"tag": "t4é",
+"workflowId": 1074
+}
+}
+},
+{
+"family": "activateWorkflow",
+"plain": {
+"companyId": 7,
+"workflowId": 1
+},
+"rich": {
+"companyId": 1037,
+"workflowId": 1074
+}
+},
+{
+"family": "closeWorkflow",
+"plain": {
+"companyId": 7,
+"reason": "x",
+"workflowId": 1
+},
+"rich": {
+"companyId": 1037,
+"reason": "t3é",
+"workflowId": 1074
+}
+},
+{
+"family": "openEnrolmentRun",
+"plain": {
+"companyId": 7,
+"throughDay": 1,
+"workflowId": 1
+},
+"rich": {
+"companyId": 1037,
+"throughDay": 1111,
+"workflowId": 1074
+}
+},
+{
+"family": "enrolmentSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "openStepRun",
+"plain": {
+"companyId": 7,
+"throughDay": 1,
+"workflowId": 1
+},
+"rich": {
+"companyId": 1037,
+"throughDay": 1111,
+"workflowId": 1074
+}
+},
+{
+"family": "stepSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "createSmsMailing",
+"plain": {
+"facts": {
+"attemptBound": 1,
+"body": "x",
+"companyId": 7,
+"scheduledDay": 1,
+"segmentId": 1
+}
+},
+"rich": {
+"facts": {
+"attemptBound": 1185,
+"body": "t2é",
+"companyId": 1037,
+"scheduledDay": 1148,
+"segmentId": 1111
+}
+}
+},
+{
+"family": "amendSmsMailing",
+"plain": {
+"facts": {
+"attemptBound": 1,
+"body": "x",
+"companyId": 7,
+"scheduledDay": 1,
+"segmentId": 1
+},
+"mailingId": 1
+},
+"rich": {
+"facts": {
+"attemptBound": 1222,
+"body": "t3é",
+"companyId": 1074,
+"scheduledDay": 1185,
+"segmentId": 1148
+},
+"mailingId": 1037
+}
+},
+{
+"family": "launchSmsMailing",
+"plain": {
+"companyId": 7,
+"expectedRecipients": 1,
+"mailingId": 1
+},
+"rich": {
+"companyId": 1037,
+"expectedRecipients": 1111,
+"mailingId": 1074
+}
+},
+{
+"family": "planSmsSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"mailingId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"mailingId": 1074
+}
+},
+{
+"family": "claimSmsSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"mailingId": 1,
+"planHash": {
+"$blob": "01"
+}
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"mailingId": 1074,
+"planHash": {
+"$blob": "dead03"
+}
+}
+},
+{
+"family": "recordSmsResults",
+"plain": {
+"results": {
+"companyId": 7,
+"mailingId": 1,
+"ok": [],
+"reasons": [],
+"recipientIds": []
+}
+},
+"rich": {
+"results": {
+"companyId": 1037,
+"mailingId": 1074,
+"ok": [
+true,
+true
+],
+"reasons": [
+"t7é",
+"t8é"
+],
+"recipientIds": [
+1111,
+1148
+]
+}
+}
+},
+{
+"family": "recordSmsReplies",
+"plain": {
+"facts": {
+"companyId": 7,
+"mailingId": 1,
+"recipientIds": [],
+"replies": []
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"mailingId": 1074,
+"recipientIds": [
+1111,
+1148
+],
+"replies": [
+{
+"$case": "undeliverable"
+},
+{
+"$case": "undeliverable"
+}
+]
+}
+}
+},
+{
+"family": "cancelSmsMailing",
+"plain": {
+"companyId": 7,
+"mailingId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"mailingId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "suppressNumber",
+"plain": {
+"companyId": 7,
+"number": "x",
+"reason": {
+"$case": "unsubscribed"
+}
+},
+"rich": {
+"companyId": 1037,
+"number": "t2é",
+"reason": {
+"$case": "manual"
+}
+}
+},
+{
+"family": "releaseNumber",
+"plain": {
+"companyId": 7,
+"number": "x",
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"number": "t2é",
+"reason": "t3é"
+}
+},
+{
+"family": "connectSocialAccount",
+"plain": {
+"facts": {
+"channel": {
+"$case": "x"
+},
+"companyId": 7,
+"handle": "x"
+}
+},
+"rich": {
+"facts": {
+"channel": {
+"$case": "instagram"
+},
+"companyId": 1037,
+"handle": "t2é"
+}
+}
+},
+{
+"family": "disconnectSocialAccount",
+"plain": {
+"accountId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"accountId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "schedulePost",
+"plain": {
+"facts": {
+"accountId": 1,
+"body": "x",
+"companyId": 7,
+"documentId": 1,
+"scheduledDay": 1
+}
+},
+"rich": {
+"facts": {
+"accountId": 1074,
+"body": "t3é",
+"companyId": 1037,
+"documentId": 1148,
+"scheduledDay": 1185
+}
+}
+},
+{
+"family": "amendPost",
+"plain": {
+"facts": {
+"accountId": 1,
+"body": "x",
+"companyId": 7,
+"documentId": 1,
+"scheduledDay": 1
+},
+"postId": 1
+},
+"rich": {
+"facts": {
+"accountId": 1111,
+"body": "t4é",
+"companyId": 1074,
+"documentId": 1185,
+"scheduledDay": 1222
+},
+"postId": 1037
+}
+},
+{
+"family": "cancelPost",
+"plain": {
+"companyId": 7,
+"postId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"postId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "claimPost",
+"plain": {
+"accountId": 1,
+"companyId": 7
+},
+"rich": {
+"accountId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "recordPostResult",
+"plain": {
+"facts": {
+"companyId": 7,
+"postId": 1,
+"posted": false,
+"reason": "x",
+"remoteId": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"postId": 1074,
+"posted": true,
+"reason": "t5é",
+"remoteId": "t4é"
+}
+}
+},
+{
+"family": "announceEvent",
+"plain": {
+"facts": {
+"capacity": 1,
+"categoryId": 1,
+"companyId": 7,
+"currency": "x",
+"day": 1,
+"journalId": 1,
+"name": "x",
+"priceUnit": 1,
+"taxRate": 1,
+"venue": "x"
+}
+},
+"rich": {
+"facts": {
+"capacity": 1185,
+"categoryId": 1222,
+"companyId": 1037,
+"currency": "t8é",
+"day": 1148,
+"journalId": 1370,
+"name": "t2é",
+"priceUnit": 1259,
+"taxRate": 1333,
+"venue": "t3é"
+}
+}
+},
+{
+"family": "amendEvent",
+"plain": {
+"eventId": 1,
+"facts": {
+"capacity": 1,
+"categoryId": 1,
+"companyId": 7,
+"currency": "x",
+"day": 1,
+"journalId": 1,
+"name": "x",
+"priceUnit": 1,
+"taxRate": 1,
+"venue": "x"
+}
+},
+"rich": {
+"eventId": 1037,
+"facts": {
+"capacity": 1222,
+"categoryId": 1259,
+"companyId": 1074,
+"currency": "t9é",
+"day": 1185,
+"journalId": 1407,
+"name": "t3é",
+"priceUnit": 1296,
+"taxRate": 1370,
+"venue": "t4é"
+}
+}
+},
+{
+"family": "cancelEvent",
+"plain": {
+"companyId": 7,
+"eventId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"eventId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "sellTickets",
+"plain": {
+"facts": {
+"companyId": 7,
+"eventId": 1,
+"partnerId": 1,
+"seats": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"eventId": 1074,
+"partnerId": 1111,
+"seats": 1148
+}
+}
+},
+{
+"family": "recordAttendance",
+"plain": {
+"companyId": 7,
+"seats": 1,
+"ticketId": 1
+},
+"rich": {
+"companyId": 1037,
+"seats": 1111,
+"ticketId": 1074
+}
+},
+{
+"family": "closeEvent",
+"plain": {
+"companyId": 7,
+"eventId": 1
+},
+"rich": {
+"companyId": 1037,
+"eventId": 1074
+}
+},
+{
+"family": "openSurvey",
+"plain": {
+"facts": {
+"companyId": 7,
+"dueDay": 1,
+"isAnonymous": false,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"dueDay": 1148,
+"isAnonymous": true,
+"title": "t2é"
+}
+}
+},
+{
+"family": "addSurveyQuestion",
+"plain": {
+"facts": {
+"companyId": 7,
+"kind": {
+"$case": "yesNo"
+},
+"options": [],
+"required": false,
+"surveyId": 1,
+"text": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"kind": {
+"$case": "openText"
+},
+"options": [
+"t4é",
+"t5é"
+],
+"required": true,
+"surveyId": 1074,
+"text": "t3é"
+}
+}
+},
+{
+"family": "respondToSurvey",
+"plain": {
+"facts": {
+"answers": [],
+"companyId": 7,
+"surveyId": 1
+}
+},
+"rich": {
+"facts": {
+"answers": [
+{
+"choice": 1148,
+"questionId": 1111,
+"text": "t5é"
+},
+{
+"choice": 1259,
+"questionId": 1222,
+"text": "t8é"
+}
+],
+"companyId": 1037,
+"surveyId": 1074
+}
+}
+},
+{
+"family": "closeSurvey",
+"plain": {
+"companyId": 7,
+"surveyId": 1
+},
+"rich": {
+"companyId": 1037,
+"surveyId": 1074
+}
+},
+{
+"family": "openReviewCycle",
+"plain": {
+"facts": {
+"companyId": 7,
+"endDay": 1,
+"name": "x",
+"startDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"endDay": 1148,
+"name": "t2é",
+"startDay": 1111
+}
+}
+},
+{
+"family": "enrolReviewSlice",
+"plain": {
+"companyId": 7,
+"cycleId": 1,
+"limit": 1
+},
+"rich": {
+"companyId": 1037,
+"cycleId": 1074,
+"limit": 1111
+}
+},
+{
+"family": "submitSelfReview",
+"plain": {
+"facts": {
+"companyId": 7,
+"cycleId": 1,
+"rating": 1,
+"text": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"cycleId": 1074,
+"rating": 1111,
+"text": "t4é"
+}
+}
+},
+{
+"family": "submitManagerReview",
+"plain": {
+"facts": {
+"companyId": 7,
+"rating": 1,
+"reviewId": 1,
+"text": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"rating": 1111,
+"reviewId": 1074,
+"text": "t4é"
+}
+}
+},
+{
+"family": "startCalibration",
+"plain": {
+"companyId": 7,
+"cycleId": 1
+},
+"rich": {
+"companyId": 1037,
+"cycleId": 1074
+}
+},
+{
+"family": "calibrateReview",
+"plain": {
+"facts": {
+"companyId": 7,
+"rating": 1,
+"reason": "x",
+"reviewId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"rating": 1111,
+"reason": "t4é",
+"reviewId": 1074
+}
+}
+},
+{
+"family": "closeReviewCycle",
+"plain": {
+"companyId": 7,
+"cycleId": 1
+},
+"rich": {
+"companyId": 1037,
+"cycleId": 1074
+}
+},
+{
+"family": "setGoal",
+"plain": {
+"facts": {
+"companyId": 7,
+"cycleId": 1,
+"dueDay": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"cycleId": 1148,
+"dueDay": 1185,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "t3é"
+}
+}
+},
+{
+"family": "addKeyResult",
+"plain": {
+"facts": {
+"companyId": 7,
+"goalId": 1,
+"kind": {
+"$case": "number"
+},
+"target": 1,
+"title": "x",
+"unit": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"goalId": 1074,
+"kind": {
+"$case": "yesNo"
+},
+"target": 1148,
+"title": "t3é",
+"unit": "t5é"
+}
+}
+},
+{
+"family": "updateKeyResult",
+"plain": {
+"companyId": 7,
+"current": 1,
+"keyResultId": 1
+},
+"rich": {
+"companyId": 1037,
+"current": 1111,
+"keyResultId": 1074
+}
+},
+{
+"family": "closeGoal",
+"plain": {
+"achieved": false,
+"companyId": 7,
+"goalId": 1
+},
+"rich": {
+"achieved": true,
+"companyId": 1037,
+"goalId": 1074
+}
+},
+{
+"family": "giveRecognition",
+"plain": {
+"facts": {
+"category": {
+"$case": "teamwork"
+},
+"companyId": 7,
+"isPublic": false,
+"message": "x",
+"to": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"category": {
+"$case": "aboveAndBeyond"
+},
+"companyId": 1037,
+"isPublic": true,
+"message": "t3é",
+"to": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "createCourse",
+"plain": {
+"facts": {
+"companyId": 7,
+"durationMins": 1,
+"format": {
+"$case": "online"
+},
+"level": {
+"$case": "beginner"
+},
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"durationMins": 1111,
+"format": {
+"$case": "selfPaced"
+},
+"level": {
+"$case": "advanced"
+},
+"title": "t2é"
+}
+}
+},
+{
+"family": "retireCourse",
+"plain": {
+"companyId": 7,
+"courseId": 1
+},
+"rich": {
+"companyId": 1037,
+"courseId": 1074
+}
+},
+{
+"family": "createLearningPath",
+"plain": {
+"facts": {
+"companyId": 7,
+"courseIds": [],
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"courseIds": [
+1111,
+1148
+],
+"title": "t2é"
+}
+}
+},
+{
+"family": "retireLearningPath",
+"plain": {
+"companyId": 7,
+"pathId": 1
+},
+"rich": {
+"companyId": 1037,
+"pathId": 1074
+}
+},
+{
+"family": "enrolInCourse",
+"plain": {
+"facts": {
+"companyId": 7,
+"courseId": 1,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"courseId": 1074,
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "updateCourseProgress",
+"plain": {
+"companyId": 7,
+"enrolmentId": 1,
+"progressPct": 1
+},
+"rich": {
+"companyId": 1037,
+"enrolmentId": 1074,
+"progressPct": 1111
+}
+},
+{
+"family": "dropEnrolment",
+"plain": {
+"companyId": 7,
+"enrolmentId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"enrolmentId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "recordCertification",
+"plain": {
+"facts": {
+"companyId": 7,
+"documentId": 1,
+"expiryDay": 1,
+"issuedDay": 1,
+"issuer": "x",
+"kind": {
+"$case": "professional"
+},
+"name": "x",
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"documentId": 1259,
+"expiryDay": 1222,
+"issuedDay": 1185,
+"issuer": "t4é",
+"kind": {
+"$case": "other"
+},
+"name": "t3é",
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "renewCertification",
+"plain": {
+"facts": {
+"certificationId": 1,
+"companyId": 7,
+"expiryDay": 1,
+"issuedDay": 1
+}
+},
+"rich": {
+"facts": {
+"certificationId": 1074,
+"companyId": 1037,
+"expiryDay": 1148,
+"issuedDay": 1111
+}
+}
+},
+{
+"family": "revokeCertification",
+"plain": {
+"certificationId": 1,
+"companyId": 7,
+"reason": "x"
+},
+"rich": {
+"certificationId": 1074,
+"companyId": 1037,
+"reason": "t3é"
+}
+},
+{
+"family": "declareSkill",
+"plain": {
+"facts": {
+"category": {
+"$case": "technical"
+},
+"companyId": 7,
+"level": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"category": {
+"$case": "domain"
+},
+"companyId": 1037,
+"level": 1111,
+"name": "t2é"
+}
+}
+},
+{
+"family": "removeSkill",
+"plain": {
+"companyId": 7,
+"skillId": 1
+},
+"rich": {
+"companyId": 1037,
+"skillId": 1074
+}
+},
+{
+"family": "endorseSkill",
+"plain": {
+"facts": {
+"companyId": 7,
+"level": 1,
+"skillId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"level": 1111,
+"skillId": 1074
+}
+}
+},
+{
+"family": "rateSkill",
+"plain": {
+"companyId": 7,
+"level": 1,
+"skillId": 1
+},
+"rich": {
+"companyId": 1037,
+"level": 1111,
+"skillId": 1074
+}
+},
+{
+"family": "offerMentoring",
+"plain": {
+"facts": {
+"bio": "x",
+"companyId": 7,
+"isActive": false,
+"maxMentees": 1
+}
+},
+"rich": {
+"facts": {
+"bio": "t2é",
+"companyId": 1037,
+"isActive": true,
+"maxMentees": 1111
+}
+}
+},
+{
+"family": "requestMentorship",
+"plain": {
+"facts": {
+"companyId": 7,
+"focus": "x",
+"mentor": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"focus": "t3é",
+"mentor": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "respondMentorship",
+"plain": {
+"accept": false,
+"companyId": 7,
+"mentorshipId": 1
+},
+"rich": {
+"accept": true,
+"companyId": 1037,
+"mentorshipId": 1074
+}
+},
+{
+"family": "logMentoringSession",
+"plain": {
+"facts": {
+"companyId": 7,
+"mentorshipId": 1,
+"minutes": 1,
+"notes": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"mentorshipId": 1074,
+"minutes": 1111,
+"notes": "t4é"
+}
+}
+},
+{
+"family": "completeMentorship",
+"plain": {
+"companyId": 7,
+"mentorshipId": 1
+},
+"rich": {
+"companyId": 1037,
+"mentorshipId": 1074
+}
+},
+{
+"family": "setCompensationPolicy",
+"plain": {
+"facts": {
+"companyId": 7,
+"deductionsAccountId": 1,
+"employeePayableAccountId": 1,
+"journalId": 1,
+"loanReceivableAccountId": 1,
+"salaryExpenseAccountId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"deductionsAccountId": 1148,
+"employeePayableAccountId": 1185,
+"journalId": 1074,
+"loanReceivableAccountId": 1222,
+"salaryExpenseAccountId": 1111
+}
+}
+},
+{
+"family": "declarePayBand",
+"plain": {
+"facts": {
+"companyId": 7,
+"currency": "x",
+"grade": 1,
+"maxAmount": 1,
+"midAmount": 1,
+"minAmount": 1,
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"currency": "t4é",
+"grade": 1111,
+"maxAmount": 1259,
+"midAmount": 1222,
+"minAmount": 1185,
+"name": "t2é"
+}
+}
+},
+{
+"family": "amendPayBand",
+"plain": {
+"facts": {
+"bandId": 1,
+"companyId": 7,
+"maxAmount": 1,
+"midAmount": 1,
+"minAmount": 1
+}
+},
+"rich": {
+"facts": {
+"bandId": 1074,
+"companyId": 1037,
+"maxAmount": 1185,
+"midAmount": 1148,
+"minAmount": 1111
+}
+}
+},
+{
+"family": "retirePayBand",
+"plain": {
+"bandId": 1,
+"companyId": 7
+},
+"rich": {
+"bandId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "proposeSalaryReview",
+"plain": {
+"facts": {
+"bandId": 1,
+"companyId": 7,
+"effectiveDay": 1,
+"justification": "x",
+"proposedBase": 1,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"bandId": 1111,
+"companyId": 1037,
+"effectiveDay": 1185,
+"justification": "t6é",
+"proposedBase": 1148,
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "decideSalaryReview",
+"plain": {
+"approve": false,
+"companyId": 7,
+"note": "x",
+"reviewId": 1
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"note": "t4é",
+"reviewId": 1074
+}
+},
+{
+"family": "implementSalaryReview",
+"plain": {
+"companyId": 7,
+"reviewId": 1
+},
+"rich": {
+"companyId": 1037,
+"reviewId": 1074
+}
+},
+{
+"family": "withdrawSalaryReview",
+"plain": {
+"companyId": 7,
+"reviewId": 1
+},
+"rich": {
+"companyId": 1037,
+"reviewId": 1074
+}
+},
+{
+"family": "grantEquity",
+"plain": {
+"facts": {
+"cliffMonths": 1,
+"companyId": 7,
+"currency": "x",
+"kind": {
+"$case": "rsu"
+},
+"schedule": {
+"$case": "cliff"
+},
+"strikePrice": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"totalShares": 1,
+"vestingMonths": 1,
+"vestingStartDay": 1
+}
+},
+"rich": {
+"facts": {
+"cliffMonths": 1259,
+"companyId": 1037,
+"currency": "t5é",
+"kind": {
+"$case": "sar"
+},
+"schedule": {
+"$case": "annual"
+},
+"strikePrice": 1148,
+"subject": {
+"$principal": "0102031d"
+},
+"totalShares": 1111,
+"vestingMonths": 1296,
+"vestingStartDay": 1222
+}
+}
+},
+{
+"family": "vestEquity",
+"plain": {
+"companyId": 7,
+"grantId": 1
+},
+"rich": {
+"companyId": 1037,
+"grantId": 1074
+}
+},
+{
+"family": "exerciseEquity",
+"plain": {
+"companyId": 7,
+"grantId": 1,
+"shares": 1
+},
+"rich": {
+"companyId": 1037,
+"grantId": 1074,
+"shares": 1111
+}
+},
+{
+"family": "cancelEquityGrant",
+"plain": {
+"companyId": 7,
+"grantId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"grantId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "createIncentivePlan",
+"plain": {
+"facts": {
+"companyId": 7,
+"maxBps": 1,
+"metrics": [],
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"maxBps": 1111,
+"metrics": [
+{
+"key": "t4é",
+"weightBps": 1185
+},
+{
+"key": "t6é",
+"weightBps": 1259
+}
+],
+"name": "t2é"
+}
+}
+},
+{
+"family": "retireIncentivePlan",
+"plain": {
+"companyId": 7,
+"planId": 1
+},
+"rich": {
+"companyId": 1037,
+"planId": 1074
+}
+},
+{
+"family": "scoreIncentive",
+"plain": {
+"facts": {
+"companyId": 7,
+"note": "x",
+"periodDay": 1,
+"planId": 1,
+"scores": [],
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"note": "t7é",
+"periodDay": 1148,
+"planId": 1074,
+"scores": [
+1185,
+1222
+],
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "createOffCyclePayment",
+"plain": {
+"facts": {
+"companyId": 7,
+"deductions": 1,
+"gross": 1,
+"kind": {
+"$case": "bonus"
+},
+"periodDay": 1,
+"scoreId": 1,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"deductions": 1222,
+"gross": 1185,
+"kind": {
+"$case": "reimbursement"
+},
+"periodDay": 1148,
+"scoreId": 1259,
+"subject": {
+"$principal": "0102031d"
+},
+"title": "t3é"
+}
+}
+},
+{
+"family": "approveOffCyclePayment",
+"plain": {
+"companyId": 7,
+"paymentId": 1
+},
+"rich": {
+"companyId": 1037,
+"paymentId": 1074
+}
+},
+{
+"family": "rejectOffCyclePayment",
+"plain": {
+"companyId": 7,
+"paymentId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"paymentId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "cancelOffCyclePayment",
+"plain": {
+"companyId": 7,
+"paymentId": 1
+},
+"rich": {
+"companyId": 1037,
+"paymentId": 1074
+}
+},
+{
+"family": "requestLoan",
+"plain": {
+"facts": {
+"amount": 1,
+"companyId": 7,
+"justification": "x",
+"kind": {
+"$case": "salaryAdvance"
+},
+"schedule": {
+"$case": "lumpSum"
+}
+}
+},
+"rich": {
+"facts": {
+"amount": 1074,
+"companyId": 1037,
+"justification": "t3é",
+"kind": {
+"$case": "other"
+},
+"schedule": {
+"$case": "twelve"
+}
+}
+}
+},
+{
+"family": "withdrawLoan",
+"plain": {
+"companyId": 7,
+"loanId": 1
+},
+"rich": {
+"companyId": 1037,
+"loanId": 1074
+}
+},
+{
+"family": "decideLoan",
+"plain": {
+"approve": false,
+"approvedAmount": 1,
+"companyId": 7,
+"loanId": 1,
+"note": "x"
+},
+"rich": {
+"approve": true,
+"approvedAmount": 1148,
+"companyId": 1037,
+"loanId": 1074,
+"note": "t5é"
+}
+},
+{
+"family": "disburseLoan",
+"plain": {
+"cashAccountId": 1,
+"companyId": 7,
+"loanId": 1
+},
+"rich": {
+"cashAccountId": 1111,
+"companyId": 1037,
+"loanId": 1074
+}
+},
+{
+"family": "recordLoanRepayment",
+"plain": {
+"facts": {
+"amount": 1,
+"cashAccountId": 1,
+"companyId": 7,
+"loanId": 1,
+"note": "x"
+}
+},
+"rich": {
+"facts": {
+"amount": 1111,
+"cashAccountId": 1148,
+"companyId": 1037,
+"loanId": 1074,
+"note": "t5é"
+}
+}
+},
+{
+"family": "createBenefitPlan",
+"plain": {
+"facts": {
+"category": {
+"$case": "health"
+},
+"companyId": 7,
+"employeeCost": 1,
+"employerCost": 1,
+"name": "x",
+"provider": "x",
+"tiers": []
+}
+},
+"rich": {
+"facts": {
+"category": {
+"$case": "other"
+},
+"companyId": 1037,
+"employeeCost": 1148,
+"employerCost": 1185,
+"name": "t2é",
+"provider": "t3é",
+"tiers": [
+{
+"$case": "family"
+},
+{
+"$case": "family"
+}
+]
+}
+}
+},
+{
+"family": "toggleBenefitPlan",
+"plain": {
+"companyId": 7,
+"isActive": false,
+"planId": 1
+},
+"rich": {
+"companyId": 1037,
+"isActive": true,
+"planId": 1074
+}
+},
+{
+"family": "openEnrolmentPeriod",
+"plain": {
+"facts": {
+"companyId": 7,
+"endDay": 1,
+"name": "x",
+"startDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"endDay": 1148,
+"name": "t2é",
+"startDay": 1111
+}
+}
+},
+{
+"family": "enrolInBenefit",
+"plain": {
+"facts": {
+"companyId": 7,
+"planId": 1,
+"tier": {
+"$case": "employee"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"planId": 1074,
+"tier": {
+"$case": "family"
+}
+}
+}
+},
+{
+"family": "waiveBenefit",
+"plain": {
+"companyId": 7,
+"planId": 1
+},
+"rich": {
+"companyId": 1037,
+"planId": 1074
+}
+},
+{
+"family": "setFleetPolicy",
+"plain": {
+"facts": {
+"companyId": 7,
+"expenseAccountId": 1,
+"journalId": 1,
+"payableAccountId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"expenseAccountId": 1111,
+"journalId": 1074,
+"payableAccountId": 1148
+}
+}
+},
+{
+"family": "registerVehicle",
+"plain": {
+"facts": {
+"assetId": 1,
+"companyId": 7,
+"model": "x",
+"odometerKm": 1,
+"plate": "x"
+}
+},
+"rich": {
+"facts": {
+"assetId": 1148,
+"companyId": 1037,
+"model": "t3é",
+"odometerKm": 1185,
+"plate": "t2é"
+}
+}
+},
+{
+"family": "retireVehicle",
+"plain": {
+"companyId": 7,
+"vehicleId": 1
+},
+"rich": {
+"companyId": 1037,
+"vehicleId": 1074
+}
+},
+{
+"family": "assignDriver",
+"plain": {
+"facts": {
+"companyId": 7,
+"subject": {
+"$principal": "0102031d"
+},
+"vehicleId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"subject": {
+"$principal": "0102031d"
+},
+"vehicleId": 1074
+}
+}
+},
+{
+"family": "releaseDriver",
+"plain": {
+"companyId": 7,
+"vehicleId": 1
+},
+"rich": {
+"companyId": 1037,
+"vehicleId": 1074
+}
+},
+{
+"family": "addVehicleContract",
+"plain": {
+"facts": {
+"companyId": 7,
+"endDay": 1,
+"kind": {
+"$case": "lease"
+},
+"monthlyCost": 1,
+"partnerId": 1,
+"ref": "x",
+"startDay": 1,
+"vehicleId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"endDay": 1185,
+"kind": {
+"$case": "other"
+},
+"monthlyCost": 1222,
+"partnerId": 1111,
+"ref": "t7é",
+"startDay": 1148,
+"vehicleId": 1074
+}
+}
+},
+{
+"family": "cancelVehicleContract",
+"plain": {
+"companyId": 7,
+"contractId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"contractId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "logOdometer",
+"plain": {
+"facts": {
+"companyId": 7,
+"reading": 1,
+"vehicleId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"reading": 1111,
+"vehicleId": 1074
+}
+}
+},
+{
+"family": "logFuel",
+"plain": {
+"facts": {
+"companyId": 7,
+"description": "x",
+"litres": 1,
+"odometer": 1,
+"pricePerLitre": 1,
+"vehicleId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"description": "t6é",
+"litres": 1148,
+"odometer": 1111,
+"pricePerLitre": 1185,
+"vehicleId": 1074
+}
+}
+},
+{
+"family": "logVehicleCost",
+"plain": {
+"facts": {
+"amount": 1,
+"companyId": 7,
+"contractId": 1,
+"day": 1,
+"description": "x",
+"kind": {
+"$case": "fuel"
+},
+"vehicleId": 1
+}
+},
+"rich": {
+"facts": {
+"amount": 1111,
+"companyId": 1037,
+"contractId": 1185,
+"day": 1148,
+"description": "t6é",
+"kind": {
+"$case": "other"
+},
+"vehicleId": 1074
+}
+}
+},
+{
+"family": "postVehicleCost",
+"plain": {
+"companyId": 7,
+"costId": 1
+},
+"rich": {
+"companyId": 1037,
+"costId": 1074
+}
+},
+{
+"family": "rejectVehicleCost",
+"plain": {
+"companyId": 7,
+"costId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"costId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "createChannel",
+"plain": {
+"facts": {
+"companyId": 7,
+"description": "x",
+"isPrivate": false,
+"members": [],
+"name": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"description": "t3é",
+"isPrivate": true,
+"members": [
+{
+"$principal": "0102031d"
+},
+{
+"$principal": "0102031d"
+}
+],
+"name": "t2é"
+}
+}
+},
+{
+"family": "archiveChannel",
+"plain": {
+"channelId": 1,
+"companyId": 7
+},
+"rich": {
+"channelId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "joinChannel",
+"plain": {
+"channelId": 1,
+"companyId": 7
+},
+"rich": {
+"channelId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "addChannelMember",
+"plain": {
+"channelId": 1,
+"companyId": 7,
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"channelId": 1074,
+"companyId": 1037,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "leaveChannel",
+"plain": {
+"channelId": 1,
+"companyId": 7
+},
+"rich": {
+"channelId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "removeChannelMember",
+"plain": {
+"channelId": 1,
+"companyId": 7,
+"subject": {
+"$principal": "0102031d"
+}
+},
+"rich": {
+"channelId": 1074,
+"companyId": 1037,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "sendChannelMessage",
+"plain": {
+"body": "x",
+"channelId": 1,
+"companyId": 7
+},
+"rich": {
+"body": "t3é",
+"channelId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "deleteChannelMessage",
+"plain": {
+"companyId": 7,
+"messageId": 1
+},
+"rich": {
+"companyId": 1037,
+"messageId": 1074
+}
+},
+{
+"family": "markChannelRead",
+"plain": {
+"channelId": 1,
+"companyId": 7,
+"messageId": 1
+},
+"rich": {
+"channelId": 1074,
+"companyId": 1037,
+"messageId": 1111
+}
+},
+{
+"family": "createAnnouncement",
+"plain": {
+"facts": {
+"audience": {
+"departmentIds": [],
+"jobTitleIds": [],
+"locations": [],
+"nationalities": [],
+"roles": []
+},
+"body": "x",
+"category": {
+"$case": "company"
+},
+"companyId": 7,
+"endDay": 1,
+"isPinned": false,
+"notify": false,
+"startDay": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"audience": {
+"departmentIds": [
+1185,
+1222
+],
+"jobTitleIds": [
+1259,
+1296
+],
+"locations": [
+"t9é",
+"t10é"
+],
+"nationalities": [
+"t11é",
+"t12é"
+],
+"roles": [
+{
+"$case": "Drafter"
+},
+{
+"$case": "Drafter"
+}
+]
+},
+"body": "t3é",
+"category": {
+"$case": "it"
+},
+"companyId": 1037,
+"endDay": 1518,
+"isPinned": true,
+"notify": true,
+"startDay": 1481,
+"title": "t2é"
+}
+}
+},
+{
+"family": "amendAnnouncement",
+"plain": {
+"facts": {
+"announcementId": 1,
+"body": "x",
+"category": {
+"$case": "company"
+},
+"companyId": 7,
+"endDay": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"announcementId": 1074,
+"body": "t4é",
+"category": {
+"$case": "it"
+},
+"companyId": 1037,
+"endDay": 1185,
+"title": "t3é"
+}
+}
+},
+{
+"family": "pinAnnouncement",
+"plain": {
+"announcementId": 1,
+"companyId": 7,
+"isPinned": false
+},
+"rich": {
+"announcementId": 1074,
+"companyId": 1037,
+"isPinned": true
+}
+},
+{
+"family": "withdrawAnnouncement",
+"plain": {
+"announcementId": 1,
+"companyId": 7
+},
+"rich": {
+"announcementId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "toggleReaction",
+"plain": {
+"announcementId": 1,
+"companyId": 7,
+"emoji": "x"
+},
+"rich": {
+"announcementId": 1074,
+"companyId": 1037,
+"emoji": "t3é"
+}
+},
+{
+"family": "openAnnouncementSweep",
+"plain": {
+"announcementId": 1,
+"companyId": 7,
+"planHash": {
+"$blob": "01"
+}
+},
+"rich": {
+"announcementId": 1074,
+"companyId": 1037,
+"planHash": {
+"$blob": "dead03"
+}
+}
+},
+{
+"family": "sweepAnnouncementSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"planHash": {
+"$blob": "01"
+},
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1148,
+"planHash": {
+"$blob": "dead03"
+},
+"runId": 1074
+}
+},
+{
+"family": "createNotification",
+"plain": {
+"facts": {
+"actionUrl": "x",
+"companyId": 7,
+"kind": {
+"$case": "announcement"
+},
+"message": "x",
+"priority": {
+"$case": "low"
+},
+"recipient": {
+"$principal": "0102031d"
+},
+"relatedId": 1,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"actionUrl": "t6é",
+"companyId": 1037,
+"kind": {
+"$case": "taskAssigned"
+},
+"message": "t4é",
+"priority": {
+"$case": "urgent"
+},
+"recipient": {
+"$principal": "0102031d"
+},
+"relatedId": 1185,
+"title": "t3é"
+}
+}
+},
+{
+"family": "markNotificationRead",
+"plain": {
+"companyId": 7,
+"notificationId": 1
+},
+"rich": {
+"companyId": 1037,
+"notificationId": 1074
+}
+},
+{
+"family": "markAllNotificationsRead",
+"plain": {
+"companyId": 7,
+"limit": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1074
+}
+},
+{
+"family": "dismissNotification",
+"plain": {
+"companyId": 7,
+"notificationId": 1
+},
+"rich": {
+"companyId": 1037,
+"notificationId": 1074
+}
+},
+{
+"family": "createKbArticle",
+"plain": {
+"facts": {
+"category": {
+"$case": "finance"
+},
+"companyId": 7,
+"documentId": 1,
+"tags": [],
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"category": {
+"$case": "product"
+},
+"companyId": 1037,
+"documentId": 1185,
+"tags": [
+"t3é",
+"t4é"
+],
+"title": "t2é"
+}
+}
+},
+{
+"family": "reviseKbArticle",
+"plain": {
+"articleId": 1,
+"facts": {
+"category": {
+"$case": "finance"
+},
+"companyId": 7,
+"documentId": 1,
+"tags": [],
+"title": "x"
+}
+},
+"rich": {
+"articleId": 1037,
+"facts": {
+"category": {
+"$case": "product"
+},
+"companyId": 1074,
+"documentId": 1222,
+"tags": [
+"t4é",
+"t5é"
+],
+"title": "t3é"
+}
+}
+},
+{
+"family": "publishKbVersion",
+"plain": {
+"articleId": 1,
+"companyId": 7,
+"number": 1
+},
+"rich": {
+"articleId": 1074,
+"companyId": 1037,
+"number": 1111
+}
+},
+{
+"family": "archiveKbArticle",
+"plain": {
+"articleId": 1,
+"companyId": 7
+},
+"rich": {
+"articleId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "recordKbView",
+"plain": {
+"articleId": 1,
+"companyId": 7
+},
+"rich": {
+"articleId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "voteKbArticle",
+"plain": {
+"articleId": 1,
+"companyId": 7,
+"isHelpful": false
+},
+"rich": {
+"articleId": 1074,
+"companyId": 1037,
+"isHelpful": true
+}
+},
+{
+"family": "createPolicy",
+"plain": {
+"facts": {
+"category": {
+"$case": "finance"
+},
+"companyId": 7,
+"documentId": 1,
+"effectiveDay": 1,
+"requiresAck": false,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"category": {
+"$case": "safety"
+},
+"companyId": 1037,
+"documentId": 1185,
+"effectiveDay": 1148,
+"requiresAck": true,
+"title": "t2é"
+}
+}
+},
+{
+"family": "revisePolicy",
+"plain": {
+"facts": {
+"category": {
+"$case": "finance"
+},
+"companyId": 7,
+"documentId": 1,
+"effectiveDay": 1,
+"requiresAck": false,
+"title": "x"
+},
+"policyId": 1
+},
+"rich": {
+"facts": {
+"category": {
+"$case": "safety"
+},
+"companyId": 1074,
+"documentId": 1222,
+"effectiveDay": 1185,
+"requiresAck": true,
+"title": "t3é"
+},
+"policyId": 1037
+}
+},
+{
+"family": "publishPolicyVersion",
+"plain": {
+"companyId": 7,
+"number": 1,
+"policyId": 1
+},
+"rich": {
+"companyId": 1037,
+"number": 1111,
+"policyId": 1074
+}
+},
+{
+"family": "archivePolicy",
+"plain": {
+"companyId": 7,
+"policyId": 1
+},
+"rich": {
+"companyId": 1037,
+"policyId": 1074
+}
+},
+{
+"family": "acknowledgePolicy",
+"plain": {
+"companyId": 7,
+"number": 1,
+"plainHash": {
+"$blob": "01"
+},
+"policyId": 1
+},
+"rich": {
+"companyId": 1037,
+"number": 1111,
+"plainHash": {
+"$blob": "dead04"
+},
+"policyId": 1074
+}
+},
+{
+"family": "defineRequirement",
+"plain": {
+"facts": {
+"category": {
+"$case": "dataPrivacy"
+},
+"certKind": {
+"$case": "professional"
+},
+"companyId": 7,
+"isRequired": false,
+"roles": [],
+"title": "x",
+"validityDays": 1
+}
+},
+"rich": {
+"facts": {
+"category": {
+"$case": "technical"
+},
+"certKind": {
+"$case": "other"
+},
+"companyId": 1037,
+"isRequired": true,
+"roles": [
+{
+"$case": "Drafter"
+},
+{
+"$case": "Drafter"
+}
+],
+"title": "t2é",
+"validityDays": 1148
+}
+}
+},
+{
+"family": "retireRequirement",
+"plain": {
+"companyId": 7,
+"requirementId": 1
+},
+"rich": {
+"companyId": 1037,
+"requirementId": 1074
+}
+},
+{
+"family": "citeCertification",
+"plain": {
+"certificationId": 1,
+"companyId": 7,
+"requirementId": 1
+},
+"rich": {
+"certificationId": 1111,
+"companyId": 1037,
+"requirementId": 1074
+}
+},
+{
+"family": "setDashboardLayout",
+"plain": {
+"companyId": 7,
+"widgets": []
+},
+"rich": {
+"companyId": 1037,
+"widgets": [
+[
+"t2é",
+true
+],
+[
+"t4é",
+true
+]
+]
+}
+},
+{
+"family": "openFiguresRun",
+"plain": {
+"companyId": 7
+},
+"rich": {
+"companyId": 1037
+}
+},
+{
+"family": "runFiguresSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "defineApprovalCycle",
+"plain": {
+"facts": {
+"companyId": 7,
+"kind": {
+"$case": "businessTrip"
+},
+"name": "x",
+"steps": []
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"kind": {
+"$case": "wfh"
+},
+"name": "t2é",
+"steps": [
+{
+"$case": "Drafter"
+},
+{
+"$case": "Drafter"
+}
+]
+}
+}
+},
+{
+"family": "retireApprovalCycle",
+"plain": {
+"companyId": 7,
+"cycleId": 1
+},
+"rich": {
+"companyId": 1037,
+"cycleId": 1074
+}
+},
+{
+"family": "startApproval",
+"plain": {
+"facts": {
+"companyId": 7,
+"kind": {
+"$case": "businessTrip"
+},
+"recordId": 1,
+"subject": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"kind": {
+"$case": "wfh"
+},
+"recordId": 1074,
+"subject": "t3é"
+}
+}
+},
+{
+"family": "decideApprovalStep",
+"plain": {
+"approve": false,
+"companyId": 7,
+"instanceId": 1,
+"note": "x"
+},
+"rich": {
+"approve": true,
+"companyId": 1037,
+"instanceId": 1074,
+"note": "t4é"
+}
+},
+{
+"family": "withdrawApproval",
+"plain": {
+"companyId": 7,
+"instanceId": 1
+},
+"rich": {
+"companyId": 1037,
+"instanceId": 1074
+}
+},
+{
+"family": "delegateApprovals",
+"plain": {
+"companyId": 7,
+"delegate": {
+"$principal": "0102031d"
+},
+"untilDay": 1
+},
+"rich": {
+"companyId": 1037,
+"delegate": {
+"$principal": "0102031d"
+},
+"untilDay": 1111
+}
+},
+{
+"family": "revokeDelegation",
+"plain": {
+"companyId": 7,
+"delegationId": 1
+},
+"rich": {
+"companyId": 1037,
+"delegationId": 1074
+}
+},
+{
+"family": "defineStudioField",
+"plain": {
+"facts": {
+"caption": "x",
+"choices": [],
+"code": "x",
+"companyId": 7,
+"record": "x",
+"scale": 1,
+"unique": false,
+"valueType": {
+"$case": "choice"
+},
+"width": 1
+},
+"rule": {
+"companyId": 7,
+"maximum": null,
+"minimum": null,
+"required": false,
+"writers": []
+}
+},
+"rich": {
+"facts": {
+"caption": "t4é",
+"choices": [
+"t8é",
+"t9é"
+],
+"code": "t3é",
+"companyId": 1037,
+"record": "t2é",
+"scale": 1222,
+"unique": true,
+"valueType": {
+"$case": "text"
+},
+"width": 1185
+},
+"rule": {
+"companyId": 1370,
+"maximum": -40,
+"minimum": -37,
+"required": true,
+"writers": [
+{
+"$case": "Drafter"
+},
+{
+"$case": "Drafter"
+}
+]
+}
+}
+},
+{
+"family": "amendStudioField",
+"plain": {
+"facts": {
+"caption": "x",
+"choices": [],
+"companyId": 7,
+"width": 1
+},
+"fieldId": 1
+},
+"rich": {
+"facts": {
+"caption": "t3é",
+"choices": [
+"t5é",
+"t6é"
+],
+"companyId": 1074,
+"width": 1148
+},
+"fieldId": 1037
+}
+},
+{
+"family": "retireStudioField",
+"plain": {
+"companyId": 7,
+"fieldId": 1
+},
+"rich": {
+"companyId": 1037,
+"fieldId": 1074
+}
+},
+{
+"family": "setStudioRule",
+"plain": {
+"facts": {
+"companyId": 7,
+"maximum": null,
+"minimum": null,
+"required": false,
+"writers": []
+},
+"fieldId": 1
+},
+"rich": {
+"facts": {
+"companyId": 1074,
+"maximum": -16,
+"minimum": -13,
+"required": true,
+"writers": [
+{
+"$case": "Drafter"
+},
+{
+"$case": "Drafter"
+}
+]
+},
+"fieldId": 1037
+}
+},
+{
+"family": "setStudioValue",
+"plain": {
+"facts": {
+"choice": "x",
+"companyId": 7,
+"day": 1,
+"fieldId": 1,
+"flag": false,
+"number": 0,
+"recordId": 1,
+"text": "x"
+}
+},
+"rich": {
+"facts": {
+"choice": "t8é",
+"companyId": 1037,
+"day": 1222,
+"fieldId": 1074,
+"flag": true,
+"number": -16,
+"recordId": 1111,
+"text": "t4é"
+}
+}
+},
+{
+"family": "clearStudioValue",
+"plain": {
+"companyId": 7,
+"fieldId": 1,
+"recordId": 1
+},
+"rich": {
+"companyId": 1037,
+"fieldId": 1074,
+"recordId": 1111
+}
+},
+{
+"family": "setControlProfile",
+"plain": {
+"facts": {
+"accounts": [],
+"approvalThreshold": 1,
+"approvers": [],
+"backdatedDays": 1,
+"bandPercent": 1,
+"benfordMinimum": 1,
+"companyId": 7,
+"criteria": [],
+"currency": "x",
+"duplicateWindowDays": 1,
+"flowMax": 1,
+"highVolumeMax": 1,
+"holidays": [],
+"keywords": [],
+"largeThreshold": 1,
+"leavers": [],
+"manyLinesMax": 1,
+"minDescription": 1,
+"pairs": [],
+"periodEndDays": 1,
+"roundBase": 1,
+"roundMinimum": 1,
+"screeners": [],
+"seldomMax": 1,
+"splitWindowDays": 1,
+"users": [],
+"weekendDays": []
+}
+},
+"rich": {
+"facts": {
+"accounts": [
+1629,
+1666
+],
+"approvalThreshold": 1296,
+"approvers": [
+{
+"$principal": "0102031d"
+},
+{
+"$principal": "0102031d"
+}
+],
+"backdatedDays": 2295,
+"bandPercent": 1333,
+"benfordMinimum": 2406,
+"companyId": 1037,
+"criteria": [
+1074,
+1111
+],
+"currency": "t39é",
+"duplicateWindowDays": 2332,
+"flowMax": 2184,
+"highVolumeMax": 2221,
+"holidays": [
+1444,
+1481
+],
+"keywords": [
+"t15é",
+"t16é"
+],
+"largeThreshold": 1259,
+"leavers": [
+[
+{
+"$principal": "0102031d"
+},
+1888
+],
+[
+{
+"$principal": "0102031d"
+},
+1962
+]
+],
+"manyLinesMax": 2258,
+"minDescription": 1518,
+"pairs": [
+[
+"t27é",
+"t28é"
+],
+[
+"t29é",
+"t30é"
+]
+],
+"periodEndDays": 1148,
+"roundBase": 1185,
+"roundMinimum": 1222,
+"screeners": [
+{
+"$case": "Drafter"
+},
+{
+"$case": "Drafter"
+}
+],
+"seldomMax": 2147,
+"splitWindowDays": 2369,
+"users": [
+{
+"$principal": "0102031d"
+},
+{
+"$principal": "0102031d"
+}
+],
+"weekendDays": [
+1370,
+1407
+]
+}
+}
+},
+{
+"family": "openScreening",
+"plain": {
+"facts": {
+"companyId": 7,
+"fromDay": 1,
+"throughDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"fromDay": 1074,
+"throughDay": 1111
+}
+}
+},
+{
+"family": "screenSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "concludeFinding",
+"plain": {
+"companyId": 7,
+"confirmed": false,
+"findingId": 1,
+"note": "x"
+},
+"rich": {
+"companyId": 1037,
+"confirmed": true,
+"findingId": 1074,
+"note": "t4é"
+}
+},
+{
+"family": "defineControlProcedure",
+"plain": {
+"facts": {
+"code": "x",
+"companyId": 7,
+"component": {
+"$case": "controlEnvironment"
+},
+"screening": false,
+"title": "x"
+}
+},
+"rich": {
+"facts": {
+"code": "t2é",
+"companyId": 1037,
+"component": {
+"$case": "monitoring"
+},
+"screening": true,
+"title": "t3é"
+}
+}
+},
+{
+"family": "prepareControlConclusion",
+"plain": {
+"facts": {
+"companyId": 7,
+"fromDay": 1,
+"note": "x",
+"procedureId": 1,
+"result": {
+"$case": "effective"
+},
+"runId": 1,
+"throughDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"fromDay": 1111,
+"note": "t6é",
+"procedureId": 1074,
+"result": {
+"$case": "notApplicable"
+},
+"runId": 1185,
+"throughDay": 1148
+}
+}
+},
+{
+"family": "reviewControlConclusion",
+"plain": {
+"companyId": 7,
+"conclusionId": 1
+},
+"rich": {
+"companyId": 1037,
+"conclusionId": 1074
+}
+},
+{
+"family": "logCall",
+"plain": {
+"facts": {
+"activityId": 1,
+"companyId": 7,
+"consent": false,
+"direction": {
+"$case": "inbound"
+},
+"leadId": 1,
+"note": "x",
+"number": "x",
+"outcome": {
+"$case": "answered"
+},
+"seconds": 1
+}
+},
+"rich": {
+"facts": {
+"activityId": 1111,
+"companyId": 1037,
+"consent": true,
+"direction": {
+"$case": "outbound"
+},
+"leadId": 1074,
+"note": "t7é",
+"number": "t4é",
+"outcome": {
+"$case": "voicemail"
+},
+"seconds": 1185
+}
+}
+},
+{
+"family": "attachCallRecording",
+"plain": {
+"callId": 1,
+"companyId": 7,
+"documentId": 1
+},
+"rich": {
+"callId": 1074,
+"companyId": 1037,
+"documentId": 1111
+}
+},
+{
+"family": "proposeBomChange",
+"plain": {
+"facts": {
+"bomId": 1,
+"code": "x",
+"companyId": 7,
+"effectiveDay": 1,
+"lines": [],
+"quantity": 1,
+"reason": "x"
+}
+},
+"rich": {
+"facts": {
+"bomId": 1074,
+"code": "t3é",
+"companyId": 1037,
+"effectiveDay": 1333,
+"lines": [
+{
+"categoryId": 1185,
+"quantity": 1222
+},
+{
+"categoryId": 1259,
+"quantity": 1296
+}
+],
+"quantity": 1148,
+"reason": "t10é"
+}
+}
+},
+{
+"family": "approveBomChange",
+"plain": {
+"companyId": 7,
+"ecoId": 1
+},
+"rich": {
+"companyId": 1037,
+"ecoId": 1074
+}
+},
+{
+"family": "rejectBomChange",
+"plain": {
+"companyId": 7,
+"ecoId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"ecoId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "withdrawBomChange",
+"plain": {
+"companyId": 7,
+"ecoId": 1
+},
+"rich": {
+"companyId": 1037,
+"ecoId": 1074
+}
+},
+{
+"family": "claimPlatformOperator",
+"plain": {},
+"rich": {}
+},
+{
+"family": "offerPlatformOperator",
+"plain": {
+"to": null
+},
+"rich": {
+"to": {
+"$principal": "0102031d"
+}
+}
+},
+{
+"family": "acceptPlatformOperator",
+"plain": {},
+"rich": {}
+},
+{
+"family": "recordGwpSet",
+"plain": {
+"facts": {
+"companyId": 7,
+"database": "x",
+"edition": "x",
+"gases": [],
+"name": "x",
+"sourceSha256": {
+"$blob": "01"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"database": "t3é",
+"edition": "t4é",
+"gases": [
+{
+"gas": "t6é",
+"group": {
+"$case": "nf3"
+},
+"gwpMilli": 1259
+},
+{
+"gas": "t8é",
+"group": {
+"$case": "nf3"
+},
+"gwpMilli": 1333
+}
+],
+"name": "t2é",
+"sourceSha256": {
+"$blob": "dead05"
+}
+}
+}
+},
+{
+"family": "approveGwpSet",
+"plain": {
+"companyId": 7,
+"setId": 1
+},
+"rich": {
+"companyId": 1037,
+"setId": 1074
+}
+},
+{
+"family": "recordEsgFactor",
+"plain": {
+"facts": {
+"basis": {
+"$case": "physical"
+},
+"category": 1,
+"code": "x",
+"companyId": 7,
+"database": "x",
+"edition": "x",
+"energySource": {
+"$case": "none"
+},
+"gases": [],
+"gwpSetId": 1,
+"kilojoules": 1,
+"per": 1,
+"reference": "x",
+"scope": {
+"$case": "scope1"
+},
+"sourceSha256": {
+"$blob": "01"
+},
+"unit": "x"
+}
+},
+"rich": {
+"facts": {
+"basis": {
+"$case": "monetary"
+},
+"category": 1296,
+"code": "t2é",
+"companyId": 1037,
+"database": "t4é",
+"edition": "t5é",
+"energySource": {
+"$case": "gridUnspecified"
+},
+"gases": [
+{
+"gas": "t11é",
+"micrograms": 1444
+},
+{
+"gas": "t13é",
+"micrograms": 1518
+}
+],
+"gwpSetId": 1111,
+"kilojoules": 1555,
+"per": 1370,
+"reference": "t7é",
+"scope": {
+"$case": "scope3"
+},
+"sourceSha256": {
+"$blob": "dead06"
+},
+"unit": "t9é"
+}
+}
+},
+{
+"family": "approveEsgFactor",
+"plain": {
+"companyId": 7,
+"factorId": 1
+},
+"rich": {
+"companyId": 1037,
+"factorId": 1074
+}
+},
+{
+"family": "setEsgRule",
+"plain": {
+"facts": {
+"accountId": 1,
+"companyId": 7,
+"factorCode": "x",
+"partnerId": 1,
+"productId": 1
+}
+},
+"rich": {
+"facts": {
+"accountId": 1185,
+"companyId": 1037,
+"factorCode": "t2é",
+"partnerId": 1148,
+"productId": 1111
+}
+}
+},
+{
+"family": "retireEsgRule",
+"plain": {
+"companyId": 7,
+"ruleId": 1
+},
+"rich": {
+"companyId": 1037,
+"ruleId": 1074
+}
+},
+{
+"family": "recordEsgActivity",
+"plain": {
+"facts": {
+"companyId": 7,
+"day": 1,
+"departmentId": 1,
+"factorCode": "x",
+"hazardous": false,
+"measure": {
+"$case": "none"
+},
+"note": "x",
+"partnerId": 1,
+"productId": 1,
+"quantity": 1,
+"sourceMoveId": 1,
+"unit": "x"
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"day": 1074,
+"departmentId": 1111,
+"factorCode": "t4é",
+"hazardous": true,
+"measure": {
+"$case": "wasteTreated"
+},
+"note": "t11é",
+"partnerId": 1222,
+"productId": 1185,
+"quantity": 1259,
+"sourceMoveId": 1370,
+"unit": "t8é"
+}
+}
+},
+{
+"family": "cancelEsgActivity",
+"plain": {
+"activityId": 1,
+"companyId": 7
+},
+"rich": {
+"activityId": 1074,
+"companyId": 1037
+}
+},
+{
+"family": "openEsgRun",
+"plain": {
+"facts": {
+"companyId": 7,
+"fromDay": 1,
+"throughDay": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"fromDay": 1074,
+"throughDay": 1111
+}
+}
+},
+{
+"family": "esgRunSlice",
+"plain": {
+"companyId": 7,
+"limit": 1,
+"runId": 1
+},
+"rich": {
+"companyId": 1037,
+"limit": 1111,
+"runId": 1074
+}
+},
+{
+"family": "proposeDraft",
+"plain": {
+"facts": {
+"bytes": {
+"$blob": "01"
+},
+"companyId": 7,
+"forPerson": {
+"$principal": "0102031d"
+},
+"note": "x",
+"source": {
+"edition": "x",
+"id": 1,
+"kind": {
+"$case": "person"
+},
+"name": "x",
+"sha256": {
+"$blob": "01"
+}
+},
+"version": 1
+}
+},
+"rich": {
+"facts": {
+"bytes": {
+"$blob": "dead04"
+},
+"companyId": 1037,
+"forPerson": {
+"$principal": "0102031d"
+},
+"note": "t9é",
+"source": {
+"edition": "t8é",
+"id": 1185,
+"kind": {
+"$case": "rule"
+},
+"name": "t7é",
+"sha256": {
+"$blob": "dead06"
+}
+},
+"version": 1111
+}
+}
+},
+{
+"family": "acceptDraft",
+"plain": {
+"companyId": 7,
+"draftId": 1
+},
+"rich": {
+"companyId": 1037,
+"draftId": 1074
+}
+},
+{
+"family": "rejectDraft",
+"plain": {
+"companyId": 7,
+"draftId": 1,
+"reason": "x"
+},
+"rich": {
+"companyId": 1037,
+"draftId": 1074,
+"reason": "t3é"
+}
+},
+{
+"family": "markIdeaBoard",
+"plain": {
+"facts": {
+"boardId": 1,
+"companyId": 7,
+"isIdeas": false
+}
+},
+"rich": {
+"facts": {
+"boardId": 1074,
+"companyId": 1037,
+"isIdeas": true
+}
+}
+},
+{
+"family": "voteTopic",
+"plain": {
+"facts": {
+"companyId": 7,
+"isUp": false,
+"topicId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"isUp": true,
+"topicId": 1074
+}
+}
+},
+{
+"family": "setIdeaStatus",
+"plain": {
+"facts": {
+"companyId": 7,
+"note": "x",
+"status": {
+"$case": "submitted"
+},
+"topicId": 1
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"note": "t3é",
+"status": {
+"$case": "rejected"
+},
+"topicId": 1074
+}
+}
+},
+{
+"family": "respondToEvent",
+"plain": {
+"facts": {
+"companyId": 7,
+"eventId": 1,
+"response": {
+"$case": "attending"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"eventId": 1074,
+"response": {
+"$case": "declined"
+}
+}
+}
+},
+{
+"family": "assignEquipment",
+"plain": {
+"facts": {
+"companyId": 7,
+"equipmentId": 1,
+"subject": {
+"$principal": "0102031d"
+}
+}
+},
+"rich": {
+"facts": {
+"companyId": 1037,
+"equipmentId": 1074,
+"subject": {
+"$principal": "0102031d"
+}
+}
+}
+},
+{
+"family": "returnEquipment",
+"plain": {
+"companyId": 7,
+"equipmentId": 1
+},
+"rich": {
+"companyId": 1037,
+"equipmentId": 1074
+}
+}
+],
+"subject": "0102031d"
+}

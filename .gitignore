@@ -1,0 +1,8 @@
+.mops/
+mops.lock.bak
+__pycache__/
+*.pyc
+build/
+.thebes/
+vendor/thebes-kernel/*
+!vendor/thebes-kernel/README.md

@@ -1,0 +1,567 @@
+// Version: 1.0.0
+type Arena__660781260 =
+  {
+    var freeCount : Nat64;
+    var freeHead : Nat64;
+    var pageCount : Nat64;
+    region : Region__471459755
+  };
+type Arena__964419832 = State__550315473;
+type Authority__545608413 = {#blockTimestamp; #businessDate; #substrateClock};
+type Calendar__214036699 =
+  {holidays : [Day__222207679]; restDays : [Weekday__642838067]};
+type Credential__410547943 =
+  {clientId : Text; clientSecret : Text; identityEndpoint : Text};
+type Data__917616847<K, V> =
+  {var count : Nat__1011761150; kvs : [var ?(K, V)]};
+type Day__1000820342 = Day__222207679;
+type Day__222207679 = Nat;
+type Device__923962899 =
+  {
+    id : Nat;
+    note : Text;
+    owner : Principal;
+    registeredAtDay : Nat;
+    var revokedAtDay : ?Nat;
+    spki : Text
+  };
+type Document__860946339 =
+  {
+    atDay : Nat;
+    blobId : Text;
+    by : Principal;
+    dedupEpoch : Nat;
+    epoch : Nat;
+    var erasedAtDay : ?Nat;
+    var erasedReason : Text;
+    var fileKey : ?Text;
+    id : Nat;
+    kind : Text;
+    mime : Text;
+    name : Text;
+    plainHash : Text;
+    plainSize : Nat;
+    ring : RingId__256943503;
+    scope : Text
+  };
+type Internal__150062700<K, V> =
+  {children : [var ?Node__362690243<K, V>]; data : Data__917616847<K, V>};
+type Key__883210179 =
+  {
+    context : Text;
+    credentialId : Text;
+    id : Nat;
+    note : Text;
+    owner : Principal;
+    publicKey : Text;
+    registeredAtDay : Nat;
+    var revokedAtDay : ?Nat;
+    scheme : Scheme__1017043340
+  };
+type Leaf__147444601<K, V> = {data : Data__917616847<K, V>};
+type List__338271302<T> =
+  {
+    var blockIndex : Nat__1011761150;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__1011761150
+  };
+type List__341252331<T> = List__338271302<T>;
+type Map__254296833<K, V> = Map__61810120<K, V>;
+type Map__61810120<K, V> = Map__711417882<K, V>;
+type Map__711417882<K, V> =
+  {var root : Node__362690243<K, V>; var size : Nat__1011761150};
+type Nat__1011761150 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__362690243<K, V> =
+  {#internal : Internal__150062700<K, V>; #leaf : Leaf__147444601<K, V>};
+type Pending__878265478 =
+  {
+    challenge : Blob;
+    nonce : Text;
+    openedAtDay : Nat;
+    owner : Principal;
+    target : Text;
+    targetHash : Text
+  };
+type Region__387902757 = Region;
+type Region__471459755 = Region__387902757;
+type RingId__256943503 = Text;
+type Ring__709336337 =
+  {
+    var epoch : Nat;
+    var epochOpenedAtDay : Nat;
+    var epochOpenedAtRevocation : Nat;
+    id : RingId__256943503;
+    wraps : List__341252331<Wrap__874599873>
+  };
+type Scheme__1017043340 = {#es256; #mayo2; #mlDsa44};
+type Signature__358608300 =
+  {
+    atDay : Nat;
+    authData : Text;
+    challengeHex : Text;
+    clientData : Text;
+    credentialId : Text;
+    id : Nat;
+    key : Nat;
+    nonce : Text;
+    scheme : Scheme__1017043340;
+    signature : Text;
+    signer : Principal;
+    target : Text;
+    targetHash : Text
+  };
+type Spec__655823939 = {keyBytes : Nat; valBytes : Nat};
+type Staging__795244304 =
+  {
+    arrived : Map__254296833<Nat, (Nat, Nat)>;
+    blobId : Text;
+    chunkHashes : [Text];
+    openedAtDay : Nat;
+    owner : Principal;
+    size : Nat
+  };
+type State__126569741 =
+  {
+    arena : Arena__660781260;
+    var entryCount : Nat;
+    var freeCount : Nat64;
+    var freeHead : Nat64;
+    internalCap : Nat;
+    leafCap : Nat;
+    var pageCount : Nat64;
+    var root : Nat64;
+    spec : Spec__655823939
+  };
+type State__1898386 =
+  {
+    var base : Nat64;
+    dataLast : Map__254296833<Nat, Nat64>;
+    var dataOffset : Nat64;
+    var dataRegion : Nat;
+    var entryCount : Nat64;
+    free : List__341252331<Nat>;
+    indexChunks : Map__254296833<Nat, Nat>;
+    var initialized : Bool;
+    regions : List__341252331<Region__471459755>
+  };
+type State__314254704 =
+  {
+    var counter : Nat;
+    keys : Map__254296833<Nat, Key__883210179>;
+    var nextKey : Nat;
+    var nextSignature : Nat;
+    pending : Map__254296833<Text, Pending__878265478>;
+    signatures : Map__254296833<Nat, Signature__358608300>
+  };
+type State__451768290 =
+  {
+    byOwner : Map__254296833<Principal, List__341252331<Nat>>;
+    devices : Map__254296833<Nat, Device__923962899>;
+    var nextDevice : Nat;
+    var revocations : Nat;
+    rings : Map__254296833<RingId__256943503, Ring__709336337>
+  };
+type State__550315473 = {var bytes : Nat; region : Region__471459755};
+type State__631966613 =
+  {
+    var budget : Nat;
+    byScope : Map__254296833<Text, List__341252331<Nat>>;
+    bytes : State__550315473;
+    var dedupEpoch : Nat;
+    documents : Map__254296833<Nat, Document__860946339>;
+    var nextDocument : Nat;
+    staging : Map__254296833<Text, Staging__795244304>;
+    stagingByOwner : Map__254296833<Principal, Nat>;
+    stored : Map__254296833<Text, Stored__276600750>
+  };
+type State__774728116 =
+  {
+    var bagAbove : [var ?Blob];
+    var baggedRoot : ?Blob;
+    chunkNodes : Nat;
+    chunks : Map__254296833<Nat, Region__471459755>;
+    free : List__341252331<Region__471459755>;
+    kept : State__126569741;
+    keptArena : Arena__660781260;
+    var leafCount : Nat;
+    var nodeCount : Nat;
+    var peaks : [var ?Blob];
+    var prunedThroughLeaf : Nat;
+    var prunedThroughPos : Nat
+  };
+type Store__1024248537 =
+  {
+    var count : Nat;
+    primary : State__126569741;
+    secondaries : [State__126569741];
+    var tombstones : Nat
+  };
+type Stored__276600750 =
+  {atDay : Nat; by : Principal; chunks : [(Nat, Nat)]; size : Nat};
+type Stores__173521276 =
+  {
+    var activities : Store__1024248537;
+    var leads : Store__1024248537;
+    var mailings : Store__1024248537;
+    var nextActivityId : Nat;
+    var nextLeadId : Nat;
+    var nextMailingId : Nat;
+    var nextRecipientId : Nat;
+    var nextRuleId : Nat;
+    var nextRunId : Nat;
+    var nextStageId : Nat;
+    var nextSuppressionId : Nat;
+    var nextTagId : Nat;
+    var recipients : Store__1024248537;
+    var rules : Store__1024248537;
+    var runs : Store__1024248537;
+    var stages : Store__1024248537;
+    var suppressions : Store__1024248537;
+    var tags : Store__1024248537
+  };
+type Stores__254623785 =
+  {
+    var billLines : Store__1024248537;
+    var categories : Store__1024248537;
+    var creditNoteLines : Store__1024248537;
+    var creditNotes : Store__1024248537;
+    var nextBillId : Nat;
+    var nextBillLineId : Nat;
+    var nextCategoryId : Nat;
+    var nextCreditNoteId : Nat;
+    var nextCreditNoteLineId : Nat;
+    var nextOrderId : Nat;
+    var nextOrderLineId : Nat;
+    var nextPartnerId : Nat;
+    var nextReceiptLinkId : Nat;
+    var orderLines : Store__1024248537;
+    var orders : Store__1024248537;
+    var partners : Store__1024248537;
+    var receiptLinks : Store__1024248537;
+    var supplierBills : Store__1024248537
+  };
+type Stores__320177362 =
+  {
+    var brackets : Store__1024248537;
+    var compensations : Store__1024248537;
+    var nextBracketId : Nat;
+    var nextCompensationId : Nat;
+    var nextPayslipId : Nat;
+    var nextPayslipLineId : Nat;
+    var nextProfileId : Nat;
+    var nextRunId : Nat;
+    var payslipLines : Store__1024248537;
+    var payslips : Store__1024248537;
+    var profiles : Store__1024248537;
+    var runs : Store__1024248537
+  };
+type Stores__482781625 =
+  {
+    var breakEntries : Store__1024248537;
+    var breakTypes : Store__1024248537;
+    var compTimeBalances : Store__1024248537;
+    var compTimeUses : Store__1024248537;
+    var devices : Store__1024248537;
+    var faceTemplates : Store__1024248537;
+    var holidays : Store__1024248537;
+    var ingestReceipts : Store__1024248537;
+    var lateTiers : Store__1024248537;
+    var nextAssignmentId : Nat;
+    var nextBalanceId : Nat;
+    var nextBreakId : Nat;
+    var nextBreakTypeId : Nat;
+    var nextColumnId : Nat;
+    var nextDeviceId : Nat;
+    var nextFaceId : Nat;
+    var nextHolidayId : Nat;
+    var nextHoursId : Nat;
+    var nextOvertimeId : Nat;
+    var nextPolicyId : Nat;
+    var nextReceiptId : Nat;
+    var nextRecipientId : Nat;
+    var nextRunId : Nat;
+    var nextScheduleId : Nat;
+    var nextSwapId : Nat;
+    var nextTemplateId : Nat;
+    var nextTierId : Nat;
+    var nextUseId : Nat;
+    var nextWfhId : Nat;
+    var overtimeRequests : Store__1024248537;
+    var policies : Store__1024248537;
+    var reportColumns : Store__1024248537;
+    var reportRecipients : Store__1024248537;
+    var reportSchedules : Store__1024248537;
+    var runs : Store__1024248537;
+    var shiftAssignments : Store__1024248537;
+    var shiftTemplates : Store__1024248537;
+    var swapRequests : Store__1024248537;
+    var wfhRequests : Store__1024248537;
+    var workingHours : Store__1024248537
+  };
+type Stores__590028456 =
+  {
+    var bomLines : Store__1024248537;
+    var boms : Store__1024248537;
+    var edges : Store__1024248537;
+    var nextBomId : Nat;
+    var nextBomLineId : Nat;
+    var nextEdgeId : Nat;
+    var nextProductionId : Nat;
+    var nextRequirementId : Nat;
+    var productions : Store__1024248537;
+    var requirements : Store__1024248537
+  };
+type Stores__617608051 =
+  {
+    var accounts : Store__1024248537;
+    var journals : Store__1024248537;
+    var locks : Store__1024248537;
+    var moveLines : Store__1024248537;
+    var moves : Store__1024248537;
+    var nextAccountId : Nat;
+    var nextJournalId : Nat;
+    var nextLockId : Nat;
+    var nextMoveId : Nat;
+    var nextMoveLineId : Nat;
+    var nextSequenceId : Nat;
+    var sequences : Store__1024248537
+  };
+type Stores__636265530 =
+  {
+    var documents : Store__1024248537;
+    ev : State__631966613;
+    ks : State__451768290;
+    var nextDocumentId : Nat;
+    var nextRecordId : Nat;
+    var nextRequestId : Nat;
+    var nextRunId : Nat;
+    var records : Store__1024248537;
+    var requests : Store__1024248537;
+    var runs : Store__1024248537;
+    sg : State__314254704
+  };
+type Stores__780593858 =
+  {
+    var costings : Store__1024248537;
+    var layers : Store__1024248537;
+    var locations : Store__1024248537;
+    var lots : Store__1024248537;
+    var moves : Store__1024248537;
+    var nextCostingId : Nat;
+    var nextLayerId : Nat;
+    var nextLocationId : Nat;
+    var nextLotId : Nat;
+    var nextMoveId : Nat;
+    var nextPickingId : Nat;
+    var nextQuantId : Nat;
+    var nextWarehouseId : Nat;
+    var pickings : Store__1024248537;
+    var quants : Store__1024248537;
+    var warehouses : Store__1024248537
+  };
+type Stores__832071714 =
+  {
+    var categoryTaxProfiles : Store__1024248537;
+    var configs : Store__1024248537;
+    var creditRefs : Store__1024248537;
+    var currencies : Store__1024248537;
+    var filingLines : Store__1024248537;
+    var filings : Store__1024248537;
+    var issuerProfiles : Store__1024248537;
+    var lines : Store__1024248537;
+    var nextCategoryTaxProfileId : Nat;
+    var nextConfigId : Nat;
+    var nextCreditRefId : Nat;
+    var nextCurrencyId : Nat;
+    var nextFilingId : Nat;
+    var nextFilingLineId : Nat;
+    var nextIssuerProfileId : Nat;
+    var nextLineId : Nat;
+    var nextPartnerAddressId : Nat;
+    var nextRateId : Nat;
+    var nextReconciliationId : Nat;
+    var nextRunId : Nat;
+    var nextSealId : Nat;
+    var nextStatementId : Nat;
+    var nextTaxId : Nat;
+    var partnerAddresses : Store__1024248537;
+    var rates : Store__1024248537;
+    var reconciliations : Store__1024248537;
+    var runs : Store__1024248537;
+    var seals : Store__1024248537;
+    var statements : Store__1024248537;
+    var taxes : Store__1024248537
+  };
+type Stores__852894661 =
+  {
+    var assignments : Store__1024248537;
+    var checkIns : Store__1024248537;
+    var contracts : Store__1024248537;
+    var customFieldValues : Store__1024248537;
+    var customFields : Store__1024248537;
+    var disciplinaryCases : Store__1024248537;
+    var familyMembers : Store__1024248537;
+    var fteEntries : Store__1024248537;
+    var grievances : Store__1024248537;
+    var headcountPlans : Store__1024248537;
+    var incidents : Store__1024248537;
+    var investigationNotes : Store__1024248537;
+    var keyPositions : Store__1024248537;
+    var milestones : Store__1024248537;
+    var nextAssignmentId : Nat;
+    var nextCaseId : Nat;
+    var nextCheckInId : Nat;
+    var nextContractId : Nat;
+    var nextExpenseId : Nat;
+    var nextFamilyId : Nat;
+    var nextFieldId : Nat;
+    var nextFteId : Nat;
+    var nextGrievanceId : Nat;
+    var nextHeadcountId : Nat;
+    var nextIncidentId : Nat;
+    var nextItemId : Nat;
+    var nextMilestoneId : Nat;
+    var nextNoteId : Nat;
+    var nextPendingId : Nat;
+    var nextPlanId : Nat;
+    var nextPositionId : Nat;
+    var nextProbationId : Nat;
+    var nextRelocationId : Nat;
+    var nextRunId : Nat;
+    var nextSuccessorId : Nat;
+    var nextValueId : Nat;
+    var nextWorkHistoryId : Nat;
+    var pendingEmployees : Store__1024248537;
+    var planItems : Store__1024248537;
+    var plans : Store__1024248537;
+    var probations : Store__1024248537;
+    var relocationExpenses : Store__1024248537;
+    var relocations : Store__1024248537;
+    var runs : Store__1024248537;
+    var successors : Store__1024248537;
+    var workHistory : Store__1024248537
+  };
+type Stores__89641807 =
+  {
+    var branches : Store__1024248537;
+    var corrections : Store__1024248537;
+    var departments : Store__1024248537;
+    var employees : Store__1024248537;
+    var jobTitles : Store__1024248537;
+    var leaveBalances : Store__1024248537;
+    var leaveRequests : Store__1024248537;
+    var memberships : Store__1024248537;
+    var nextBranchId : Nat;
+    var nextCorrectionId : Nat;
+    var nextDepartmentId : Nat;
+    var nextEmployeeId : Nat;
+    var nextJobTitleId : Nat;
+    var nextLeaveBalanceId : Nat;
+    var nextLeaveRequestId : Nat;
+    var nextMembershipId : Nat;
+    var nextPunchId : Nat;
+    var punches : Store__1024248537
+  };
+type Stores__905659696 =
+  {
+    var entries : Store__1024248537;
+    var nextEntryId : Nat;
+    var nextProjectId : Nat;
+    var nextTaskId : Nat;
+    var nextTimesheetId : Nat;
+    var projects : Store__1024248537;
+    var tasks : Store__1024248537;
+    var timesheets : Store__1024248537
+  };
+type Stores__940328372 =
+  {
+    var applications : Store__1024248537;
+    var assessments : Store__1024248537;
+    var candidates : Store__1024248537;
+    var checkKinds : Store__1024248537;
+    var checks : Store__1024248537;
+    var consents : Store__1024248537;
+    var counterOffers : Store__1024248537;
+    var exitInterviews : Store__1024248537;
+    var interviews : Store__1024248537;
+    var nextApplicationId : Nat;
+    var nextAssessmentId : Nat;
+    var nextCandidateId : Nat;
+    var nextCheckId : Nat;
+    var nextCheckKindId : Nat;
+    var nextConsentId : Nat;
+    var nextCounterId : Nat;
+    var nextExitId : Nat;
+    var nextInterviewId : Nat;
+    var nextNoteId : Nat;
+    var nextOfferId : Nat;
+    var nextPanelistId : Nat;
+    var nextPolicyId : Nat;
+    var nextPostingId : Nat;
+    var nextPublicId : Nat;
+    var nextReferralId : Nat;
+    var nextRequirementId : Nat;
+    var nextRequisitionId : Nat;
+    var nextRunId : Nat;
+    var nextScorecardId : Nat;
+    var nextWindowId : Nat;
+    var notes : Store__1024248537;
+    var offers : Store__1024248537;
+    var panelists : Store__1024248537;
+    var policies : Store__1024248537;
+    var postings : Store__1024248537;
+    var publicApplications : Store__1024248537;
+    var referrals : Store__1024248537;
+    var requirements : Store__1024248537;
+    var requisitions : Store__1024248537;
+    var runs : Store__1024248537;
+    var scorecards : Store__1024248537;
+    var windows : Store__1024248537
+  };
+type Weekday__642838067 = Nat;
+type Wrap__874599873 =
+  {atDay : Nat; byDevice : Nat; device : Nat; epoch : Nat; wrapped : Text};
+actor {
+  stable var calendarAuthority : ?Principal;
+  stable var config :
+    {
+      authority : Authority__545608413;
+      businessDate : ?Day__1000820342;
+      calendar : ?Calendar__214036699;
+      maxRollDays : Nat
+    };
+  stable var etaCredentials :
+    {
+      var root : Node__362690243<Nat, Credential__410547943>;
+      var size : Nat__1011761150
+    };
+  stable log :
+    {
+      var count : Nat;
+      var lastHash : ?Blob;
+      mmr : State__774728116;
+      stableLog : State__1898386
+    };
+  stable state :
+    {
+      acct : Stores__617608051;
+      arena : Arena__964419832;
+      att : Stores__482781625;
+      var blocksApplied : Nat;
+      var companies : Store__1024248537;
+      crm : Stores__173521276;
+      evs : Stores__636265530;
+      fin : Stores__832071714;
+      hr : Stores__89641807;
+      mrp : Stores__590028456;
+      var nextCompanyId : Nat;
+      ord : Stores__254623785;
+      pay : Stores__320177362;
+      ppl : Stores__852894661;
+      proj : Stores__905659696;
+      rec : Stores__940328372;
+      stock : Stores__780593858
+    };
+  stable var upgrades : Nat
+};

@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+"""A real P-256 signature over a device's attendance batch, generated outside the contract.
+
+The received `ingestDevicePunches(companyId, deviceKey : Text, punches)` (`main.mo:5861`)
+authenticates a reader by a shared secret carried in the clear in every call - a secret
+`registerAttendanceDevice` (`main.mo:5816`) mints from the company number and `Time.now()`, with no
+random source in it at all. The landed ingest has no secret anywhere: the device holds a private
+key it generated and never sent, the contract holds the public half, and every batch is signed
+together with a monotonic counter.
+
+Proving that requires a REAL signature from a signer that is not the thing being tested. This
+script is that signer. It shares no code with the contract: it writes the batch bytes again from
+the specification in `AttFold.batchBytes` - the canonical writer's 16-bit-length text, its
+minimal-length naturals, a 16-bit count, then each punch - and signs their SHA-256 with
+`cryptography`'s own P-256 implementation, in DER.
+
+Run it with no arguments to print the Motoko literals `test/Attendance.test.mo` embeds.
+
+ECDSA's per-signature nonce is random here, so the SIGNATURES differ on every run and the ones in
+the battery are one run's output. That is not a weakness of the vector: a signature is evidence
+because it VERIFIES, and any of them does. The two public keys and the two digests printed at the
+end are deterministic, and those are what a reader compares.
+
+Attribution: Thebes Core Team. Licence: Apache 2.0.
+"""
+
+import hashlib
+import sys
+
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import ec, utils
+
+# Two fixed private keys, so the vectors are reproducible. They sign nothing real, guard nothing,
+# and exist only in this file - which is the point: the contract never sees either of them.
+DEVICE_SCALAR = 0x3F1C9A47D5E20B86A1F4C70D93B5E8246ACDF0193B77E5FF08DE6DA42F707113
+OTHER_SCALAR = 0x51B7E2C48A9D0F36725C1E8B04D9A3F6182B7C0D5E4F39A8271C6B0D4E5F8A29
+
+DOMAIN = "qorza:deviceBatch:v1"
+
+
+def canonical_nat(n: int) -> bytes:
+    """`Canonical.Writer.nat`: one length byte, then the value big-endian in that many bytes.
+
+    Zero is one byte of length and no payload, which is how the kernel writes it.
+    """
+    if n == 0:
+        return bytes([0])
+    body = n.to_bytes((n.bit_length() + 7) // 8, "big")
+    return bytes([len(body)]) + body
+
+
+def canonical_text(t: str) -> bytes:
+    """`Canonical.Writer.text`: a 16-bit big-endian length, then the UTF-8 bytes."""
+    b = t.encode("utf-8")
+    return len(b).to_bytes(2, "big") + b
+
+
+def len16(n: int) -> bytes:
+    return n.to_bytes(2, "big")
+
+
+def batch_bytes(device_id: int, counter: int, punches) -> bytes:
+    """`AttFold.batchBytes`, written again from the specification."""
+    out = canonical_text(DOMAIN)
+    out += canonical_nat(device_id)
+    out += canonical_nat(counter)
+    out += len16(len(punches))
+    for employee_id, day, minute, kind in punches:
+        out += canonical_nat(employee_id)
+        out += canonical_nat(day)
+        out += canonical_nat(minute)
+        out += bytes([kind])          # `nat8`, one raw byte: 1 arrival, 2 departure
+    return out
+
+
+def spki_hex(key: ec.EllipticCurvePrivateKey) -> str:
+    der = key.public_key().public_bytes(
+        serialization.Encoding.DER, serialization.PublicFormat.SubjectPublicKeyInfo
+    )
+    assert len(der) == 91, f"a P-256 SPKI is 91 bytes, not {len(der)}"
+    return der.hex()
+
+
+def sign_hex(key: ec.EllipticCurvePrivateKey, payload: bytes) -> str:
+    digest = hashlib.sha256(payload).digest()
+    return key.sign(digest, ec.ECDSA(utils.Prehashed(hashes.SHA256()))).hex()
+
+
+def motoko_blob(name: str, hexstr: str) -> str:
+    return f'let {name} : Text = "{hexstr}";'
+
+
+def main() -> int:
+    device = ec.derive_private_key(DEVICE_SCALAR, ec.SECP256R1())
+    other = ec.derive_private_key(OTHER_SCALAR, ec.SECP256R1())
+
+    # Employee ids 3 and 4, on business day 20,709, arriving at 08:55 and 09:12 and leaving at
+    # 17:03 and 17:30. Ids and the day are what the battery admits into the company.
+    punches = [
+        (3, 20_709, 535, 1),
+        (4, 20_709, 552, 1),
+        (3, 20_709, 1023, 2),
+        (4, 20_709, 1050, 2),
+    ]
+    payload = batch_bytes(1, 1, punches)
+
+    # The same batch with ONE MINUTE CHANGED: the signature over the original must not verify.
+    tampered = list(punches)
+    tampered[0] = (3, 20_709, 536, 1)
+
+    # A batch naming a badge the company does not know, beside one it does. The contract must
+    # place the second and COUNT the first as rejected rather than discarding the batch: the device
+    # attested to what it read, and one unknown badge must not lose everybody else's day.
+    stranger = [
+        (99, 20_709, 600, 1),
+        (3, 20_709, 601, 1),
+    ]
+
+    print("// Generated by integration/oracle/device_vector.py - do not edit by hand.")
+    print(motoko_blob("DEVICE_SPKI", spki_hex(device)))
+    print(motoko_blob("OTHER_SPKI", spki_hex(other)))
+    print(motoko_blob("BATCH_SIG", sign_hex(device, payload)))
+    print(motoko_blob("BATCH_SIG_C2", sign_hex(device, batch_bytes(1, 2, punches))))
+    print(motoko_blob("OTHER_SIG", sign_hex(other, payload)))
+    print(motoko_blob("STRANGER_SIG", sign_hex(device, batch_bytes(1, 3, stranger))))
+    # A batch placing a punch on a day that has not happened. Nothing else about it is wrong, so
+    # the only rule that may refuse it is the one bounding the window a device may attest to.
+    future = [(3, 20_710, 540, 1)]
+    print(motoko_blob("FUTURE_SIG", sign_hex(device, batch_bytes(1, 4, future))))
+    print(motoko_blob("BATCH_SIG_C5", sign_hex(device, batch_bytes(1, 5, punches))))
+    # A batch of 201 punches - one more than a message should carry - CORRECTLY SIGNED, by the
+    # second device, so the only rule that may refuse it is the bound. The received ingest accepts
+    # a thousand and resolves each one by walking every membership in the contract.
+    big = [(3, 20_709, i % 1440, 1) for i in range(201)]
+    print(motoko_blob("BIG_SIG", sign_hex(other, batch_bytes(2, 1, big))))
+    print(f"// the signed batch is {len(payload)} bytes; its digest is "
+          f"{hashlib.sha256(payload).hexdigest()}")
+    print(f"// a punch changed by one minute hashes to "
+          f"{hashlib.sha256(batch_bytes(1, 1, tampered)).hexdigest()}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

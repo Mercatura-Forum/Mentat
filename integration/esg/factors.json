@@ -1,0 +1,124 @@
+{
+  "sources": {
+    "ghg-emission-factors-hub-2025.xlsx": "43afb91d79b2ae765b3a447549d9e1021a144a407cec5eb804be9fcf69a668a7",
+    "SupplyChainGHGEmissionFactors_v1.3.0_NAICS_byGHG_USD2022.csv": "963952e5911dd5c5a4408172192b327c1583b5491a5b80c2d7cb03260411ee16"
+  },
+  "gwpSet": {
+    "name": "IPCC AR5, 100-year",
+    "database": "EPA GHG Emission Factors Hub",
+    "edition": "2025",
+    "file": "ghg-emission-factors-hub-2025.xlsx",
+    "gases": [
+      {
+        "gas": "CO2",
+        "group": "co2",
+        "gwpMilli": 1000,
+        "reference": "Table 11: carbon dioxide, by definition"
+      },
+      {
+        "gas": "CH4",
+        "group": "ch4",
+        "gwpMilli": 28000,
+        "reference": "Table 11, E525"
+      },
+      {
+        "gas": "N2O",
+        "group": "n2o",
+        "gwpMilli": 265000,
+        "reference": "Table 11, E526"
+      },
+      {
+        "gas": "HFCs and PFCs, unspecified",
+        "group": "hfc",
+        "gwpMilli": 1000,
+        "reference": "Supply Chain v1.3.0: given in kg CO2e, so its potential is one"
+      }
+    ]
+  },
+  "factors": [
+    {
+      "code": "ng",
+      "database": "EPA GHG Emission Factors Hub",
+      "edition": "2025",
+      "file": "ghg-emission-factors-hub-2025.xlsx",
+      "reference": "Table 1, Natural Gas (row 38): H38 kg CO2/scf, I38 g CH4/scf, J38 g N2O/scf, D38 mmBtu/scf",
+      "scope": "scope1",
+      "category": 1,
+      "basis": "physical",
+      "unit": "scf",
+      "per": 1000000,
+      "gases": [
+        {
+          "gas": "CO2",
+          "micrograms": 54440000000000
+        },
+        {
+          "gas": "CH4",
+          "micrograms": 1030000000
+        },
+        {
+          "gas": "N2O",
+          "micrograms": 100000000
+        }
+      ],
+      "energySource": "naturalGas",
+      "kilojoules": 1082487305
+    },
+    {
+      "code": "grid",
+      "database": "EPA GHG Emission Factors Hub (eGRID2023)",
+      "edition": "2025",
+      "file": "ghg-emission-factors-hub-2025.xlsx",
+      "reference": "Table 6, US Average (row 366): E366 lb CO2/MWh, F366 lb CH4/MWh, G366 lb N2O/MWh",
+      "scope": "scope2Location",
+      "category": 0,
+      "basis": "physical",
+      "unit": "kWh",
+      "per": 100000,
+      "gases": [
+        {
+          "gas": "CO2",
+          "micrograms": 34995694607951
+        },
+        {
+          "gas": "CH4",
+          "micrograms": 2585476509
+        },
+        {
+          "gas": "N2O",
+          "micrograms": 362873896
+        }
+      ],
+      "energySource": "gridUnspecified",
+      "kilojoules": 360000000
+    },
+    {
+      "code": "refinery",
+      "database": "EPA Supply Chain GHG Emission Factors",
+      "edition": "v1.3.0, 2022 USD",
+      "file": "SupplyChainGHGEmissionFactors_v1.3.0_NAICS_byGHG_USD2022.csv",
+      "reference": "NAICS 324110 Petroleum Refineries, Supply Chain Emission Factors with Margins",
+      "scope": "scope3",
+      "category": 1,
+      "basis": "monetary",
+      "unit": "USD",
+      "per": 100,
+      "gases": [
+        {
+          "gas": "CO2",
+          "micrograms": 183000000
+        },
+        {
+          "gas": "CH4",
+          "micrograms": 2910000
+        },
+        {
+          "gas": "HFCs and PFCs, unspecified",
+          "micrograms": 438000
+        }
+      ],
+      "energySource": "none",
+      "kilojoules": 0
+    }
+  ]
+}

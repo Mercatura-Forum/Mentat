@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.08">
+  <BkToCstmrStmt>
+    <GrpHdr>
+      <MsgId>CIB-STMT-2026-09-0917</MsgId>
+      <CreDtTm>2026-09-13T06:00:00Z</CreDtTm>
+    </GrpHdr>
+    <Stmt>
+      <Id>STMT-2026-09-13-EGP-0001</Id>
+      <CreDtTm>2026-09-13T06:00:00Z</CreDtTm>
+      <FrToDt>
+        <FrDtTm>2026-09-01T00:00:00Z</FrDtTm>
+        <ToDtTm>2026-09-13T00:00:00Z</ToDtTm>
+      </FrToDt>
+      <Acct>
+        <Id><IBAN>EG380019000500000000263180002</IBAN></Id>
+        <Ccy>EGP</Ccy>
+        <Svcr><FinInstnId><BICFI>CIBEEGCX</BICFI></FinInstnId></Svcr>
+      </Acct>
+      <Bal>
+        <Tp><CdOrPrtry><Cd>OPBD</Cd></CdOrPrtry></Tp>
+        <Amt Ccy="EGP">10000.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Dt><Dt>2026-09-01</Dt></Dt>
+      </Bal>
+      <Bal>
+        <Tp><CdOrPrtry><Cd>CLBD</Cd></CdOrPrtry></Tp>
+        <Amt Ccy="EGP">53989.90</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Dt><Dt>2026-09-13</Dt></Dt>
+      </Bal>
+      <Ntry>
+        <NtryRef>NTRY-0001</NtryRef>
+        <Amt Ccy="EGP">43890.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-09-14</Dt></BookgDt>
+        <ValDt><Dt>2026-09-14</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>PMNT</Cd></Prtry></BkTxCd>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><EndToEndId>INV-2026-0901</EndToEndId></Refs>
+            <RltdPties>
+              <Dbtr><Pty><Nm>A Customer SAE</Nm></Pty></Dbtr>
+              <DbtrAcct><Id><IBAN>EG800002000156789012345180002</IBAN></Id></DbtrAcct>
+            </RltdPties>
+            <RmtInf><Ustrd>Invoice INV-2026-0901</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>NTRY-0002</NtryRef>
+        <Amt Ccy="EGP">4000.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-09-14</Dt></BookgDt>
+        <BkTxCd><Prtry><Cd>PMNT</Cd></Prtry></BkTxCd>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><EndToEndId>UNKNOWN-4000</EndToEndId></Refs>
+            <RmtInf><Ustrd>A receipt nobody expected</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>NTRY-0003</NtryRef>
+        <Amt Ccy="EGP">3900.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-09-15</Dt></BookgDt>
+        <BkTxCd><Prtry><Cd>PMNT</Cd></Prtry></BkTxCd>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><EndToEndId>BILL-1-1</EndToEndId><UETR>8f2b5e70-1d44-4e6a-9c4a-2d9c87fd0011</UETR></Refs>
+            <RltdPties>
+              <Cdtr><Pty><Nm>A Supplier Ltd</Nm></Pty></Cdtr>
+              <CdtrAcct><Id><IBAN>EG920002000199999999999999999</IBAN></Id></CdtrAcct>
+            </RltdPties>
+            <RmtInf><Ustrd>Invoice INV-2026-0917</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>NTRY-0004</NtryRef>
+        <Amt Ccy="EGP">0.10</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-09-15</Dt></BookgDt>
+        <BkTxCd><Prtry><Cd>CHRG</Cd></Prtry></BkTxCd>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf><Ustrd>Account fee</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+    </Stmt>
+  </BkToCstmrStmt>
+</Document>

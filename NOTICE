@@ -1,0 +1,563 @@
+Mentat - an enterprise resource planning system that runs as a smart contract on
+the Thebes substrate: the books, sales and purchase, stock and manufacturing, the
+person record and payroll, the company's sites and shop, and the rest of its
+operations, as one append-only log and one fold.
+
+Copyright 2026 Mercatura Forum. Licensed under the Apache License, Version 2.0.
+
+════════════════════════════════════════════════════════════════════════════════
+ PROVENANCE
+════════════════════════════════════════════════════════════════════════════════
+
+Every source file under `src/` is listed here with where it came from, together
+with the batteries, tools and readers that check it.
+
+── written for this product ────────────────────────────────────────────────────
+
+  src/Widths.mo        the width registry: every fixed-width field, declared once
+  src/TextArena.mo     variable-length text in an append-only stable region
+  src/Command.mo       the command type: every act that changes state
+  src/Encoding.mo      the versioned command encoders and their registry
+  src/Log.mo           the domain block log's codec and event
+  src/Rows.mo          the tables: what a row is, how wide, and what is indexed
+  src/State.mo         the store, and the fold that is its only writer
+  src/Contract.mo      the accept path: clock, bind, fold, append
+  src/Catalogue.mo     the permission catalogue
+  src/ClockWiring.mo   the one module in this product with a time source
+  src/Query.mo         the read edge: every list a page, an over-large ask refused
+  src/Lookup.mo        a range read from its head that follows the page's cursor past the
+                       tombstones in it, so a short page never reads as a finished range
+  test/Tombstones.test.mo  every kind of range read driven past sixteen tombstones through the
+                       commands, and the walk itself against a model
+  src/Fields.mo        the field codecs every row shares
+  src/Enums.mo         the closed vocabularies and their byte codes
+  src/HrFacts.mo       the payloads the HR core's commands carry
+  src/HrRows.mo        the HR core's nine tables
+  src/HrFold.mo        the HR core's rules, in the one place a row may change
+  src/PayFacts.mo      the payloads payroll's commands carry
+  src/PayRows.mo       payroll's six tables
+  src/PayEngine.mo     the payslip computation, in exact arithmetic
+  src/PayFold.mo       payroll's rules, in the one place a payroll row may change
+  src/AcctFacts.mo     the payloads accounting's commands carry
+  src/AcctRows.mo      accounting's twenty tables: the ledger's six, the close's run, its plan
+                       lines and the moves it posted, the statement and its lines, the deferral,
+                       its entries and its run, the revaluation policy and each position at a close,
+                       the asset register row, each month's charge, the impairments and disposals,
+                       and the run that posts the charges
+  src/AcctFold.mo      accounting's rules, in the one place a ledger row may change; the close as
+                       a run the fold posts; the statements as folds of the log at a block; the deferrals as
+                       schedule rows the run posts month by month; the revaluation at the head of
+                       the close, reversed at the next; the fixed assets charged month by month by
+                       a run, impaired and disposed of by events posted under four eyes
+  src/OrderFacts.mo    the payloads the order commands carry
+  src/OrderRows.mo     partners, categories, orders and order lines
+  src/OrderFold.mo     orders, and the balanced invoice they become
+  src/StockFacts.mo    the payloads the inventory commands carry
+  src/StockRows.mo     warehouses, locations, lots, quants, pickings, moves, layers, costing
+  src/StockFold.mo     inventory, and the value that moves with it
+  src/MrpFacts.mo      the payloads the manufacturing commands carry
+  src/MrpRows.mo       bills of materials, their closure, productions, requirement lines
+  src/MrpFold.mo       manufacturing, and the stock it actually moves
+  src/ProjFacts.mo     the payloads the project, task and time commands carry
+  src/ProjRows.mo      projects, the one task table, time entries, timesheets
+  src/ProjFold.mo      projects, tasks, and time that costs something
+  src/CrmFacts.mo      the payloads the CRM commands carry, none of them a credential
+  src/CrmRows.mo       leads, tags, stages, activities, mailings, recipients, suppressions,
+                       scoring rules, the two sweeps, the saved segment, the campaign, its arms,
+                       its audience as dealt, and the relay's acknowledgements
+  src/CrmFold.mo       the CRM: a sweep that covers, a mailing that reaches, a score that is a run,
+                       an audience that is a rule, a deal and a winner that are recorded rules
+  test/Campaign.test.mo  the campaign: the audience counted by the battery before the contract,
+                       every hand checked against the battery's own statement of the deal, the
+                       calendar's schedule, the suppression the next batch reads, the winner by the
+                       recorded rule and the remainder in the winner's words
+  test/Close.test.mo   the month-end close: every period total checked against the battery's own
+                       ledger of what it posted, the plan hash restated by the battery, the sweep
+                       verified by a walk of the whole store, four pairs of eyes, re-opening and
+                       the period closed again on the activity alone
+  test/Statement.test.mo  the statements: every line against the battery's own walk of the store,
+                       the hash restated, the anchor checked against the block before, the income
+                       statement of a closed period equal to the close's plan
+  test/Deferral.test.mo  the deferrals: sixteen month-ends pinned from outside the tree, every part
+                       to the minor unit with the residue last, the run's entries on their month-ends
+                       or on the first open day, the balances by a walk of the whole store
+  test/Revaluation.test.mo  the revaluation: every position and posting against the battery's own
+                       half-even arithmetic under the declared exponents and rounding unit, the
+                       reversal line for line at the next close, the books by a walk of the store
+  test/Asset.test.mo   the fixed assets: every charge against the battery's own rule of what is
+                       left over the months left, the impairment re-planning the rest, the disposal
+                       at a gain, at a loss and for nothing, the balances by a walk of the store
+  src/ExpFacts.mo      the payloads the expense commands carry; no rate travels with a claim
+  src/ExpRows.mo       expense categories, their dated rates, the company's policy, the claim and
+                       its lines, the receipt indexed by its document
+  src/ExpFold.mo       expenses: a claim priced by the fold from the rate in force on each line's
+                       day and backed by receipts in the evidence store, posted to the ledger on
+                       approval by a second person and not on filing, the reimbursement a payable a
+                       third person settles
+  test/Expense.test.mo the expenses: every price against the battery's own table of rates and its
+                       own half-even arithmetic, the ledger unmoved by a filing, the approval's move
+                       and its two signatories, a receipt reused, released and erased, the approval
+                       refused into a lock and posted the next day, the balances by a walk of the store
+  src/Pacs008.mo       the supplier payment as a pacs.008 in the messaging hub's compact shape, built
+                       from rows: ISO 13616 and 9362 for the accounts, a UETR derived in the version-4
+                       shape, the business day at midnight, SWIFT character set X, the SHA-256 fixed
+  src/PmtFacts.mo      the payloads the payment commands carry; no message, total or answer taken on trust
+  src/PmtRows.mo       the company's bank accounts by IBAN, where each supplier is paid, the payment
+                       with its fingerprint and the hub's word
+  src/PmtFold.mo       payments out: a matched bill whose liability is posted, paid once from an
+                       account in its currency, the message built and fixed, the submission and the
+                       hub's word each a second person's act, the acceptance posting through the ledger
+  test/Payment.test.mo the payments out: every message held to the messaging hub's own validator
+                       (the ISO 20022 example's, imported as a package) under its Egypt guideline,
+                       the IBANs judged by two MOD 97-10 implementations, the fingerprint by a second
+                       SHA-256, the ledger unmoved until the hub's acceptance, the move's two
+                       signatories, a British account refused by the hub on its two country rules
+  test/Camt.test.mo    the statements in: a camt.053 imported as a statement with every line the
+                       message's against figures computed outside the tree, nineteen malformed or
+                       foreign messages refused and moving nothing, the matching already present
+                       reconciling the lines whose counterparty the bank named, a real bank's
+                       CBPR+ statement imported and refused confirmation on its own figures
+  test/Camt053Fixtures.mo  the camt.053 fixtures under test/fixtures/camt053/ as text, written by
+                       tools/camt_fixtures.py from the files and checked against them by tools/check.sh
+  test/fixtures/camt053/  a September statement written for the battery, valid against the official
+                       camt.053.001.08 schema; and the hub's CBPR+ conforming statement, as published
+  tools/camt_fixtures.py  writes and checks the fixtures module
+  src/MailRequest.mo   the outbound send, built unreplicated, with the credential in the header
+                       and in no command
+  src/EvFacts.mo       the payloads the evidence and signature commands carry, none of which is
+                       a file, a document number or a signature taken on trust
+  src/EvRows.mo        the document register, signature requests and records, the signers of a
+                       request in order, the seal on a completed request, the expiry sweep
+  src/EvFold.mo        documents that are encrypted, erasable and actually signed - by named
+                       people in turn, sealed when the last has signed, closed by a decline or by
+                       the calendar
+  src/Outcall.mo       the shape of an outbound request, and the rule that every one of them is
+                       unreplicated
+  src/EtaDocument.mo   the tax authority's document as its SDK specifies it, its canonical
+                       serialisation and the digest a seal is made over; the serialisation is held
+                       to the authority's own published example by tools/check.sh
+  src/EtaSubmit.mo     the login and the submission as the authority's API states them, at quorum
+                       one, and their answers read
+  integration/eta/     the authority's published example: the document, its serialisation and its
+                       seal, carried as the vector both the twin and the kernel are held to
+  test/fixtures/eta/   keys and certificates made for the battery: a test root, a leaf carrying the
+                       taxpayer identifier, another taxpayer's, an unanchored one and a lapsed one
+  test/EtaVectors.mo   the seals over the battery's own documents, made by OpenSSL playing the
+                       sealing token (tools/eta_seal.sh)
+  tools/eta_seal.sh    the sealing token, played by OpenSSL, in two passes
+  src/FinFacts.mo      the payloads the currency, tax, banking and filing commands carry - none of
+                       them a credential, an endpoint or a total
+  src/FinRows.mo       currencies and rates, taxes, bank statements and lines, reconciliations,
+                       the filings and their lines
+  src/FinFold.mo       exact scales, a reconciliation that compares, and a filing that is derived
+  src/PeopleFacts.mo   the payloads the person-record and conduct commands carry - no `Text` date,
+                       no generated id, no identity number, no name on an anonymous complaint
+  src/PeopleRows.mo    plans, contracts, probation, relocation, work history, family, headcount,
+                       succession, custom fields, conduct, the roster and its import
+  src/PeopleFold.mo    the person record whole, and cases and conduct
+  src/AttFacts.mo      the payloads the shift, break, overtime, holiday, home-working and device
+                       commands carry - no date, no time, no rate, no credential
+  src/AttRows.mo       shift templates and assignments, swaps, break types and entries, overtime,
+                       time in lieu, holidays, working from home, the working week, the attendance
+                       policy and its tiers, the devices, face-template enrolments, the report
+                       schedules and the ingest receipts
+  src/AttFold.mo       shifts, breaks, overtime, holidays, working from home, and a device that
+                       signs its own batch
+  src/RecFacts.mo      the payloads the recruitment commands carry - no name, no address, no cover
+                       letter, no `Text` date, no salary without its currency
+  src/RecRows.mo       postings and their requirements, applications public and internal, the
+                       careers policy and its daily window, candidates and their notes,
+                       requisitions, offers and counter-offers, interviews, panels and scorecards,
+                       referrals, background checks with their consents, exit interviews and the
+                       talent grid
+  src/RecFold.mo       recruitment: a careers page that stays open and is bounded, priced and
+                       blind, and an offer only the candidate can answer
+  src/Boundary.mo      what a contract's front door decides - the decoding, and the words a
+                       refusal is given - written once for every contract in the estate
+  src/Mentat.mo        the contract: the substrate's clock, the persistence boundary, and the one
+                       route by which a command reaches the log
+  src/Mentat.most      the stable-type signature of that contract, recorded so an upgrade that
+                       would discard a persistent variable is refused rather than reported as a
+                       success
+  src/Migration.mo     the retired layout of the state named exactly and carried into this one:
+                       every store kept, the order line re-encoded at its new width, applied by a
+                       migrating copy of the actor for the one upgrade that needs it; the person
+                       record's custom fields carried into Studio on the record kind membership,
+                       the upgrade refused rather than anything cut to fit
+  tools/layouts/       the stable-type signatures of retired layouts, frozen at the commit that
+                       retired each, and the upgrade path the compiler is made to check
+  src/CrdFacts.mo      the payloads the credit commands carry: a partner's limit, term, grace, charge and rate
+  src/CrdRows.mo       the credit tables: a partner's terms with its running exposure, the open items of its
+                       account from the order confirmed to the invoice settled, and the run that charges the overdue
+  src/CrdFold.mo       credit terms on parties: the limit refused at the order's confirmation, the due day the
+                       terms give every invoice and bill, the settlement by the bank's line or the hub's word, and
+                       late charges and interest as moves a run posts under four eyes
+  src/GrpFacts.mo     the payloads the consolidation commands carry: the group, a link, the member statements
+  src/GrpRows.mo      the consolidation tables: the group and its members, the intercompany links, the
+                       consolidation, the member statements it was read from, its lines by code, the eliminations
+  src/GrpFold.mo      consolidation: a fold of the members' published statements at a block, the intercompany
+                       lines reversed by linked partner, the difference to the parent's equity, sealed with the tip
+  src/MntFacts.mo     the payloads the maintenance commands carry: the equipment, a plan, a request, a sign-off,
+                       a piece handed to an employee
+  src/MntRows.mo      the maintenance tables: the equipment register, the preventive plans, the run, the work
+                       orders and the downtime they record, and every hand-over of a piece to an employee
+  src/MntFold.mo      maintenance: plans run into work orders in the opener's name, a failure taking equipment
+                       down against the production it stops, the sign-off under four eyes with the parts
+                       consumed through the stock fold, the downtime a row against equipment and production; a
+                       piece in service handed to an active employee by somebody else, one holder at a time, and
+                       received back by a member who is not its holder
+  src/QcFacts.mo      the payloads the quality commands carry: a control point, a check, a disposition, and the
+                       hold the stock and production folds ask about
+  src/QcRows.mo       the quality tables: the control points, the checks recorded against pickings and
+                       productions, the non-conformances a failed check raises
+  src/QcFold.mo       quality: control points as rules, the hold asked at the release, the check the checker's
+                       act, the disposition a second person's with the scrap through the stock fold
+  src/HdFacts.mo      the payloads the helpdesk commands carry: a team, a stage, a service level, a ticket, a message
+  src/HdRows.mo       the helpdesk tables: the teams, the stages of their boards, the service levels, the tickets,
+                       the messages on them, the escalation runs
+  src/HdFold.mo       the helpdesk: teams with a board and a promise, tickets whose two clocks the company's
+                       calendar sets, the requester kept off the desk, escalation as a bounded sweep under four eyes
+  src/FsFacts.mo      the payloads the field-service commands carry: the service rate, a visit planned, a visit
+                       completed with the parts it used
+  src/FsRows.mo       the field-service tables: the service rate, the visits, the parts each visit used
+  src/FsFold.mo       field service: a visit as a task with a place and a window, the parts a delivery through the
+                       stock fold, time from the timesheet, the invoice a second person's through the order fold
+  src/AptFacts.mo     the payloads the appointment commands carry: a bookable resource and a booking
+  src/AptRows.mo      the appointment tables: the bookable resources and the bookings on them
+  src/AptFold.mo      appointments: a resource's availability by the calendar, a booking refused over a taken slot,
+                       the cancellation window the booker is held to and the keeper is not
+  src/SubFacts.mo     the payloads the subscription commands carry: a recurring sale and a change to it
+  src/SubRows.mo      the subscription tables: the subscriptions, the invoices they raised, the runs
+  src/SubFold.mo      subscriptions: periods by the civil calendar, invoices raised by a bounded run through the
+                       order fold, a rise prorated over the days remaining, a subscription closed by its customer
+  src/RntFacts.mo     the payloads the rental commands carry: an item for hire, a reservation, the handover, the return
+  src/RntRows.mo      the rental tables: the items for hire and the rentals of them
+  src/RntFold.mo      rental: the unit out and back through the stock fold, days held by a live rental, the return
+                       charged by the rule through the order fold
+  src/PosFacts.mo     the payloads the point-of-sale commands carry: a shop, a price on its list, a sale at its till
+  src/PosRows.mo      the point-of-sale tables: the shops, their price lists, the till sessions, the sales, the kinds sold
+  src/PosFold.mo      point of sale: a session the cashier's own, every sale priced by the list and an order through the
+                       order fold, the Z report posted in slices by somebody else - receipts, goods, takings
+  src/RstFacts.mo     the payloads the restaurant commands carry: a table, a tab, a course, the bill settled by a rule
+  src/RstRows.mo      the restaurant tables: the tables, the tabs, their courses and lines, the shares of split bills
+  src/RstFold.mo      the restaurant: tables and courses over the till session, a bill split by the largest-remainder
+                       rule and rung up as one sale through the shop fold
+  src/WebFacts.mo     the payloads the web-shop commands carry: a storefront, a listing, a line into a cart, the checkout
+  src/WebRows.mo      the web-shop tables: the storefronts, their listings, the carts, the orders paid, the stock held
+  src/WebFold.mo      eCommerce: a catalogue from a shop's list, a cart as a draft order, checkout confirming the order,
+                       recording the payment and holding the goods, fulfilment shipping and posting under four eyes
+  src/SiteFacts.mo    the payload the website commands carry: a page published at a path from a document
+  src/SiteRows.mo     the website tables: the pages by path and every version of each, published at a block
+  src/SiteFold.mo     the website: a company document read whole and found to be its own plaintext, published as a
+                       version at a path and at a block, served through the read surface by slug and path
+  src/BlogFacts.mo    the payloads the blog commands carry: a post at a slug from a document, and a revision of it
+  src/BlogRows.mo     the blog table: the posts by slug, each a published document with its author and its day
+  src/BlogFold.mo     the blog: a verified document as a post, the caller its author and the calendar's day its date,
+                       revised in place and withdrawn, listed newest first and served through the read surface
+  src/ForumFacts.mo   the payloads the forum commands carry: a board at a slug, a topic, a reply, a moderator's act, a
+                       board's mark for ideas, a vote on an idea and a decision on it
+  src/ForumRows.mo    the forum tables: the boards by slug, the topics on them, the replies, every moderation recorded,
+                       the boards marked for ideas, each idea's latest decision and one vote per member and idea
+  src/ForumFold.mo    the forum: topics and replies as a member's word with the caller its author and the calendar's day,
+                       moderation a recorded act by somebody other than the author, served through the read surface;
+                       an idea a topic on a board the administrator or HR marks for ideas, voted on once by each member
+                       who did not open it and decided, forward only, by a holder by role who did not open it
+  src/ChatFacts.mo    the payloads the live-chat commands carry: a conversation opened with a word, a word, a transfer, a rating
+  src/ChatRows.mo     the live-chat tables: the operators enrolled, the visitors' conversations with their operator, every word
+  src/ChatFold.mo     live chat: a conversation a visitor's, the longest waiting one assigned by the fold to the operator who
+                       takes, a word a party's own and the history bounded, the rating the visitor's alone; opened only
+                       on the company's own open storefront, for a proof-of-work stamp spent on that one opening
+  src/AutoFacts.mo    the payloads the marketing-automation commands carry: a workflow over a segment, and a step of it
+  src/AutoRows.mo     the marketing-automation tables: the workflows, their steps in order, the participants, the runs
+  src/AutoFold.mo     marketing automation: a workflow as a rule set a second person activates, enrolment and steps as
+                       bounded runs, every send a wave through the mailing fold, a condition on the relay's word
+  src/SmsFacts.mo     the payloads the SMS-marketing commands carry: a text mailing over a segment, the relay's results, the replies
+  src/SmsRows.mo      the SMS-marketing tables: the text mailings, each copy by number in one form, the suppressed numbers
+  src/SmsFold.mo      SMS marketing: the mailing's shape over numbers - one segment of text fixed at launch, the list built,
+                       claimed for one outbound call and held to the count, a STOP or an unreachable number a suppression
+  src/SocialFacts.mo  the payloads the social-marketing commands carry: an account on a channel, a post, the relay's word
+  src/SocialRows.mo   the social-marketing tables: a company's accounts, one per channel, and the posts scheduled to them
+  src/SocialFold.mo   social marketing: a post a member's word scheduled by the calendar within the channel's bound, its
+                       image a verified document, given to the relay by the fold when its day has come, the word folded
+  src/EventFacts.mo   the payloads the events commands carry: an event with its day, capacity and ticket as a line of sale; tickets sold;
+                       a member's answer to an event held at no price
+  src/EventRows.mo    the events tables: the events a company holds and the tickets sold to each, every ticket an order, and one
+                       answer per member to each members' event
+  src/EventFold.mo    events: an event announced for a day with its seats, a ticket an order through the order fold asked
+                       about whole and sold by a second person, attendance at the door held to the seats; a members' event
+                       held at no price with nothing of a sale, answered by each member for themselves until its day, attending
+                       taking a place within the capacity
+  src/SurveyFacts.mo  the payloads the survey commands carry: a survey opened, a question added, a response with its answers
+  src/SurveyRows.mo   the survey tables: the surveys, their questions in order, the responses one per respondent, every answer a row
+  src/SurveyFold.mo   surveys: questions added in order while nobody has answered, a response a member's once under a key the
+                       reader computes too, every answer held to its kind and the whole refused as one, results a paged tally
+  src/AprFacts.mo     the payloads the appraisal commands carry: a review cycle, the self and the manager's review, a
+                       calibration, a goal and its key results, a recognition
+  src/AprRows.mo      the appraisal tables: the review cycle and its reviews, goals and their key results, the recognitions
+  src/AprFold.mo      appraisals: a review cycle a bounded run over every employee with the manager at enrolment as reviewer,
+                       the self review the subject's own, the manager's the reviewer's, calibration a second person's and the
+                       final rating a read, goals whose key results only the owner moves and achieved only at the target
+  src/LrnFacts.mo     the payloads the learning commands carry: a course, a path, an enrolment, a certification and its
+                       renewal, a skill and an endorsement, a mentor's offer, a mentorship and a session
+  src/LrnRows.mo      the learning tables: courses and paths, enrolments, certifications, skills and endorsements, mentor
+                       profiles and mentorships
+  src/LrnFold.mo      learning and career: enrolments the learner's with progress only they move and never backwards,
+                       certifications whose validity is a read against the calendar, skills endorsed by others and rated by
+                       the manager alone, mentorship asked of a mentor with room counted from what stands
+  src/CnbFacts.mo     the payloads the compensation and benefits commands carry: the posting policy, a pay band, a salary
+                      review, an equity grant, an incentive plan and a score, a payment outside the run, a loan and a
+                      repayment, a benefit plan, an enrolment period and an enrolment
+  src/CnbRows.mo      the compensation and benefits tables: the policy, the pay bands, the salary reviews, the equity
+                      grants, the incentive plans with their metrics and scores, the payments outside the run, the loans
+                      and their repayments, the benefit plans, the enrolment periods, the enrolments
+  src/CnbFold.mo      compensation and benefits: salary reviews the manager's proposal within a band decided by a second
+                      person and written through the payroll, vesting as a schedule the fold computes, incentives the
+                      fold's arithmetic, payments and loans posted through the ledger, enrolments while a period is open
+  src/FltFacts.mo     the payloads the fleet commands carry: the posting policy, a vehicle, a driver's assignment, a contract,
+                      an odometer reading, a fuelling, a cost
+  src/FltRows.mo      the fleet tables: the policy, the vehicles, the assignments, the contracts, the readings, the fuellings,
+                      the costs
+  src/FltFold.mo      fleet: vehicles carried as fixed assets, a driver assigned by somebody else, contracts with a supplier in
+                      force by a read, an odometer that never goes backwards, fuel with the amount the fold's, every cost
+                      posted by a second person through the ledger
+  src/DscFacts.mo     the payloads the discussion commands carry: a channel, an announcement with its audience and its
+                      window, an amendment, a notification
+  src/DscRows.mo      the discussion tables: the channels, their members, their messages, the announcements, the reactions,
+                      the notifications, the announcement sweeps
+  src/DscFold.mo      discussion: channels a member's to join or be added to, a message deleted by its sender alone, a read
+                      mark that only moves forward, announcements to an audience nobody suspended is in, a sweep telling it
+                      a slice at a time, notifications held to the record they report
+  src/KbFacts.mo      the payload the knowledge commands carry: a version of an article
+  src/KbRows.mo       the knowledge tables: the articles, their versions, the views, the votes
+  src/KbFold.mo       knowledge: an article as its versions, each a company document of the evidence store registered by
+                      its author, published by somebody who did not write it, a view once per member, a vote moved and
+                      never the published version's author's
+  src/GovFacts.mo     the payload the governance commands carry: a version of a policy, a compliance requirement
+  src/GovRows.mo      the governance tables: the policies, their versions, the acknowledgements, the requirements, the
+                      citations, the dashboard layouts, the runs of the figures
+  src/GovFold.mo      governance: a policy as its versions, each a company document its author registered, published by a
+                      governor who did not write it, acknowledged once per member per version by the fingerprint of its
+                      words; requirements held against company roles, certifications cited by somebody else; a member's
+                      own dashboard; the company's figures counted a slice at a time
+  src/WfFacts.mo      the payload the approval commands carry: a cycle, a request
+  src/WfRows.mo       the approval tables: the cycles, the requests, the decisions on their steps, the delegations
+  src/WfFold.mo       approval workflows: a cycle of company roles a request moves through, never decided by its
+                      requester nor twice by one person, a delegation standing between two days, and the gate every
+                      chained domain's own decision passes
+  src/StudioFacts.mo  the payload the Studio commands carry: a field on a kind of record, its amendment, a rule, a value
+  src/StudioRows.mo   the Studio tables: the fields, the versions of their rules, the values on each record
+  src/StudioFold.mo   Studio: a custom field on every kind of record with a declared shape, validation as a recorded rule
+                      each value is held to, a value a writer's whose role the rule names, unique where the field is
+                      declared unique; a person's custom fields among them (the person record's four acts absorbed, refused by name)
+  src/CtlFacts.mo     the payload the controls commands carry: a screening profile, a run's period, a procedure, a conclusion
+  src/CtlRows.mo      the controls tables: the posting and confirmation records, the profile and its lists, the run, its
+                      counts, marks and findings, the procedures and their conclusions
+  src/CtlFold.mo      controls: the journal screened by a profile of criteria over a run's population fixed by block, in
+                      bounded slices, the duplicate-bill and split-order tests, the leading-digit test, a run sealed with
+                      the tip and a chain over its findings, and procedures concluded and reviewed under four eyes
+  src/VoipFacts.mo    the payload of a call on the pipeline
+  src/VoipRows.mo     the call table: the lead, the activity it carried out, the member, the number in one form, the
+                      outcome, the seconds, the consent and the recording in the evidence store
+  src/VoipFold.mo     voice over IP: a call logged by the member who took or made it, carrying out the lead's phone-call
+                      activity through the CRM fold's own acts, and its recording a company document attached once
+  src/PlmFacts.mo     the payload of an engineering change to a bill of materials
+  src/PlmRows.mo      the change table, its lines, and the version each production was planned against
+  src/PlmFold.mo      product lifecycle: a change proposed whole, made the bill's next version only by a second member,
+                      effective on strictly increasing days; the version in effect on a day, and the production's pin
+  src/Gate.mo         the company-authority gate: every command family's route to its company and the holders who may
+                      send it, asked before any fold runs; deny by default, a refusal byte-neutral; the company's
+                      auditor reads the audit index and holds no act
+  src/PlatformRows.mo the platform operator's one row: the principal the contract names, and the one it has offered the role
+  src/PlatformFold.mo the platform operator: claimed once while no operator is named and no company exists, handed over in
+                      two steps - offered by the operator, taken only by the principal offered
+  src/Personal.mo     the acts whose blocks carry a person's payroll, medical, disciplinary or family record, served
+                      by query to nobody until the chain checks a query's sender by its signature
+  src/AuditRows.mo    the index of the log: one entry per accepted block under its caller and one under its company,
+                      each keyed by the caller's principal field or the company's id, then the block's height
+  src/AuditIndex.mo   the audit index: the two writes of an accepted block and the running digest over them, and a
+                      page of one caller's or one company's entries from a cursor
+  src/Identity.mo     a person signed in with a Memphis passkey: the session verified with the identity contract, the
+                      person's stable principal under the contract's namespace, the session bound to the browser key that
+                      first presents it; the namespace set once by the platform operator, the expiry read from the Source
+  src/EsgFacts.mo     the payloads of ESG: a set of global warming potentials and a factor version, each naming the
+                      published file by its SHA-256; an assignment rule; an activity; a run's period
+  src/EsgRows.mo      the seven ESG tables: GWP sets, the gases of sets and factor versions, factor versions by code,
+                      rules by their keys, activities by day, runs, and a run's figures by key
+  src/EsgFold.mo      ESG: emissions and energy weighed against the ledger's own posted lines and the activities a
+                      company records, by factors recorded and approved under four eyes; a run over a locked period
+                      walked with the close's slicing and sealed with the log's tip, a chain over its figures and a
+                      hash; the statement and the disclosure, with the answers of the FRA's ESG form figures give
+  src/DraftFacts.mo   the payload of a draft: the company, the person it is made for, the act's canonical bytes under a
+                      named encoding version, and a source that states what made it, and a note
+  src/DraftRows.mo    the drafts table: each act proposed for a person kept as its bytes in hexadecimal text, its source,
+                      its state and the block its act was made in, by company and by the person it is for
+  src/ReadSurface.mo the read method: a page of one kind of record in one company, or one record, read by the class of
+                      reader its kind names, deny by default, in the command codec's canonical form, naming the tip
+  src/ReadKinds.mo    written by tools/read_surface.py from the declarations: every kind's class of reader and its rows
+  src/ReadRules.mo    the read method's rules per record: a channel and what is said in it by who is in it, a
+                      notification by its addressee alone, a named survey's responses by whom it names them to
+  src/DraftFold.mo    drafts: an act proposed for a person and made an act only by that person or a holder of it by role,
+                      through the gate and the act's own fold as the acceptor's, once and before its last day
+
+  test/Audit.test.mo   the audit index: every block's two entries and the digest restated from the log, every read and
+                       refusal, the pages and their cursors, the replay rebuilding it byte for byte
+  test/Read.test.mo    the read method: every kind probed three ways, the classes stated independently, a page decoded
+                       field by field, a cursor walked to its end, the request's one spelling, the tip named, a person
+                       named by another field, every rule per record held to the rows its acts wrote
+  test/Draft.test.mo   drafts: an accepted draft against the act sent directly in a second world, the gate and four eyes
+                       unchanged, once and in time, what is drafted and by whom, the reads that withhold a personal act,
+                       and the replay rebuilding it byte for byte
+  test/Esg.test.mo     ESG: every act and its refusals, three runs sliced by one and by a thousand to the same seal,
+                       a rule and a version changed while a run is open, the figures by the published factors, the
+                       statement's pages restated to the chain and the hash, and the FRA's answers
+  test/Identity.test.mo  a passkey session: the namespace set once, the token's form, the session bound to the
+                       browser holding it, the rules before and after the calls to Memphis; and Arabic, mixed-direction
+                       and marked text kept and sealed byte for byte, the block naming the person who sent it
+  integration/esg/     the two EPA files the seeded factors are read from, byte for byte, pinned by SHA-256 in
+                       SOURCES.md, and factors.json, the integer facts derived from them
+  tools/esg_sources.py the derivation of every seeded factor and GWP from the EPA files alone, with exact fractions:
+                       the files' hashes, the derivation against factors.json and the figures the battery weighs by
+  tools/esg_sources_control.sh  its negative control: a file changed by a byte, a derived figure moved, a battery
+                       literal moved, a pin moved, each refused
+  test/Purchase.test.mo  the three-way match: an order, the delivery it is assigned to, and the
+                       supplier's own bill, refused unless all three agree
+  test/Usp.test.mo     the advantages this system states, asserted rather than claimed: the state
+                       re-derived from its own log, the date taken from the calendar and read back
+                       off the block, and the second signature the act cannot stand without
+  tools/usp_control.sh the advantages' negative control: the calendar frozen, four eyes removed,
+                       the second name recorded as the first
+  tools/wasi_run.sh    one WASI module under wasmtime, a host that could not start it told apart
+                       from a module that ran and failed, so no control counts "not run" as caught
+  tools/tombstone_lint.py  no fold reads a range from its head in one page; its own control first
+  tools/read_surface.py who reads every kind of record, held to the tables, and the read cases written from the
+                       declarations, with its own control
+  tools/studio_lint.py every table a Studio field may stand on is a record kind read from its own store,
+                       every other table named for why not; it writes the kinds into src/State.mo and
+                       holds them there, its own control first
+  tools/wasm_bound.py  the largest function in the contract's module, held under a bound before a
+                       node is asked to compile it; a module one byte past the bound refused first
+  tools/check.sh       every check that needs no chain, in one run, each control beside its check; it
+                       holds docs/landed/mentat.did to the contract's Candid
+  tools/codec_samples.py  the rich sample of every command family, written from the command type
+                       into test/CodecSamples.mo with the value each reads back as in
+                       test/fixtures/codec_samples.json; tools/check.sh refuses either when it is not current
+  tools/command_schema.py  the command type published as data (docs/landed/commands.json): every family's
+                       tag and fields with each type resolved to its wire form and every enumeration's bytes,
+                       read by the independent reader's parser; a client's forms and encoder are generated
+                       from it, and tools/check.sh refuses it when it is not what the command type gives
+
+── the independent oracle ──────────────────────────────────────────────────────
+
+  integration/oracle/ shares no code with the contract. `device_vector.py` is a SIGNER: it writes
+  a device's attendance batch again from the specification in `AttFold.batchBytes` and signs it
+  with `cryptography`'s own P-256, so the attendance battery verifies a batch this tree did not
+  sign - and refuses one whose punches were changed by a minute, one replayed at a counter already
+  spent, and one signed by another device's key. `webauthn_vector.py` is a SIGNER too: it
+  recomputes the contract's signing challenge from the specification and produces a real
+  WebAuthn ES256 assertion with `cryptography`'s own P-256 implementation, so the evidence
+  battery verifies a signature this tree did not make; with `--sign` it produces two signers'
+  assertions in the order the signing battery (`test/Sign.test.mo`) names them. `sign.py` is the
+  signing flow's READER: it decodes the battery's log with the enterprise envelope, verifies every
+  assertion with `cryptography` over the challenge it recomputed, and recomputes every seal;
+  `evidence.py` decodes the evidence families for it. `stock.py` decodes and re-encodes
+  the inventory families and REFOLDS the stock: quants, first-in-first-out layers, the
+  average pair, the standard, and every validated picking's value by Python's own
+  `decimal` at the reference precision, handing the valuation entry to the ledger
+  reader. `crm.py` decodes and re-encodes every CRM family and REFOLDS the pipeline's
+  mailing and campaign: the leads and their tags, the suppression list, every mailing's
+  recipients as planned, claimed and acknowledged, the segment's rule, the audience dealt
+  into arms by its own statement of the recorded rule, the winner by its own
+  cross-multiplication, and the remainder; and the pipeline itself - every lead's state,
+  stage, board state and weighted forecast, the reminder sweep over the activities the
+  call reader keeps, and the scoring run by its own statement of the nine criteria.
+  `typed_codec.py` decodes and re-encodes a command of every family from the command type
+  and the enumerations' stored bytes alone, and every block on the log is written back by
+  it. `accounting.py` REFOLDS the
+  month-end close from its own ledger - the plan as every profit-and-loss account's
+  period totals in account order and its hash, the sweep as those accounts brought to
+  zero with the difference to retained earnings in moves of at most 254 lines, the
+  reversal as each closing move's lines swapped - and compares the contract's `close:`
+  line figure by figure; it REFOLDS every statement over its window, hashes it with the
+  block and the tip it names and requires that tip to be the hash of the block before,
+  comparing the `statement:` lines; it REFOLDS every deferral's schedule with its own calendar
+  arithmetic and integer division and generates the run's moves in the same order, comparing
+  the `deferral:` lines to the minor unit; it REFOLDS every revaluation under the declared
+  exponents and rounding with its own half-even arithmetic and the rate it finds in force,
+  comparing the `revaluation:` lines; it REFOLDS every asset's charges by its own rule - what is
+  left over the months that are left - and every event's result against the carrying value it
+  keeps, comparing the `asset:` lines to the minor unit. `expenses.py` decodes and re-encodes the
+  eight expense families, notes the documents the evidence families register, archive and erase,
+  REPRICES every rate line from the rate it finds in force on the line's day with its own half-even
+  arithmetic, sums every total, folds the claim's state machine with its three pairs of eyes, hands
+  the approval's and the settlement's moves to the ledger reader, and compares the `claim:` lines.
+  `payments.py` decodes and re-encodes the payment families and the three-way match's, folds the
+  bill from its lines and hands the match's move to the ledger reader, REBUILDS every pacs.008 from
+  the rows with its own writer - its own MOD 97-10, its own UETR derivation, its own civil date and
+  amount - and requires the same bytes under the same SHA-256, posting the acceptance's move itself,
+  comparing the `payment:` lines. `statements.py` decodes and re-encodes the statement families,
+  typed and from the message, READS every camt.053 again with Python's own parser into the same
+  statement and lines, holds the message to the official camt.053.001.08 schema with lxml where the
+  hub's copy of it is beside this tree, and requires the bytes to be the fixture file they say they
+  are, comparing the `camt:` lines. `esg.py` decodes and re-encodes the ESG families, folds every GWP set,
+  factor version, rule and activity by its own statement of the rules, WALKS every run slice by slice over the
+  accounting reader's moves and its own activities with its own half-even arithmetic, chains and hashes every
+  sealed run with Python's own SHA-256, and writes every disclosure and the FRA's answers again, comparing the
+  `esg_*` lines whole. `accounting.py` additionally emits a Beancount ledger and an hledger
+  journal; Beancount (`bean-check`) is run over the first, and a control requires it
+  to REFUSE the same ledger with one posting moved by a minor unit; where the `hledger`
+  binary is installed it reads the second and must arrive at every balance, the swept
+  accounts at zero among them. Beancount is GPL-2.0 and hledger is GPL-3.0; both are
+  used as external tools, not vendored.
+  `read_page.py` decodes a page of the read method from its bytes alone, by the codec's rules and
+  the schema `tools/read_surface.py` writes from the declarations (`read_kinds.json`: each kind's
+  fields, how each is written, and every enumeration's bytes by name), and refuses a page it cannot
+  read to its last byte or that is not the one spelling of what it holds. `read_compare.py` holds
+  the export's pages - every kind in every company walked to its end - to the log's height and the
+  tip this reader chained, to one walk per kind and company, to the company of each row, and to this
+  reader's own fold both ways, field by field, under a floor (`read_floor.json`) that a run may not
+  fall below.
+
+── the Thebes Domain Kernel ────────────────────────────────────────────────────
+
+  Mercatura-Forum/thebes-kernel, Apache 2.0, used as a package (`mo:kernel/…`)
+  and not vendored into this tree; vendor/thebes-kernel/README.md names the
+  commit. Its own NOTICE carries the provenance of the third-party code it
+  contains.
+
+── the ISO 20022 hub ───────────────────────────────────────────────────────────
+
+  Mercatura-Forum/thebes-example-open-banking-iso20022, Apache 2.0, read by the
+  payment battery as a package (`mo:iso20022hub/…`) and by the statement reader
+  for the official camt.053 schema; not vendored. vendor/thebes-kernel/README.md
+  names its commit too.
+
+── the earlier backend ─────────────────────────────────────────────────────────
+
+  The domains here were rebuilt from an earlier backend's behaviour; none of its
+  source is in this tree. Where a comment names one of its files and lines
+  (`main.mo`, `erp.mo`, `crm.mo`, `Types.mo`), it records the defect the
+  rebuilt domain closes.
+
+════════════════════════════════════════════════════════════════════════════════
+ THIRD PARTY
+════════════════════════════════════════════════════════════════════════════════
+
+  mops packages (`base`, `core`, `map`, `stableheapbtreemap`, `sha2`,
+  `matchers`) are used as dependencies and are not vendored. Their licences are
+  their own and are carried in `.mops/`.
+
+  Beancount and hledger are used as external tools by the oracle's control and
+  are not vendored.
+
+  integration/esg/ carries two files of the United States Environmental Protection
+  Agency byte for byte: the GHG Emission Factors Hub (2025) and the Supply Chain GHG
+  Emission Factors v1.3.0 by NAICS and gas. Works of the United States Government,
+  they are in the public domain (17 U.S.C. §105); their URLs and SHA-256 are in
+  integration/esg/SOURCES.md.
+
+  src/Identity.mo restates thebes-lib's MemphisAuth (v1.0.0, Apache 2.0, Mercatura-Forum):
+  the two Memphis methods it binds and the shape of their answers, with the session's
+  expiry read from the contract's Source rather than a clock of its own.
+
+  The Thebes Domain Kernel carries the provenance of the third-party code it
+  contains, in its own NOTICE.

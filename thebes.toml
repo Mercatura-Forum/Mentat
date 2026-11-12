@@ -1,0 +1,17 @@
+# Deployment manifest. Replace every placeholder with your own network before deploying.
+[project]
+name = "mentat"
+default_network = "wan"
+chain_id = 0
+
+[networks.wan]
+validators = ["https://<validator>/deploy-api"]
+boundary = "https://<thebes-gateway>"
+routing = "smart"
+
+[canisters.mentat]
+type = "backend-motoko"
+cid = "auto"
+identity = "<your-identity>"
+wasm = "build/mentat.wasm"
+build = "mkdir -p build && ${MOC_THEBES:-$HOME/.thebes/toolchain/moc} --legacy-persistence $(./tools/packages.sh) -o build/mentat.wasm src/Mentat.mo"

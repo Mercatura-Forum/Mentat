@@ -1,0 +1,514 @@
+type StatementView = 
+ record {
+   atBlock: nat;
+   certificate: opt blob;
+   companyId: nat;
+   currentTip: opt blob;
+   fromDay: nat;
+   hash: blob;
+   kind: text;
+   lines: vec record {
+                accountId: nat;
+                credit: nat;
+                debit: nat;
+              };
+   state: text;
+   throughDay: nat;
+   tip: blob;
+ };
+type ScreeningView = 
+ record {
+   band: nat;
+   benfordCount: nat;
+   billBound: nat;
+   bills: nat;
+   byCriterion: vec nat;
+   certificate: opt blob;
+   chain: blob;
+   chiE2: nat;
+   companyId: nat;
+   confirmed: nat;
+   currentTip: opt blob;
+   findings: nat;
+   flagged: nat;
+   foreign: nat;
+   fromDay: nat;
+   hash: blob;
+   lines: nat;
+   madE10: nat;
+   more: bool;
+   moves: nat;
+   open: nat;
+   openedBlock: nat;
+   openedBy: principal;
+   openedDay: nat;
+   orderBound: nat;
+   orders: nat;
+   page: vec ScreeningFinding;
+   phase: text;
+   profileId: nat;
+   runId: nat;
+   sealedBlock: nat;
+   throughDay: nat;
+   tip: blob;
+   unrecorded: nat;
+ };
+type ScreeningFinding = 
+ record {
+   amount: nat;
+   concludedBy: principal;
+   concludedDay: nat;
+   criteria: nat;
+   findingId: nat;
+   kind: text;
+   note: text;
+   poster: principal;
+   postingDay: nat;
+   preparer: principal;
+   state: text;
+   subjectId: nat;
+ };
+type Response = 
+ record {
+   body: blob;
+   headers: vec record {
+                  text;
+                  text;
+                };
+   status_code: nat16;
+ };
+type Request = 
+ record {
+   body: blob;
+   headers: vec record {
+                  text;
+                  text;
+                };
+   method: text;
+   url: text;
+ };
+type Outcome = 
+ variant {
+   err: record {
+          kind: text;
+          reason: text;
+        };
+   ok: record {
+         block: nat;
+         day: nat;
+         effects: vec nat;
+         height: nat;
+       };
+ };
+type FraAnswer = 
+ record {
+   answer: text;
+   clarification: text;
+   code: text;
+   question: text;
+ };
+type FigureView = 
+ record {
+   amount: int;
+   category: nat;
+   co2e: int;
+   departmentId: nat;
+   detail: nat;
+   entries: nat;
+   figureId: nat;
+   kind: text;
+   scope: nat;
+ };
+type EsgStatementView = 
+ record {
+   activities: nat;
+   activitiesAssigned: nat;
+   activitiesMeasured: nat;
+   certificate: opt blob;
+   chain: blob;
+   companyId: nat;
+   currentTip: opt blob;
+   figures: nat;
+   fromDay: nat;
+   hash: blob;
+   lines: nat;
+   linesAssigned: nat;
+   more: bool;
+   openedBlock: nat;
+   openedBy: principal;
+   openedDay: nat;
+   page: vec FigureView;
+   phase: text;
+   runId: nat;
+   sealedBlock: nat;
+   throughDay: nat;
+   tip: blob;
+ };
+type EsgDisclosureView = 
+ record {
+   byGas: vec int;
+   certificate: opt blob;
+   companyId: nat;
+   currentTip: opt blob;
+   energy: int;
+   energyBySource: vec int;
+   energyOutside: int;
+   energyRenewable: int;
+   fra: vec FraAnswer;
+   fromDay: nat;
+   hash: blob;
+   runId: nat;
+   scope1: int;
+   scope2EnergyMethod: text;
+   scope2Location: int;
+   scope2Market: int;
+   scope3: int;
+   scope3ByCategory: vec int;
+   sealedBlock: nat;
+   throughDay: nat;
+   tooLargeEntries: nat;
+   unassignedEntries: nat;
+   wasteGenerated: int;
+   wasteHazardous: int;
+   wasteRecycled: int;
+   wasteTreated: int;
+   waterConsumed: int;
+   waterRecycled: int;
+ };
+type EntryPage = 
+ record {
+   entries: vec Entry;
+   next: opt nat;
+ };
+type Entry = 
+ record {
+   caller: principal;
+   company: nat;
+   family: text;
+   height: nat;
+   tag: nat;
+ };
+type DraftView = 
+ record {
+   acceptedBlock: opt nat;
+   act: opt blob;
+   companyId: nat;
+   decidedBy: opt principal;
+   decidedDay: nat;
+   draftId: nat;
+   expiryDay: nat;
+   family: text;
+   forPerson: principal;
+   note: opt text;
+   proposedDay: nat;
+   proposer: principal;
+   reason: text;
+   source: text;
+   state: text;
+   version: nat;
+ };
+type ConsolidationView = 
+ record {
+   atBlock: nat;
+   certificate: opt blob;
+   companyId: nat;
+   currentTip: opt blob;
+   difference: int;
+   eliminations:
+    vec
+     record {
+       code: text;
+       companyId: nat;
+       counterpartyId: nat;
+       credit: nat;
+       debit: nat;
+     };
+   fromDay: nat;
+   groupId: nat;
+   hash: blob;
+   kind: text;
+   lines: vec record {
+                code: text;
+                credit: nat;
+                debit: nat;
+              };
+   members:
+    vec record {
+          atBlock: nat;
+          companyId: nat;
+          hash: blob;
+          statementId: nat;
+        };
+   state: text;
+   throughDay: nat;
+   tip: blob;
+ };
+type Config = 
+ record {
+   audience: text;
+   memphisCid: nat;
+   origin: text;
+   version: nat64;
+ };
+/// Mentat.mo - the contract: the one route by which a command reaches the log, on the chain.
+/// 
+/// Everything that decides anything is already written and already tested: `Contract.accept` reads
+/// the clock once, binds the command to an encoding version, folds it, and appends the block. This
+/// module adds no authority, no validation and no state of its own. What it adds is the substrate:
+/// the clock's source, the persistence boundary, and the surface a caller can reach.
+/// 
+/// THE COMMAND ARRIVES AS ITS OWN CANONICAL BYTES, not as a Candid variant.
+/// 
+/// `submit(version, bytes)` decodes with `Encoding.read` and then accepts. The alternative - a
+/// Candid parameter of the command type - would put a SECOND encoding of every command on the
+/// wire, generated by a tool from the Motoko type, beside the frozen one the log stores and the
+/// approval hash is taken over. Two encodings of one thing drift, and the day they do, a command a
+/// caller signed and a command the log recorded would differ with nothing to say so. The bytes are
+/// the command; this method takes the command.
+/// 
+/// It also means a client needs only the canonical writer to talk to this contract, which the
+/// independent oracle already carries - so the harness that drives this on a chain shares no code
+/// with it, exactly as the batteries' oracle does not.
+/// 
+/// The decoding and the wording of a refusal are `Boundary`'s, not this file's: they are the same
+/// for every contract in the estate, and a front door written out twice is a front door that can
+/// be written out differently.
+/// 
+/// THE CLOCK IS THE SUBSTRATE'S, AND THIS IS THE ONLY PLACE IT IS READ.
+/// 
+/// `ClockWiring` says a product runs on the calendar authority and that no other file may read a
+/// clock; `tools/no_direct_clock.sh` fails the build if one does. This module is the exception the
+/// rule is written around: it supplies the `Source` record, and nothing else in the tree has one.
+/// On this substrate the clock advances with the block rather than with the wall, so the height is
+/// derived from it here and the business date still comes from the calendar, never from either.
+/// 
+/// Attribution: Thebes Core Team. Licence: Apache 2.0.
+service : {
+  /// Begin the login: the client-credentials request goes out at quorum one; the answer is read
+  /// by `submitEtaFiling`.
+  beginEtaLogin: (companyId: nat) -> (variant {
+                                        err: text;
+                                        ok;
+                                      });
+  beginEtaLoginAs: (session: text, companyId: nat) ->
+   (variant {
+      err: text;
+      ok;
+    });
+  /// One block's bytes, exactly as they are stored. This is what the independent oracle reads: it
+  /// parses the block layout itself and recomputes the product's figures from them, sharing no code
+  /// with the contract. THE RAW LOG IS READ BY THE SAME RULE AS THE RECORDS: served to the platform operator, the administrator of the block's company and the block's own caller, and
+  /// a block of a person's payroll, medical, disciplinary or family record to nobody by query (`Personal.mo`). The
+  /// tip and its certificate stay public, so anyone still checks that the chain is whole.
+  blockBytes: (index: nat) -> (variant {
+                                 err: text;
+                                 ok: blob;
+                               }) query;
+  /// `blockBytes`, as the person an open session names.
+  blockBytesAs: (session: text, index: nat) ->
+   (variant {
+      err: text;
+      ok: blob;
+    }) query;
+  businessDate: () -> (opt nat) query;
+  /// The log's tip under the subnet's certificate. The certificate is null outside a query call.
+  certifiedTip: () -> (record {
+                         certificate: opt blob;
+                         tip: opt blob;
+                       }) query;
+  /// The substrate's clock and the height derived from it, as this contract sees them. The harness
+  /// reads this across blocks to show that the clock advances with the chain and not with the wall.
+  clockReading: () -> (record {
+                         height: nat;
+                         now: int;
+                       }) query;
+  /// Sign out here, by the browser holding the session: the token is refused from then until its expiry, from every
+  /// browser (Memphis's own sign-out only forgets it in the browser). True when an open session was signed out.
+  closeSession: (session: text) -> (bool);
+  /// Name the identity contract, by the platform operator. The namespace and the version are set by the first call
+  /// and never change, since they decide every person's principal; the identity contract and the web address may move.
+  configureIdentity: (memphisCid: nat, origin: text, version: nat64,
+   audience: text) -> (variant {
+                         err: text;
+                         ok;
+                       });
+  consolidation: (consolidationId: nat) -> (opt ConsolidationView) query;
+  /// THE DRAFTS MADE FOR THE CALLER in one company, a page at a time (`DraftFold`); the act a draft holds and its
+  /// note withheld where the act is a personal record's.
+  draftsFor: (companyId: nat, after: opt nat, limit: nat) ->
+   (variant {
+      err: text;
+      ok: record {
+            drafts: vec DraftView;
+            next: opt nat;
+          };
+    }) query;
+  /// `draftsFor`, as the person an open session names.
+  draftsForAs: (session: text, companyId: nat, after: opt nat, limit: 
+   nat) ->
+   (variant {
+      err: text;
+      ok: record {
+            drafts: vec DraftView;
+            next: opt nat;
+          };
+    }) query;
+  /// THE LOG FOUND BY CALLER: a person's own accepted blocks, in every company or in one; or, read by a company's
+  /// administrator in standing, the person's blocks in that company only.
+  entriesByCaller: (subject: principal, companyId: opt nat, after: opt nat,
+   limit: nat) -> (variant {
+                     err: text;
+                     ok: EntryPage;
+                   }) query;
+  entriesByCallerAs: (session: text, subject: principal, companyId: opt nat,
+   after: opt nat, limit: nat) -> (variant {
+                                     err: text;
+                                     ok: EntryPage;
+                                   }) query;
+  /// THE LOG FOUND BY COMPANY: one company's accepted blocks after `after`, in height order, a page at a time
+  /// (`AuditIndex.mo`). Read by the company's administrator in standing and by the platform operator; anyone else
+  /// is refused by the gate. Each entry names a height: the block itself (`blockBytes`), checked against the
+  /// certified tip, is the evidence, and the entry only finds it.
+  entriesByCompany: (companyId: nat, after: opt nat, limit: nat) ->
+   (variant {
+      err: text;
+      ok: EntryPage;
+    }) query;
+  /// The two reads above, as the person an open session names (`openSession` first: a query cannot ask Memphis).
+  entriesByCompanyAs: (session: text, companyId: nat, after: opt nat, limit:
+   nat) -> (variant {
+              err: text;
+              ok: EntryPage;
+            }) query;
+  esgDisclosure: (runId: nat, priorRunId: nat) ->
+   (variant {
+      err: text;
+      ok: EsgDisclosureView;
+    }) query;
+  esgStatement: (runId: nat, afterFigure: nat, limit: nat) ->
+   (variant {
+      err: text;
+      ok: EsgStatementView;
+    }) query;
+  /// The sealed submission body a filing would send, for a relay that files from outside the
+  /// contract and records the answer with `recordEtaResult`. Read-only.
+  etaSubmissionBody: (filingId: nat) -> (variant {
+                                           err: text;
+                                           ok: text;
+                                         }) query;
+  /// Every byte of state a command can move, in one digest. Two contracts that agree here hold the
+  /// same rows; a contract that agrees with itself across an upgrade kept its state.
+  fingerprint: () -> (blob) query;
+  /// A read-only surface, and an instrument.
+  /// 
+  /// It echoes the url and the headers it was given. That is not decoration: the boundary in front
+  /// of this contract delivers the PATH ONLY - no headers, no query string - and a design that put
+  /// anything load-bearing in either would work in every battery and fail in front of a browser.
+  /// The careers page's proof-of-work stamp is in the command's body for that reason, and this
+  /// method is what lets a test show the reason rather than assert it.
+  /// 
+  /// Nothing is submitted here. A submission changes state, this cannot, and an applicant reaches
+  /// `submit` as an ingress call with no account of any kind.
+  http_request: (r: Request) -> (Response) query;
+  identityConfig: () -> (opt Config) query;
+  /// Install the authority's client credential for a company. The caller must be the company's
+  /// administrator. No block, no row.
+  installEtaCredential: (companyId: nat, identityEndpoint: text, clientId:
+   text, clientSecret: text) -> (variant {
+                                   err: text;
+                                   ok;
+                                 });
+  installEtaCredentialAs: (session: text, companyId: nat, identityEndpoint:
+   text, clientId: text, clientSecret: text) -> (variant {
+                                                   err: text;
+                                                   ok;
+                                                 });
+  logLength: () -> (nat) query;
+  /// Sign in here: the person the session names, bound to the browser that signs this call.
+  openSession: (session: text) -> (variant {
+                                     err: text;
+                                     ok: principal;
+                                   });
+  /// The platform operator the log names, the block it took the role at, and the principal a standing offer names;
+  /// null while the log names none. The install reads it back right after its claim and stops if it is not the
+  /// deployer.
+  platformOperator: () ->
+   (opt record {
+          offered: opt principal;
+          operator: principal;
+          sinceBlock: nat;
+        }) query;
+  /// THE READ METHOD, the mirror of `submit`: `request` is the
+  /// canonical bytes of a `ReadSurface.Request` under `version` - a page of one kind of record in one company from a
+  /// cursor, or one record - and the reply is the page, naming the log's height and tip it was read at, so a client
+  /// holds it to `certifiedTip`. Each kind is served to the class of reader `ReadKinds` names for it, deny by default;
+  /// a person's payroll, medical, disciplinary or family record to nobody by query.
+  read: (version: nat8, request: blob) ->
+   (variant {
+      err: text;
+      ok: blob;
+    }) query;
+  /// `read`, as the person an open session names.
+  readAs: (session: text, version: nat8, request: blob) ->
+   (variant {
+      err: text;
+      ok: blob;
+    }) query;
+  /// Read the authority's answer to a submitted filing and record it through the fold.
+  readEtaAnswer: (companyId: nat, filingId: nat) ->
+   (variant {
+      err: text;
+      ok: record {
+            note: text;
+            recorded: bool;
+          };
+    });
+  readEtaAnswerAs: (session: text, companyId: nat, filingId: nat) ->
+   (variant {
+      err: text;
+      ok: record {
+            note: text;
+            recorded: bool;
+          };
+    });
+  /// Move the business date. The FIRST caller becomes the calendar authority, because a contract
+  /// that has just been installed has no company and no membership to check against; every caller
+  /// after that must be it.
+  rollBusinessDate: (day: nat) -> (variant {
+                                     err: text;
+                                     ok: nat;
+                                   });
+  screening: (runId: nat, afterFinding: nat, limit: nat) ->
+   (variant {
+      err: text;
+      ok: ScreeningView;
+    }) query;
+  statement: (statementId: nat) -> (opt StatementView) query;
+  submit: (version: nat8, bytes: blob) -> (Outcome);
+  /// `submit`, as the person the session signs in.
+  submitAs: (session: text, version: nat8, bytes: blob) -> (Outcome);
+  /// Submit a sealed filing. If a login is pending its answer is read first and the token kept for
+  /// its hour. The submission is recorded on the log by the fold BEFORE the request is submitted,
+  /// so the record says a submission was made even if the answer never comes back; the answer is
+  /// then read by `readEtaAnswer`.
+  submitEtaFiling: (companyId: nat, filingId: nat) ->
+   (variant {
+      err: text;
+      ok: record {
+            note: text;
+            submitted: bool;
+          };
+    });
+  submitEtaFilingAs: (session: text, companyId: nat, filingId: nat) ->
+   (variant {
+      err: text;
+      ok: record {
+            note: text;
+            submitted: bool;
+          };
+    });
+  tipHash: () -> (opt blob) query;
+  upgradeCount: () -> (nat) query;
+  /// The person an open session names, asked by the browser holding it; null for any other.
+  whoAmI: (session: text) -> (opt principal) query;
+}
